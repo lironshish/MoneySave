@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item1"
+            android:checked="true"
+            android:icon="@drawable/ic_settings"
+            android:title="settings" />
+        <item
+            android:id="@+id/item2"
+            android:icon="@drawable/ic_navigaton_exit"
+            android:title="logout" />
+
+        <item
+            android:id="@+id/addAccount"
+            android:icon="@drawable/ic_navigaton_exit"
+            android:title="logout" />
+
+<!--        <item-->
+<!--            android:id="@+id/action_sound"-->
+<!--            android:title="sound"-->
+<!--            android:icon="@android:drawable/ic_lock_silent_mode"-->
+<!--            app:showAsAction="always"-->
+<!--            />-->
+
+    </group>
+</menu>
