@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    tools:context="com.example.moneysave.Acivities.MainActivity">
+    tools:context=".Acivities.MyAccountsActivity">
+
 
     <ImageView
         android:id="@+id/sign_up_IMG_back1"
@@ -42,8 +43,6 @@
 
             />
 
-
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/panel_Toolbar_Top"
             android:layout_width="match_parent"
@@ -58,11 +57,38 @@
             app:titleTextColor="#F1A94F" />
 
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/account_BTN_Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_add"
+            app:borderWidth="0dp"
+            app:layout_anchor="@id/account_BottomAppBar"
+            app:maxImageSize="50dp" />
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/account_BottomNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/drawer_menu" />
+
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/account_BottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:fabCradleMargin="20dp"
+            app:fabAlignmentMode="center"
+            app:fabCradleRoundedCornerRadius="10dp" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-
-
 </androidx.drawerlayout.widget.DrawerLayout>
-
-
