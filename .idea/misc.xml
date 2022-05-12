@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.10099637681159421" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_main.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/fragment_bankAcoounts.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/my_accounts_activity.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/navigation_header.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/sign_in.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/sign_up.xml" value="0.13994565217391305" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.25416666666666665" />
       </map>
     </option>
