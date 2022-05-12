@@ -64,16 +64,32 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/account_Fragment"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/topTen_frames"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="?attr/actionBarSize"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:clipToPadding="false"
-            />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+        <FrameLayout
+            android:id="@+id/topTen_frame1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_weight="0.5" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <FrameLayout
+            android:id="@+id/topTen_frame2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/account_BTN_Add"
@@ -104,7 +120,7 @@
             android:layout_gravity="bottom"
             android:background="@color/white"
             app:fabCradleMargin="20dp"
-            app:fabAlignmentMode="end"
+            app:fabAlignmentMode="center"
             app:fabCradleRoundedCornerRadius="10dp" />
 
 
@@ -150,8 +166,6 @@
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 
 
 
