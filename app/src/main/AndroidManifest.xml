@@ -12,6 +12,13 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.MoneySave"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/shape_rounded_stroke" />
+
+        <activity
+            android:name=".Acivities.AddAccount_Activity"
+            android:exported="false" />
         <activity
             android:name=".Acivities.PieChartActivity"
             android:exported="true">
