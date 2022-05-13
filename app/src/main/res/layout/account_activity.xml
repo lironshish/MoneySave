@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Acivities.AccountActivity">
+    tools:context=".Acivities.AccountActivity"
+    >
 
 
     <ImageView
@@ -15,7 +16,6 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/imgapp" />
-
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -35,61 +35,135 @@
                 android:layout_height="?actionBarSize"
                 android:background="@color/white"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/account_IMG_Menu"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/ic_menu"
-                    app:tint="@android:color/holo_orange_dark"/>
-
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/account_Title"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:text="ACCOUNT"
+                    android:text="ACCOUNT name"
                     android:textColor="@android:color/holo_orange_dark"
                     android:textSize="20sp"
                     android:gravity="center"
+                    android:layout_gravity="center"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="585dp"
+                tools:ignore="MissingConstraints">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_revenue" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/Income_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Incomes"
+                    android:textColor="#19A51F"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_expenses" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/expenses_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Expenses"
+                    android:textColor="#D82420"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/topTen_frames"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="50dp"
+            android:gravity="center_vertical"
             android:orientation="vertical"
-            android:padding="20dp">
+            app:layout_anchor="@+id/account_Top_Menu"
+            app:layout_anchorGravity="center">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/bank_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="MY BANK ACCOUNTS"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/account_LST_AccountsBank"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                tools:listitem="layout/list_bank" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/gaols_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="ALL MY GOALS"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/account_LST_goals"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                tools:layout_editor_absoluteX="70dp"
+                tools:layout_editor_absoluteY="34dp"
+                tools:listitem="layout/list_goals" />
 
 
-        <FrameLayout
-            android:id="@+id/topTen_frame1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="24dp"
-            android:layout_weight="0.5" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <FrameLayout
-            android:id="@+id/topTen_frame2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/account_BTN_Add"
@@ -108,7 +182,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@android:color/transparent"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/drawer_menu" />
 
@@ -125,7 +198,6 @@
 
 
         <LinearLayout
-            android:id="@+id/account_Layout_addButtons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -164,9 +236,7 @@
 
         </LinearLayout>
 
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
 
     <com.google.android.material.navigation.NavigationView

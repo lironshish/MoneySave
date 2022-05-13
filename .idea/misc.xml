@@ -3,19 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.136" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/app/src/main/res/layout/add_account_popup_window.xml" value="0.176" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/content_main.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/navigation_header.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable-v24/ic_profile.xml" value="0.106" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/ic_user_name.xml" value="0.106" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.1" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_my_accounts.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_main.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/fragment_bankAcoounts.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_bank.xml" value="0.1" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_bank_accounts.xml" value="0.1" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_goal.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/my_accounts_activity.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/navigation_header.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/sign_in.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/sign_up.xml" value="0.13994565217391305" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/menu/drawer_menu.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/I563474/AndroidStudioProjects/MoneySave1/app/src/main/res/menu/top_app_bar_menu.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

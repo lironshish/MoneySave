@@ -22,18 +22,17 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Acivities.SignUpActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="Sign Up"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Acivities.AccountActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="Account Activity"
             android:screenOrientation="portrait" />
     </application>

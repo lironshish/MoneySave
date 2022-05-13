@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/navigation_header">
+
+    <item
+        android:id="@+id/nav_Distribution"
+        android:icon="@drawable/ic_cake"
+        android:title="DISTRIBUTION"
+        app:showAsAction="always" />
 
     <group
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/item1"
-            android:checked="true"
-            android:icon="@drawable/ic_settings"
-            android:title="settings" />
-        <item
-            android:id="@+id/item2"
-            android:icon="@drawable/ic_navigaton_exit"
-            android:title="logout" />
+            android:id="@+id/nav_addBankAccount"
+            android:icon="@drawable/ic_addbank"
+            android:title="ADD BANK ACCOUNT" />
 
         <item
-            android:id="@+id/addAccount"
-            android:icon="@drawable/ic_navigaton_exit"
-            android:title="logout" />
+            android:id="@+id/nav_addGoal"
+            android:icon="@drawable/ic_goal"
+            android:title="ADD GOAL" />
 
-<!--        <item-->
-<!--            android:id="@+id/action_sound"-->
-<!--            android:title="sound"-->
-<!--            android:icon="@android:drawable/ic_lock_silent_mode"-->
-<!--            app:showAsAction="always"-->
-<!--            />-->
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_sign_up"
+            android:title="SHARE" />
+
 
     </group>
+
+
+    <item android:title="MORE">
+        <menu>
+            <item
+                android:id="@+id/nav_allAccounts"
+                android:icon="@drawable/ic_user_name"
+                android:title="MY ACCOUNTS" />
+
+            <item
+                android:id="@+id/addAccount"
+                android:icon="@drawable/ic_navigaton_exit"
+                android:title="LOGOUT" />
+
+
+        </menu>
+    </item>
+
 </menu>
