@@ -4,12 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_expense_diagram.xml" value="0.365625" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.1" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_pie_chart.xml" value="0.33" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/add_account_popup_window.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/fragment_bank_acoounts.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/navigation_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.136" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/app/src/main/res/layout/add_account_popup_window.xml" value="0.176" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/content_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.24010416666666667" />
