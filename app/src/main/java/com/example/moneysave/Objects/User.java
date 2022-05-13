@@ -2,11 +2,15 @@ package com.example.moneysave.Objects;
 
 import android.provider.ContactsContract;
 
+import java.util.ArrayList;
+
 public class User {
     private String name;
     private ContactsContract.CommonDataKinds.Email email;
     private String password;
-    // need to add avatar
+    //TODO: Add Avatar variable
+    private ArrayList<Account> myAccounts = new ArrayList<Account>();
+
 
 
     public User(){ }
