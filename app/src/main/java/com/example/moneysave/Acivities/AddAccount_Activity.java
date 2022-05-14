@@ -3,6 +3,7 @@ package com.example.moneysave.Acivities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import com.example.moneysave.Objects.Account;
@@ -18,7 +19,6 @@ public class AddAccount_Activity extends AppCompatActivity {
     private TextInputEditText apartment_LBL_money;
     private TextInputEditText clothing_and_footwear_LBL_money;
     private TextInputEditText various_expenses_LBL_money;
-    private TextInputEditText another_category_LBL_money;
     private MaterialButton submit_add_account;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class AddAccount_Activity extends AppCompatActivity {
         apartment_LBL_money = findViewById(R.id.apartment_LBL_money);
         clothing_and_footwear_LBL_money = findViewById(R.id.clothing_and_footwear_LBL_money);
         various_expenses_LBL_money = findViewById(R.id.various_expenses_LBL_money);
-        another_category_LBL_money = findViewById(R.id.another_category_LBL_money);
 
     }
 
@@ -45,7 +44,7 @@ public class AddAccount_Activity extends AppCompatActivity {
         submit_add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addAccount(); // Unchecked!!
+                Account newAccount = addAccount(); // Unchecked!!
                 //TODO: Connect all objects and data to the database to continue functionality
                 backToMyAccounts();
             }

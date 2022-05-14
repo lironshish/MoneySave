@@ -45,6 +45,5 @@ public class User {
         this.password = password;
     }
 
-
     //Need to add functions that pull and push data to the database
 }
