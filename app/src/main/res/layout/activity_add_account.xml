@@ -69,7 +69,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/food_EDT_money"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="249dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/login_Title"
             android:layout_marginLeft="120dp"
@@ -84,11 +84,11 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/food_LBL_money"
-                android:layout_width="190dp"
-                android:layout_height="47dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:textSize="20sp" />
+               />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -111,7 +111,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/leisure_and_recreation_EDT_money"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="249dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/login_Title"
                 android:layout_marginLeft="-43dp"
@@ -126,11 +126,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/leisure_and_recreation_LBL_money"
-                    android:layout_width="190dp"
-                    android:layout_height="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
                     android:inputType="number"
-                    android:textSize="20sp" />
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -154,7 +154,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/car_EDT_money"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="249dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/login_Title"
                 android:layout_marginLeft="120dp"
@@ -169,11 +169,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/car_LBL_money"
-                    android:layout_width="190dp"
-                    android:layout_height="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:textSize="20sp" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -197,7 +196,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/apartment_EDT_money"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="249dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/login_Title"
                 android:layout_marginLeft="120dp"
@@ -211,11 +210,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/apartment_LBL_money"
-                    android:layout_width="190dp"
-                    android:layout_height="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:textSize="20sp" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -241,7 +239,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/clothing_and_footwear_EDT_money"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="249dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/login_Title"
                 android:layout_marginLeft="12dp"
@@ -255,11 +253,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/clothing_and_footwear_LBL_money"
-                    android:layout_width="190dp"
-                    android:layout_height="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:textSize="20sp" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -284,7 +281,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/various_expenses_EDT_money"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="249dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/login_Title"
                 android:layout_marginLeft="55dp"
@@ -298,75 +295,24 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/various_expenses_LBL_money"
-                    android:layout_width="190dp"
-                    android:layout_height="47dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:imeOptions="actionDone"
-                    android:inputType="number"
-                    android:textSize="20sp" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </LinearLayout>
 
 
-
-    <TextView
-        android:id="@+id/another_categories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Do you want to add another category?"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:layout_below="@+id/categories_LL"/>
-
-
-    <EditText
-        android:id="@+id/another_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/another_categories"
-        android:layout_centerInParent="true"
-        android:hint="Enter Category Name"
-        android:textSize="20dp" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/another_category_EDT_money"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="199dp"
-        android:layout_height="48dp"
-        android:layout_below="@+id/another_category"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="-1dp"
-        android:hint="Money Per Month"
-        android:textColorHint="@color/white"
-        app:boxBackgroundColor="#B2FFB0"
-        app:boxCornerRadiusBottomEnd="40dp"
-        app:boxCornerRadiusBottomStart="40dp"
-        app:boxCornerRadiusTopEnd="40dp"
-        app:boxCornerRadiusTopStart="40dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/another_category_LBL_money"
-            android:layout_width="190dp"
-            android:layout_height="47dp"
-            android:layout_centerInParent="true"
-            android:imeOptions="actionDone"
-            android:inputType="number"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submit_add_account"
         style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_below="@+id/another_category_EDT_money"
+        android:layout_below="@+id/categories_LL"
         android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="129dp"
+        android:layout_marginTop="121dp"
         android:backgroundTint="#AA7CB342"
         android:text="Add Account!"
         android:textColor="#FFFFFF"
