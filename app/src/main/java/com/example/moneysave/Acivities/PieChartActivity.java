@@ -3,10 +3,8 @@ package com.example.moneysave.Acivities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.TextView;
 
 import com.example.moneysave.R;
@@ -22,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class temp extends AppCompatActivity {
+public class PieChartActivity extends AppCompatActivity {
     PieChart pieChart;
     ArrayList<Integer>colors;
     TextView TvYear, TvMonth;
@@ -30,7 +28,7 @@ public class temp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.temp);
+        setContentView(R.layout.pie_chart);
         HashMap<String,Integer> data=new HashMap<>();
         InitViews();
         //test
