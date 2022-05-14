@@ -17,7 +17,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="#F1A94F"
+            android:background="#FAEFBD"
             android:orientation="horizontal">
 
 
@@ -37,7 +37,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Account Name"
-                        android:textColor="#FFFDFD"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -53,7 +53,7 @@
                         app:icon="@drawable/ic_share_account"
                         app:iconGravity="textStart"
                         app:iconSize="25dp"
-                        app:iconTint="@color/white" />
+                        app:iconTint="@color/black" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/minus_account"
@@ -68,7 +68,7 @@
                         app:icon="@drawable/ic_minus"
                         app:iconGravity="textStart"
                         app:iconSize="25dp"
-                        app:iconTint="@color/white" />
+                        app:iconTint="@color/black" />
                 </LinearLayout>
 
 
