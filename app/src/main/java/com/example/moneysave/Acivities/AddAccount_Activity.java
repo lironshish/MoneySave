@@ -3,6 +3,7 @@ package com.example.moneysave.Acivities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import com.example.moneysave.Objects.Account;
@@ -45,7 +46,7 @@ public class AddAccount_Activity extends AppCompatActivity {
         submit_add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addAccount(); // Unchecked!!
+                Account newAccount = addAccount(); // Unchecked!!
                 //TODO: Connect all objects and data to the database to continue functionality
                 backToMyAccounts();
             }

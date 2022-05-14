@@ -67,7 +67,8 @@
             android:src="@drawable/ic_add"
             app:borderWidth="0dp"
             app:layout_anchor="@id/account_BottomAppBar"
-            app:maxImageSize="50dp" />
+            app:maxImageSize="50dp"
+            />
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -83,11 +84,11 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/account_BottomAppBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="67dp"
             android:layout_gravity="bottom"
             android:background="@color/white"
-            app:fabCradleMargin="20dp"
             app:fabAlignmentMode="center"
+            app:fabCradleMargin="20dp"
             app:fabCradleRoundedCornerRadius="10dp" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

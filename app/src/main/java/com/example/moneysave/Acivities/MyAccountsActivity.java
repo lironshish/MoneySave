@@ -13,6 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class MyAccountsActivity extends AppCompatActivity {
+
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
     ArrayList<Account> accounts = new ArrayList<>();
