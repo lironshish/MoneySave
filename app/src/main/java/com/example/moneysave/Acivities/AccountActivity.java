@@ -20,6 +20,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.moneysave.Adapter.BankAccount_Adapter;
+import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
@@ -29,6 +31,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
+
+import java.util.ArrayList;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -162,6 +166,13 @@ public class AccountActivity extends AppCompatActivity {
         account_LST_goals = findViewById(R.id.account_LST_goals);
         popup_LBL_accountName = findViewById(R.id.popup_LBL_accountName);
         popup_BTN_save = findViewById(R.id.popup_BTN_save);
+
+    }
+
+
+    private void initAdapters(){
+        ArrayList<BankAccount> bankAccounts =
+                BankAccount_Adapter
 
     }
 
