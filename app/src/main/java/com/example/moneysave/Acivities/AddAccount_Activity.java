@@ -19,7 +19,6 @@ public class AddAccount_Activity extends AppCompatActivity {
     private TextInputEditText apartment_LBL_money;
     private TextInputEditText clothing_and_footwear_LBL_money;
     private TextInputEditText various_expenses_LBL_money;
-    private TextInputEditText another_category_LBL_money;
     private MaterialButton submit_add_account;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,6 @@ public class AddAccount_Activity extends AppCompatActivity {
         apartment_LBL_money = findViewById(R.id.apartment_LBL_money);
         clothing_and_footwear_LBL_money = findViewById(R.id.clothing_and_footwear_LBL_money);
         various_expenses_LBL_money = findViewById(R.id.various_expenses_LBL_money);
-        another_category_LBL_money = findViewById(R.id.another_category_LBL_money);
 
     }
 
