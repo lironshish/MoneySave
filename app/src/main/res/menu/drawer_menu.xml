@@ -41,7 +41,7 @@
                 android:title="MY ACCOUNTS" />
 
             <item
-                android:id="@+id/addAccount"
+                android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_navigaton_exit"
                 android:title="LOGOUT" />
 

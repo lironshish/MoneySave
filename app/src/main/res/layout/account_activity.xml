@@ -23,34 +23,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MoneySave.AppBarOverlay">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:titleTextColor="#ECC089"
+                app:popupTheme="@style/Theme.MoneySave.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/account_Top_Menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/account_TopAppBar"
-                android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                app:layout_constraintTop_toTopOf="parent">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/account_TopAppBar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?actionBarSize"-->
+<!--                android:background="@color/white"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="15dp"-->
+<!--                android:paddingEnd="15dp"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/account_Title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ACCOUNT name"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:textStyle="bold" />
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/account_Title"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="ACCOUNT name"-->
+<!--                    android:textColor="@android:color/holo_orange_dark"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:textStyle="bold" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -166,7 +180,7 @@
         </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/account_BTN_Add"
+            android:id="@+id/account_FBT_Add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -198,6 +212,7 @@
 
 
         <LinearLayout
+            android:id="@+id/account_FBTmenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -245,6 +260,7 @@
         android:layout_height="match_parent"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/drawer_menu"
+        android:fitsSystemWindows="true"
         android:layout_gravity="start">
 
     </com.google.android.material.navigation.NavigationView>
