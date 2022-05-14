@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_manual.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/pop_up_window.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_expense_diagram.xml" value="0.365625" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.1" />

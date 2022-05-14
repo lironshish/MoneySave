@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/account_DrawerLayout"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,49 +9,120 @@
 
 
     <ImageView
-        android:id="@+id/account_IMG_background"
+        android:id="@+id/manual_IMG_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/imgapp" />
 
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/account_Menu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout2"
+            android:id="@+id/manual_appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/Theme.MoneySave.AppBarOverlay">
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/manual_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:titleCentered="true"
+                app:title="manual bank account name"
+                app:popupTheme="@style/Theme.MoneySave.PopupOverlay"
+                app:titleTextColor="#ECC089" />
         </com.google.android.material.appbar.AppBarLayout>
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/manual_FAB_revenue"
-                android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/manual_Top_Menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+
+            <LinearLayout
+                android:id="@+id/manual_mainlinerlayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_marginBottom="70dp"
-                app:icon="@drawable/ic_revenue" />
+                android:layout_gravity="center"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/manual_FAB_expenses"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_marginBottom="70dp"
-                app:icon="@drawable/ic_revenue" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="revenues"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/Python"
+                        android:textSize="30dp">
 
-        </LinearLayout>
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/manual_FAB_balance"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/ic_balance"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:hint="expenses"
+                        android:textColorHint="@color/CPP"
+                        android:layout_marginTop="20dp"
+                        android:textSize="30dp">
+
+                    </com.google.android.material.textview.MaterialTextView>
+<!--                </LinearLayout>-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="20dp"
+                    android:hint="BALANCE: "
+                    android:textColorHint="@color/white"
+                    android:textSize="40dp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/manual_FAB_expenses"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/ic_expenses" />
+
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/manual_FAB_revenue"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/ic_revenue" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/account_BottomNavigationView"
@@ -73,19 +143,6 @@
             app:fabAlignmentMode="center"
             app:fabCradleRoundedCornerRadius="10dp" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            app:layout_anchor="@+id/appBarLayout2"
-            app:layout_anchorGravity="center"
-            app:popupTheme="@style/Theme.MoneySave.PopupOverlay"
-            app:titleTextColor="#ECC089" />
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-
-</androidx.drawerlayout.widget.DrawerLayout>
