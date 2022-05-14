@@ -25,7 +25,7 @@
             android:name=".Acivities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Acivities.temp"
+            android:name=".Acivities.PieChartActivity"
             android:exported="false" />
         <activity
             android:name=".Acivities.ManualBankActivity"

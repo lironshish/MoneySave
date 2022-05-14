@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_manual.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/pop_up_window.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_expense_diagram.xml" value="0.365625" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.1" />
@@ -18,16 +21,10 @@
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_account_for_list.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_add_account.xml" value="0.176" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_add_goal.xml" value="0.2" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_manual.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_manual_bank.xml" value="0.1" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_my_accounts.xml" value="0.1" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/list_account.xml" value="0.176" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/list_bank.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/list_goal.xml" value="0.2" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/pop_up_window.xml" value="0.18704710144927536" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/popup_balance.xml" value="0.18645833333333334" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/popup_expenses.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/popup_revenue.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.124" />
         <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.124" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.24010416666666667" />
