@@ -16,6 +16,5 @@
 
 
     <style name="Theme.MoneySave.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.MoneySave.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
