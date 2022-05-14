@@ -58,7 +58,7 @@ tools:context=".Acivities.ManualBankActivity">
             android:gravity="center"
             android:text="revenues"
             android:layout_marginTop="20dp"
-            android:textColor="@color/Python"
+            android:textColor="@color/black"
             android:textSize="30dp">
 
         </com.google.android.material.textview.MaterialTextView>
@@ -78,7 +78,7 @@ tools:context=".Acivities.ManualBankActivity">
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:hint="expenses"
-            android:textColorHint="@color/CPP"
+            android:textColorHint="@color/black"
             android:layout_marginTop="20dp"
             android:textSize="30dp">
 
