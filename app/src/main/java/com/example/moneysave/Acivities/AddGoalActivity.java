@@ -40,6 +40,7 @@ public class AddGoalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Category newGoal = addGoal();
+                //TODO: Save newGoal on DATABASE
                 backToAccountActivity();
             }
         });
