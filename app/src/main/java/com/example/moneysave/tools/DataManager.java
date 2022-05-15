@@ -27,8 +27,10 @@ public class DataManager {
 
 
     public void setUser(UserBoundary userBoundary) {
-        if (userBoundary == null)
+        if (userBoundary == null) {
             activeCallBack.failed(0);
+            return;
+        }
 
         myUser = new MyUser(userBoundary);
         if (activeCallBack instanceof LoginCallBack)

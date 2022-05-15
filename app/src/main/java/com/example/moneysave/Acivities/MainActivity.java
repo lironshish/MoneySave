@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in);
-        bundle = new Bundle();
-        accounts_activity = new Intent(this, AccountActivity.class);
         findViews();
         init();
     }
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             if (userPassword != null) {
                 if (main_user.getPassword().equals(userPassword.getInstanceAttributes().get(DataManager.KEY_PASSWORD))) {
                     DataManager.getDataManager().setActiveCallBack(null);
-                    Intent myIntent = new Intent(MainActivity.this, AccountActivity.class);
+                    Intent myIntent = new Intent(MainActivity.this, MyAccountsActivity.class);
                     startActivity(myIntent);
                     finish();
                 } else {

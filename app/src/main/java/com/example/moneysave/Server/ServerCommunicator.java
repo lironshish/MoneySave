@@ -32,7 +32,7 @@ public class ServerCommunicator  {
                 DataManager.getDataManager().failed(FOUND);
             }
             else {
-                MyServices.getInstance().makeToast("User create failed");
+                MyServices.getInstance().makeToast("failed - Wrong details");
                 DataManager.getDataManager().failed(response.code());
             }
         }

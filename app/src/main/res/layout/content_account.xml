@@ -39,7 +39,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/account_LST_AccountsBank"
             android:layout_width="match_parent"
-            android:layout_height="0"
+            android:layout_height="0dp"
             android:layout_weight="0.5"
             android:paddingTop="20dp"
             tools:listitem="layout/list_bank" />
