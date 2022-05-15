@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Account {
     private String name = "";
     private ArrayList<User> SharedWith = new ArrayList<User>();
-    private ArrayList<Goal> Categories = new ArrayList<Goal>();
+    private ArrayList<Category> Categories = new ArrayList<Category>();
 
 
     public Account(){ }
@@ -30,27 +30,27 @@ public class Account {
         SharedWith = sharedWith;
     }
 
-    public ArrayList<Goal> getCategories() {
+    public ArrayList<Category> getCategories() {
         return Categories;
     }
 
 
-    public void setCategories(ArrayList<Goal> categories) {
+    public void setCategories(ArrayList<Category> categories) {
         Categories = categories;
     }
 
     public void InitCategoriesList(int moneyPerFood, int moneyPerLeisureAndRecreation, int moneyPerCar, int moneyPerApartment, int moneyPerClothingAndFootwear, int moneyPerVariousExpenses){
-        Categories.add(new Goal()
+        Categories.add(new Category()
         .setName("Food").setMoneyPerMonth(moneyPerFood));
-        Categories.add(new Goal()
+        Categories.add(new Category()
                 .setName("Leisure and recreation").setMoneyPerMonth(moneyPerLeisureAndRecreation));
-        Categories.add(new Goal()
+        Categories.add(new Category()
                 .setName("Car").setMoneyPerMonth(moneyPerCar));
-        Categories.add(new Goal()
+        Categories.add(new Category()
                 .setName("Apartment").setMoneyPerMonth(moneyPerApartment));
-        Categories.add(new Goal()
+        Categories.add(new Category()
                 .setName("Clothing and footwear").setMoneyPerMonth(moneyPerClothingAndFootwear));
-        Categories.add(new Goal()
+        Categories.add(new Category()
                 .setName("Various expenses").setMoneyPerMonth(moneyPerVariousExpenses));
     }
 

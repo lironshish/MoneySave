@@ -1,4 +1,4 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Server;
 
 import com.google.gson.Gson;
 
@@ -7,20 +7,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
 
+    private static RetrofitService retrofitService = new RetrofitService() ;
     private Retrofit retrofit;
 
-    public RetrofitService() {
+    private RetrofitService() {
         initializeRetrofit();
     }
 
     private void initializeRetrofit() {
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.68.107:8085")
+                .baseUrl("http://192.168.43.96:8085")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
     }
 
-    public Retrofit getRetrofit() {
+    public  Retrofit getRetrofit() {
         return retrofit;
+    }
+
+    public  static RetrofitService getInstance(){
+        return retrofitService;
     }
 }
