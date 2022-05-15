@@ -1,5 +1,7 @@
 package com.example.moneysave.Objects;
 
+import com.example.moneysave.Server.boundaries.User;
+
 import java.util.ArrayList;
 
 public class Account {

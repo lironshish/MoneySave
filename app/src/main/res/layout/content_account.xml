@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_account">
 
     <ImageView
         android:id="@+id/account_IMG_background"
@@ -39,8 +39,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/account_LST_AccountsBank"
             android:layout_width="match_parent"
-            android:layout_height="0"
-            android:layout_weight="0.5"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:paddingTop="20dp"
             tools:listitem="layout/list_bank" />
 

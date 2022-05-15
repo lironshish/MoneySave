@@ -23,7 +23,6 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public interface BankAccountListener{
         void clicked(BankAccount bankAccount, int position);
-        void showDistribution(BankAccount bankAccount, int position);
         void deleteBankAccount(BankAccount bankAccount, int position);
 
     }
@@ -75,7 +74,6 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public BankAccountHolder(@NonNull View itemView) {
             super(itemView);
 
-            bank_BTN_distribution =itemView.findViewById(R.id.bank_BTN_distribution);
             bank_BTN_delete =itemView.findViewById(R.id.bank_BTN_delete);
             bank_TXT_name = itemView.findViewById(R.id.bank_TXT_name);
 

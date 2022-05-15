@@ -26,4 +26,28 @@ public class Data {
 
         return goals;
     }
+
+
+    public static ArrayList<Goal> generateCategories(){
+        ArrayList<Goal>categories = new ArrayList<>();
+
+        categories.add(new Goal()
+                .setName("FOOD").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_food"));
+
+        categories.add(new Goal()
+                .setName("RECREATIONS").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_recreations"));
+
+        categories.add(new Goal()
+                .setName("CAR").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_car"));
+
+        categories.add(new Goal()
+                .setName("HOME").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_home"));
+
+        categories.add(new Goal()
+                .setName("CLOTHING").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_clothing"));
+
+        categories.add(new Goal()
+                .setName("VARIOUS").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_various"));
+        return categories;
+    }
 }
