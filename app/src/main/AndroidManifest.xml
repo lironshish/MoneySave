@@ -13,14 +13,8 @@
         android:theme="@style/Theme.MoneySave"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Acivities.AllManualActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".Acivities.AddAccount_Activity"
+            android:exported="false" />
         <activity
             android:name=".Acivities.MyAccountsActivity"
             android:exported="false" />
@@ -31,10 +25,10 @@
             android:name=".Acivities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Acivities.temp"
+            android:name=".Acivities.PieChartActivity"
             android:exported="false" />
         <activity
-            android:name=".Acivities.AddAccount_Activity"
+            android:name=".Acivities.ManualBankActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
