@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Acivities.AccountActivity"
+    tools:showIn="@layout/account_activity1">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MoneySave.AppBarOverlay">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.MoneySave.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_account" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/account_FBT_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_add"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/account_BottomAppBar"
+        app:maxImageSize="50dp" />
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/account_BottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="20dp"
+        app:fabCradleRoundedCornerRadius="10dp" />
+
+
+    <LinearLayout
+        android:id="@+id/account_FBTmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="90dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/account_BTN_AddBankAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:text="add bank account"
+            android:textColor="@android:color/holo_orange_dark"
+            app:borderWidth="0dp"
+            app:icon="@drawable/ic_addbank"
+            app:iconTint="@android:color/holo_orange_dark"
+            app:maxImageSize="50dp"
+            app:tint="@android:color/holo_orange_dark" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/account_BTN_AddManualBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:text="add manual bank"
+            android:textColor="@android:color/holo_orange_dark"
+            app:borderWidth="0dp"
+            app:icon="@drawable/ic_edit"
+            app:iconTint="@android:color/holo_orange_dark"
+            app:maxImageSize="50dp"
+            app:tint="@android:color/holo_orange_dark" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/account_BTN_AddGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/white"
+            android:text="add goal"
+            android:textColor="@android:color/holo_orange_dark"
+            app:borderWidth="0dp"
+            app:icon="@drawable/ic_goal"
+            app:iconTint="@android:color/holo_orange_dark"
+            app:maxImageSize="50dp"
+            app:tint="@android:color/holo_orange_dark" />
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

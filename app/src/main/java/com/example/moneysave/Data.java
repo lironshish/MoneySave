@@ -1,10 +1,11 @@
 package com.example.moneysave;
 
 import com.example.moneysave.Objects.BankAccount;
+import com.example.moneysave.Objects.Goal;
 
 import java.util.ArrayList;
 
-public class DataBank {
+public class Data {
 
     public static ArrayList<BankAccount> generateBankAccounts(){
         ArrayList<BankAccount>bankAccounts = new ArrayList<>();
@@ -14,5 +15,15 @@ public class DataBank {
 
 
         return bankAccounts;
+    }
+
+    public static ArrayList<Goal> generategoals(){
+        ArrayList<Goal>goals = new ArrayList<>();
+
+        goals.add(new Goal()
+                .setName("Food").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_add"));
+
+
+        return goals;
     }
 }

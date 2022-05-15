@@ -15,7 +15,7 @@ import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
-public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class Account_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     public interface Accountlistener {
         void sharedWith(Account account, int position);
@@ -28,7 +28,7 @@ public class AccountAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
 
 
-    public AccountAdapter(Activity activity, ArrayList<Account> accounts){
+    public Account_Adapter(Activity activity, ArrayList<Account> accounts){
         this.activity = activity;
         this.accounts = accounts;
     }

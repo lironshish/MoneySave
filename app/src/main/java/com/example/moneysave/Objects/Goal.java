@@ -4,6 +4,9 @@ public class Goal {
 
     private String name;
     private int moneyPerMonth = 0;
+    private int moneyWested = 0;
+    private String image;
+
 
     public Goal(){}
 
@@ -27,6 +30,25 @@ public class Goal {
 
     public Goal setMoneyPerMonth(int moneyPerMonth) {
         this.moneyPerMonth = moneyPerMonth;
+        return this;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+
+    public Goal setImage(String image) {
+        this.image = image;
+        return this;
+    }
+
+    public int getMoneyWested() {
+        return moneyWested;
+    }
+
+    public Goal setMoneyWested(int moneyWested) {
+        this.moneyWested = moneyWested;
         return this;
     }
 }

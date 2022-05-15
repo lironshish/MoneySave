@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MoneySave"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Acivities.DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Acivities.AddAccount_Activity"
             android:exported="false" />
         <activity
@@ -20,10 +23,9 @@
             android:exported="false" />
         <activity
             android:name=".Acivities.AddGoalActivity"
-            android:exported="true" />
-<!--        <activity-->
-<!--            android:name=".Acivities.MainActivity"-->
-<!--            android:exported="false" />-->
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".Acivities.MainActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Acivities.PieChartActivity"
             android:exported="false" />

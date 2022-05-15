@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="match_parent"
-        android:background="#AFE0F8">
+        android:background="#AFE0F8"
+        >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="60dp"
@@ -43,7 +44,9 @@
             android:layout_marginLeft="30dp"
             android:layout_gravity="center"
             app:iconGravity="end"
-            android:background="@drawable/ic_cake" />
+
+            android:background="@drawable/ic_cake"
+            app:iconTint="@color/black"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bank_BTN_delete"

@@ -6,7 +6,8 @@
     android:layout_height="250dp"
     android:background="#F8C586"
     android:fitsSystemWindows="true"
-    android:layoutDirection="rtl">
+    android:layoutDirection="rtl"
+    tools:showIn="@layout/account_activity">
 
     <FrameLayout
         android:id="@+id/profile_FRM_nav"

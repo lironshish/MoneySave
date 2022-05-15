@@ -4,15 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/shape_stroke.xml" value="0.1" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.22" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity1.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_account_for_list.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_account.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_goal.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_all_manual.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_details.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_manual.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_my_accounts.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/app_bar_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_account.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_account.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_bank.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_detail.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_goal.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/navigation_header.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/pie_chart.xml" value="0.13854166666666667" />

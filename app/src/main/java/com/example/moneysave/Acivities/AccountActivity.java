@@ -12,21 +12,21 @@ import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.moneysave.Adapter.BankAccount_Adapter;
-import com.example.moneysave.DataBank;
+import com.example.moneysave.Adapter.Goal_Adapter;
+import com.example.moneysave.Data;
 import com.example.moneysave.Objects.BankAccount;
+import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
@@ -35,7 +35,6 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
@@ -72,7 +71,7 @@ public class AccountActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.account_activity);
+        setContentView(R.layout.account_activity1);
 
 
 
@@ -81,16 +80,18 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("MY ACCOUNT");
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        toolbar.setTitleTextColor(Integer.parseInt("#FFA726"));
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onBackPressed();
+//            }
+//        });
 
 
         findView();
         initButton();
+        closeFBT();
         initAdapters();
 
 
@@ -178,7 +179,7 @@ public class AccountActivity extends AppCompatActivity {
 
 
     private void initAdapters(){
-        ArrayList<BankAccount> bankAccounts = DataBank.generateBankAccounts();
+        ArrayList<BankAccount> bankAccounts = Data.generateBankAccounts();
         BankAccount_Adapter bankAccount_adapter = new BankAccount_Adapter(this,bankAccounts);
         account_LST_AccountsBank.setLayoutManager(new LinearLayoutManager(this));
         account_LST_AccountsBank.setHasFixedSize(true);
@@ -222,10 +223,21 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
+        ArrayList<Goal> goals = Data.generategoals();
+        Goal_Adapter goal_adapter = new Goal_Adapter(this,goals);
+        account_LST_goals.setLayoutManager(new LinearLayoutManager(this));
+        account_LST_goals.setHasFixedSize(true);
+        account_LST_goals.setAdapter(bankAccount_adapter);
 
+        goal_adapter.setGoalListener(new Goal_Adapter.GoalListener(){
+            @Override
+            public void clicked(Goal goal, int position) {
+                Toast.makeText(AccountActivity.this, goal.getName(), Toast.LENGTH_SHORT).show();
+                //we need to decide if show now all the over vashav
+            }
 
+        });
     }
-
     private void showFBT() {
         isFBTOpen = true;
         TranslateAnimation animation = new TranslateAnimation(0, 0, account_FBTmenu.getHeight() + 1000, 0);
