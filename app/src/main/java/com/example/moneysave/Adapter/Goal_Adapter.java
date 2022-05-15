@@ -1,24 +1,83 @@
 package com.example.moneysave.Adapter;
 
+import android.app.Activity;
+import android.os.FileUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.moneysave.Objects.BankAccount;
+import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.google.android.material.textview.MaterialTextView;
 
-public class Goal_Adapter {
+import java.util.ArrayList;
 
+public class Goal_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    public interface GoalListener{
+
+
+
+    }
+    private Activity activity;
+    private ArrayList<Goal> goals = new ArrayList<>();
+    private Goal_Adapter.GoalListener goalListener;
+
+
+    public Goal_Adapter(Activity activity, ArrayList<Goal> goals) {
+        this.activity = activity;
+        this.goals = goals;
+    }
+
+    public void setBankAccountListener(Goal_Adapter.GoalListener goalListener) {
+        this.goalListener = goalListener;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_goal, parent, false);
+        GoalHolder holder = new GoalHolder(view);
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+        final GoalHolder holder = (GoalHolder) viewHolder;
+        Goal goal = getGoal(position);
+
+        holder.goal_TXT_progressbar.setText(goal.getMoneyPerMonth());
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return goals.size();
+    }
+
+    public Goal getGoal(int position){
+        return goals.get(position);
+    }
 }
-//
-//class GoalHolder extends RecyclerView.ViewHolder{
-//
-//    goal_TXT_progressbar;
-//    goal_progressBar;
-//    goal_TXT_category;
-//    goal_IMG_pic;
-//
-//
-//    goal_TXT_progressbar= findViewById(R.id.goal_TXT_progressbar);
-//    goal_progressBar = findViewById(R.id.goal_progressBar);
-//    goal_TXT_category = findViewById(R.id.goal_TXT_progressbar);
-//    goal_IMG_pic = findViewById(R.id.goal_IMG_pic);
-//
-//}
+
+class GoalHolder extends RecyclerView.ViewHolder{
+
+    private MaterialTextView goal_TXT_progressbar;
+    private FileUtils.ProgressListener goal_progressBar;
+    private MaterialTextView goal_TXT_category;
+    private ImageView goal_IMG_pic;
+
+
+
+
+    public GoalHolder(@NonNull View itemView) {
+        super(itemView);
+        goal_TXT_progressbar= itemView.findViewById(R.id.goal_TXT_progressbar);
+        goal_progressBar = itemView.findViewById(R.id.goal_progressBar);
+        goal_TXT_category = itemView.findViewById(R.id.goal_TXT_category);
+        goal_IMG_pic = itemView.findViewById(R.id.goal_IMG_pic);
+    }
+}

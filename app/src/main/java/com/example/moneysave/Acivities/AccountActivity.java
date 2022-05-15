@@ -1,5 +1,7 @@
 package com.example.moneysave.Acivities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,6 +13,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -18,9 +21,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.moneysave.Adapter.BankAccount_Adapter;
+import com.example.moneysave.DataBank;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.R;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -69,6 +74,8 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_activity);
 
+
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -84,7 +91,7 @@ public class AccountActivity extends AppCompatActivity {
 
         findView();
         initButton();
-        closeFBT();
+        initAdapters();
 
 
     }
@@ -171,8 +178,51 @@ public class AccountActivity extends AppCompatActivity {
 
 
     private void initAdapters(){
-        ArrayList<BankAccount> bankAccounts =
-                BankAccount_Adapter
+        ArrayList<BankAccount> bankAccounts = DataBank.generateBankAccounts();
+        BankAccount_Adapter bankAccount_adapter = new BankAccount_Adapter(this,bankAccounts);
+        account_LST_AccountsBank.setLayoutManager(new LinearLayoutManager(this));
+        account_LST_AccountsBank.setHasFixedSize(true);
+        account_LST_AccountsBank.setAdapter(bankAccount_adapter);
+
+        bankAccount_adapter.setBankAccountListener(new BankAccount_Adapter.BankAccountListener() {
+            @Override
+            public void clicked(BankAccount bankAccount, int position) {
+                Toast.makeText(AccountActivity.this, bankAccount.getName(), Toast.LENGTH_SHORT).show();
+                //we need to decide if show now all the over vashav
+            }
+
+            @Override
+            public void showDistribution(BankAccount bankAccount, int position) {
+                Intent pieChart_activity = new Intent(AccountActivity.this, PieChartActivity.class);
+                startActivity(pieChart_activity);
+            }
+
+            @Override
+            public void deleteBankAccount(BankAccount bankAccount, int position) {
+
+                AlertDialog alertDialog = new AlertDialog.Builder(AccountActivity.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("warning")
+                        .setMessage("Are you sure you want to delete the bank account?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //add delete function
+                                Toast.makeText(getApplicationContext(),bankAccount.getName()+" deleted",Toast.LENGTH_LONG).show();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .show();
+                account_LST_AccountsBank.getAdapter().notifyDataSetChanged();
+            }
+        });
+
+
 
     }
 

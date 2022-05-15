@@ -1,13 +1,13 @@
 package com.example.moneysave.Objects;
 
-public class Category {
+public class Goal {
 
     private String name;
     private int moneyPerMonth = 0;
 
-    public Category(){}
+    public Goal(){}
 
-    public Category(String name, int moneyPerMonth) {
+    public Goal(String name, int moneyPerMonth) {
         setName(name);
         setMoneyPerMonth(moneyPerMonth);
     }
@@ -16,7 +16,7 @@ public class Category {
         return name;
     }
 
-    public Category setName(String name) {
+    public Goal setName(String name) {
         this.name = name;
         return this;
     }
@@ -25,7 +25,7 @@ public class Category {
         return moneyPerMonth;
     }
 
-    public Category setMoneyPerMonth(int moneyPerMonth) {
+    public Goal setMoneyPerMonth(int moneyPerMonth) {
         this.moneyPerMonth = moneyPerMonth;
         return this;
     }

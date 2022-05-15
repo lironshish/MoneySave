@@ -7,35 +7,42 @@ public class BankAccount {
     private int revenues = 0;
     private boolean isManual = true;
 
+    public BankAccount() {
+    }
+
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public BankAccount setName(String name) {
         this.name = name;
+        return this;
     }
 
     public int getExpenses() {
         return expenses;
     }
 
-    public void setExpenses(int expenses) {
+    public BankAccount setExpenses(int expenses) {
         this.expenses = expenses;
+        return this;
     }
 
     public int getRevenues() {
         return revenues;
     }
 
-    public void setRevenues(int revenues) {
+    public BankAccount setRevenues(int revenues) {
         this.revenues = revenues;
+        return this;
     }
 
     public boolean isManual() {
         return isManual;
     }
 
-    public void setManual(boolean manual) {
+    public BankAccount setManual(boolean manual) {
         isManual = manual;
+        return this;
     }
 }

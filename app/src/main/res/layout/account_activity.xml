@@ -45,8 +45,8 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="50dp"
             android:gravity="center_vertical"
@@ -59,19 +59,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="70dp"
                 android:gravity="center"
                 android:text="MY BANK ACCOUNTS"
-                android:textColor="@android:color/holo_orange_dark"
+                android:textColor="#AFE0F8"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/account_LST_AccountsBank"
                 android:layout_width="match_parent"
-                android:layout_height="171dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:paddingTop="20dp"
+                android:layout_weight="0.5"
                 tools:listitem="layout/list_bank" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -89,17 +89,20 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/account_LST_goals"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 tools:layout_editor_absoluteX="70dp"
                 tools:layout_editor_absoluteY="34dp"
+                android:layout_weight="1"
                 tools:listitem="layout/list_goals" />
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:layout_weight="0.5"
+                android:layout_margin="70dp"
+                android:layout_gravity="center">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="30dp"
@@ -142,9 +145,9 @@
                     android:textStyle="bold" />
 
 
-            </LinearLayout>
-        </LinearLayout>
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -159,14 +162,6 @@
             app:layout_anchor="@id/account_BottomAppBar"
             app:maxImageSize="50dp" />
 
-
-<!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--            android:id="@+id/account_BottomNavigationView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            app:labelVisibilityMode="labeled"-->
-<!--            app:menu="@menu/drawer_menu" />-->
 
 
         <com.google.android.material.bottomappbar.BottomAppBar

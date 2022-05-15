@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.moneysave.R;
 
-public class AllManualActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_manual);
-    }
-}
+//public class AllManualActivity extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_all_manual);
+//    }
+//}

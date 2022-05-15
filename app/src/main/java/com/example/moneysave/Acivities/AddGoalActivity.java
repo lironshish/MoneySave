@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import com.example.moneysave.Objects.Category;
+import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 
@@ -39,13 +38,14 @@ public class AddGoalActivity extends AppCompatActivity {
         submit_add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Category newGoal = addGoal();
+                Goal newGoal = addGoal();
+                //TODO: Save newGoal on DATABASE
                 backToAccountActivity();
             }
         });
     }
-    public Category addGoal(){
-        Category newGoal = new Category(enter_goal_name.getText().toString(),Integer.valueOf(enter_money.getText().toString()));
+    public Goal addGoal(){
+        Goal newGoal = new Goal(enter_goal_name.getText().toString(),Integer.valueOf(enter_money.getText().toString()));
         return newGoal;
     }
 
