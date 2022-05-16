@@ -1,14 +1,6 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import com.example.moneysave.Objects.Account;
-import com.example.moneysave.R;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 
 public class AddAccount_Activity extends AppCompatActivity {
 //    private EditText enter_account_name;

@@ -1,11 +1,8 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,14 +11,11 @@ import com.example.moneysave.Objects.UserPassword;
 import com.example.moneysave.R;
 import com.example.moneysave.Server.ServerCommunicator;
 import com.example.moneysave.Server.boundaries.NewUserBoundary;
-import com.example.moneysave.Server.boundaries.UserBoundary;
 import com.example.moneysave.Server.boundaries.UserRole;
 import com.example.moneysave.call_backs.LoginCallBack;
 import com.example.moneysave.tools.DataManager;
 import com.example.moneysave.tools.MyServices;
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class SignUpActivity extends AppCompatActivity {

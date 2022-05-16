@@ -3,8 +3,6 @@ package com.example.moneysave.tools;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.moneysave.Acivities.MainActivity;
-
 public class MyServices {
 
     private static MyServices myServices = new MyServices();

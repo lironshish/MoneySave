@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Acivities.AddAccount_Activity">
+    tools:context=".Activities.AddAccount_Activity">
 
     <ImageView
         android:id="@+id/account_IMG_background"
