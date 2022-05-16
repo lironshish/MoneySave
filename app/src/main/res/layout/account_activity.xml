@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_DrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AccountActivity">
+
+
+    <ImageView
+        android:id="@+id/account_IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/imgapp" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/account_Menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MoneySave.AppBarOverlay">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:menu="@menu/drawer_menu"
+                app:popupTheme="@style/Theme.MoneySave.PopupOverlay"
+                app:titleTextColor="#ECC089" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/account_Top_Menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="50dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_anchor="@+id/account_Top_Menu"
+                app:layout_anchorGravity="center">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/bank_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="70dp"
+                    android:gravity="center"
+                    android:text="MY BANK ACCOUNTS"
+                    android:textColor="#AFE0F8"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/account_LST_AccountsBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:paddingTop="20dp"
+                    tools:listitem="layout/list_bank" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/gaols_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="ALL MY GOALS"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/account_LST_goals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="20dp"
+                    tools:layout_editor_absoluteX="70dp"
+                    tools:layout_editor_absoluteY="34dp"
+                    tools:listitem="layout/list_goals" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="70dp"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_revenue" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/Income_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="Incomes"
+                        android:textColor="#19A51F"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_expenses" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/expenses_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="Expenses"
+                        android:textColor="#D82420"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/account_FBT_Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_add"
+            app:borderWidth="0dp"
+            app:layout_anchor="@id/account_BottomAppBar"
+            app:maxImageSize="50dp" />
+
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/account_BottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            app:fabAlignmentMode="center"
+            app:fabCradleMargin="20dp"
+            app:fabCradleRoundedCornerRadius="10dp" />
+
+
+        <LinearLayout
+            android:id="@+id/account_FBTmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="90dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/account_BTN_AddBankAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/white"
+                android:text="add bank account"
+                android:textColor="@android:color/holo_orange_dark"
+                app:borderWidth="0dp"
+                app:icon="@drawable/ic_addbank"
+                app:iconTint="@android:color/holo_orange_dark"
+                app:maxImageSize="50dp"
+                app:tint="@android:color/holo_orange_dark" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/account_BTN_AddManualBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/white"
+                android:text="add manual bank"
+                android:textColor="@android:color/holo_orange_dark"
+                app:borderWidth="0dp"
+                app:icon="@drawable/ic_edit"
+                app:iconTint="@android:color/holo_orange_dark"
+                app:maxImageSize="50dp"
+                app:tint="@android:color/holo_orange_dark" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/account_BTN_AddGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/white"
+                android:text="add goal"
+                android:textColor="@android:color/holo_orange_dark"
+                app:borderWidth="0dp"
+                app:icon="@drawable/ic_goal"
+                app:iconTint="@android:color/holo_orange_dark"
+                app:maxImageSize="50dp"
+                app:tint="@android:color/holo_orange_dark" />
+
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/account_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/drawer_menu">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

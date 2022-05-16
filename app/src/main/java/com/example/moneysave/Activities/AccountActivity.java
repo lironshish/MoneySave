@@ -1,4 +1,4 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
