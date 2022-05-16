@@ -2,16 +2,13 @@ package com.example.moneysave.Adapter;
 
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.moneysave.Acivities.AccountActivity;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.R;
 import com.google.android.material.button.MaterialButton;

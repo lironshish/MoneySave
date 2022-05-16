@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Acivities.AccountActivity"
+    tools:context=".Activities.AccountActivity"
     tools:showIn="@layout/account_activity1">
 
     <com.google.android.material.appbar.AppBarLayout

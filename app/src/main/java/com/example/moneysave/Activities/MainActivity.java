@@ -1,4 +1,4 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in);
-        bundle = new Bundle();
         findViews();
         init();
     }

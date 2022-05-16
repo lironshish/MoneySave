@@ -1,4 +1,4 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;

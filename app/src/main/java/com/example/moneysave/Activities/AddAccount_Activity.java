@@ -1,4 +1,4 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -9,18 +9,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.moneysave.Adapter.Category_Adapter;
-import com.example.moneysave.Adapter.Goal_Adapter;
 import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
@@ -87,13 +84,13 @@ public class AddAccount_Activity extends AppCompatActivity {
 
     private void initAdapter(){
 
-    ArrayList<Goal> categories = Data.generateCategories();
-    Category_Adapter category_adapter = new Category_Adapter(this, categories);
+        ArrayList<Goal> categories = Data.generateCategories();
+        Category_Adapter category_adapter = new Category_Adapter(this, categories);
         category_LST_items.setLayoutManager(new LinearLayoutManager(this));
         category_LST_items.setHasFixedSize(true);
         category_LST_items.setAdapter(category_adapter);
 
 
-}
+    }
 
 }

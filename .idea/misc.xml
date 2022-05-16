@@ -8,7 +8,7 @@
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/ic_recreations.xml" value="0.1305" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/shape_stroke.xml" value="0.1" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.22" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity1.xml" value="0.22" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity1.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_account_for_list.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_account.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_account1.xml" value="0.16666666666666666" />
@@ -17,7 +17,9 @@
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_details.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_manual.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_my_accounts.xml" value="0.14447463768115942" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/add.xml" value="0.1" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/addaccount.xml" value="0.1203125" />
+        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/app_bar_account.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/app_bar_main.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_account.xml" value="0.1796875" />
         <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_main.xml" value="0.1203125" />
