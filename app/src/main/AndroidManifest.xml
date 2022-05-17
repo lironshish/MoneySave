@@ -13,9 +13,9 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.MoneySave"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".Activities.DetailsActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".Activities.DetailsActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".Activities.AddAccount_Activity"
             android:exported="false" />
