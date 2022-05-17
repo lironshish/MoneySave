@@ -16,7 +16,12 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import android.text.Editable;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,22 +51,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {// , "rogygggyn@gmail.com"
-        DataManager.getDataManager().setActiveCallBack(loginCallBack); // TODO: 14/05/2022 verify user input data ok
-        main_BTN_sign_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!callInProgress) {
-                    callInProgress = true;
-                    ServerCommunicator.getInstance().getUserDetails(DataManager.MAIN_DOMAIN, main_EDT_email.getText().toString());
-                }
-            }
-        });
+        DataManager.getDataManager().setActiveCallBack(loginCallBack);
+
+        main_BTN_sign_in.setOnClickListener(view -> signInClicked());
 
         main_FAB_sign_up.setOnClickListener(view -> {
             Intent myIntent = new Intent(MainActivity.this, SignUpActivity.class);
             startActivity(myIntent);
-            finish();
         });
+    }
+
+    private void signInClicked(){
+        if(!isValidEmail(main_EDT_email.getText().toString())){
+            Toast.makeText(MainActivity.this, "Invalid Email! Try again.", Toast.LENGTH_SHORT).show();
+        }
+        else if(main_EDT_password.getText().toString().isEmpty()){
+            Toast.makeText(MainActivity.this, "Password cannot be empty! Try again.", Toast.LENGTH_SHORT).show();
+        }
+        else if (!callInProgress) {
+            callInProgress = true;
+            ServerCommunicator.getInstance().getUserDetails(DataManager.MAIN_DOMAIN, main_EDT_email.getText().toString());
+        }
+    }
+
+    private boolean isValidEmail(String email) {
+        //Regular Expression
+        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        //Compile regular expression to get the pattern
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     private LoginCallBack loginCallBack = new LoginCallBack() {

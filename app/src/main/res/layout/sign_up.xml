@@ -37,18 +37,21 @@
                 android:textStyle="bold" />
 
             <ImageView
+
                 android:layout_width="150dp"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/icon" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_margin="20dp"
+
+                android:layout_marginBottom="0dp"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
@@ -117,6 +120,7 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
+                    android:id="@+id/linear_avatars"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -125,35 +129,45 @@
                         android:id="@+id/avatar1"
                         android:layout_width="0dp"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
+                        android:padding="3dp"
                         android:src="@drawable/ic_avatar1" />
 
                     <ImageView
                         android:id="@+id/avatar2"
                         android:layout_width="0dp"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
+                        android:padding="3dp"
                         android:src="@drawable/ic_avatar2" />
 
                     <ImageView
                         android:id="@+id/avatar3"
                         android:layout_width="0dp"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
+                        android:padding="3dp"
                         android:src="@drawable/ic_avatar3" />
 
                     <ImageView
                         android:id="@+id/avatar4"
                         android:layout_width="0dp"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
+                        android:padding="3dp"
                         android:src="@drawable/ic_avatar4" />
 
                     <ImageView
                         android:id="@+id/avatar5"
                         android:layout_width="0dp"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
+                        android:padding="3dp"
                         android:src="@drawable/ic_avatar5" />
                 </LinearLayout>
 
@@ -193,6 +207,14 @@
 
 
             </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_return"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
 
 
         </LinearLayout>

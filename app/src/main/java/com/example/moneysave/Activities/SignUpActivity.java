@@ -1,8 +1,11 @@
 package com.example.moneysave.Activities;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +19,12 @@ import com.example.moneysave.call_backs.LoginCallBack;
 import com.example.moneysave.tools.DataManager;
 import com.example.moneysave.tools.MyServices;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -25,6 +33,10 @@ public class SignUpActivity extends AppCompatActivity {
     private TextInputEditText sign_up_EDT_email;
     private TextInputEditText sign_up_EDT_password;
     private MaterialButton sign_up_BTN_sign_up;
+    private FloatingActionButton fab_return;
+    private LinearLayout linear_avaters;
+    private ImageView chosenAvatar;
+    private HashMap<Integer ,String> avatarsIdNameMap;
     private boolean callInProgress = false;
 
 
@@ -32,8 +44,35 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+        avatarsIdNameMap = new HashMap<>();
         findViews();
         init();
+        initAvatarImages();
+    }
+
+    private void initAvatarImages(){
+        for(int i =0 ; i< linear_avaters.getChildCount(); i++){
+            ImageView current = (ImageView) linear_avaters.getChildAt(i);
+            avatarsIdNameMap.put(current.getId() , "avatar" + (i + 1));
+            current.setOnClickListener(view -> {
+                if(chosenAvatar != null) {
+                    if (current.getId() == chosenAvatar.getId()) {
+                        current.setBackgroundResource(R.drawable.transparent);
+                        chosenAvatar = null;
+                    }
+                    else{
+                        chosenAvatar.setBackgroundResource(R.drawable.transparent);
+                        current.setBackgroundResource(R.drawable.image_border);
+                        chosenAvatar = current;
+                    }
+                }
+                else{
+                    current.setBackgroundResource(R.drawable.image_border);
+                    chosenAvatar = current;
+                }
+            });
+
+        }
     }
 
 
@@ -48,48 +87,65 @@ public class SignUpActivity extends AppCompatActivity {
         sign_up_EDT_email = findViewById(R.id.sign_up_EDT_email);
         sign_up_EDT_password = findViewById(R.id.sign_up_EDT_password);
         sign_up_BTN_sign_up = findViewById(R.id.sign_up_BTN_sign_up);
+        linear_avaters = findViewById(R.id.linear_avatars);
+        fab_return = findViewById(R.id.fab_return);
+
     }
 
     private void init() {
+
         sign_up_BTN_sign_up.setOnClickListener(view -> {
             if(callInProgress)
                 return;
 
-            if (!isEmailOk()) {
-                MyServices.getInstance().makeToast("Wrong Email");
+            if (!isValidUserName()) {
+                MyServices.getInstance().makeToast("Username cannot be empty! Try again");
                 return;
             }
-            if (!isPasswordOk()) {
-                MyServices.getInstance().makeToast("password cannot be empty");
+            if (!isValidEmail()) {
+                MyServices.getInstance().makeToast("Invalid Email! Try again");
                 return;
             }
-            if (!isUserNameOk()) {
-                MyServices.getInstance().makeToast("username cannot be empty");
+            if (!isValidPassword()) {
+                MyServices.getInstance().makeToast("Password cannot be empty! Try again");
+                return;
+            }
+            if(chosenAvatar == null){
+                MyServices.getInstance().makeToast("Must choose an avatar!");
                 return;
             }
             callInProgress = true;
             DataManager.getDataManager().setActiveCallBack(loginCallBack);
             NewUserBoundary newUserBoundary = new NewUserBoundary();
-            newUserBoundary.setAvatar("aaa"); //  TODO: 14/05/2022 add avatar!
+            newUserBoundary.setAvatar(avatarsIdNameMap.get(chosenAvatar.getId()));
             newUserBoundary.setRole(UserRole.MANAGER);
             newUserBoundary.setUsername(sign_up_EDT_user_name.getText().toString());
             newUserBoundary.setEmail(sign_up_EDT_email.getText().toString());
             ServerCommunicator.getInstance().createUser(newUserBoundary);
+
+            //TODO: find indication that sign up was successful. if successful then finish, else Toast a message.
+            finish();
         });
-    }
-    // TODO: 15/05/2022 change all patterns they not good  and update messages explantaion
-    private boolean isEmailOk() {
-        //String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-       // return sign_up_EDT_email.getText().toString().matches(emailPattern);
-        String email = sign_up_EDT_email.getText().toString();
-        return (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+
+        fab_return.setOnClickListener(view -> finish());
     }
 
-    private boolean isPasswordOk() {
+    private boolean isValidEmail() {
+        String email = sign_up_EDT_email.getText().toString();
+        //Regular Expression
+        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        //Compile regular expression to get the pattern
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private boolean isValidPassword() {
         return !sign_up_EDT_password.getText().toString().isEmpty();
     }
 
-    private boolean isUserNameOk() {
+    private boolean isValidUserName()
+    {
         return !sign_up_EDT_user_name.getText().toString().isEmpty();
     }
 
