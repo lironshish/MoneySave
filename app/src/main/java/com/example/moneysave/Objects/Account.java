@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Account extends InstanceBoundary {
-    private ArrayList<Goal> categories = new ArrayList<Goal>();
-    private ArrayList<UserId> myUsers = new ArrayList<UserId>();
-    private ArrayList<BankAccount> bankAccounts = new ArrayList<BankAccount>();
 
     public Account() {
         super();
@@ -23,9 +20,9 @@ public class Account extends InstanceBoundary {
         this.setType(UserDetails.class.getSimpleName());
         this.setName(name);
         this.setInstanceAttributes(new HashMap<>());
-        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , myUsers );
-        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES , categories);
-        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , bankAccounts);
+        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , new ArrayList<UserId>() );
+        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES ,  new ArrayList<Goal>());
+        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , new ArrayList<BankAccount>());
     }
 
 
@@ -40,36 +37,36 @@ public class Account extends InstanceBoundary {
                 instanceBoundary.getInstanceAttributes());
     }
 
-    public ArrayList<UserId> getMyUsers() {
-        return myUsers;
+    public ArrayList<UserId> receive_myUsers() {
+        return (ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS);
     }
 
-    public Account setMyUsers(ArrayList<UserId> myUsers) {
-        this.myUsers = myUsers;
-        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , this.myUsers);
+    public Account update_myUsers(ArrayList<UserId> myUsers) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , myUsers);
         return this;
     }
 
-    public ArrayList<Goal> getCategories() {
-        return categories;
+    public ArrayList<Goal> receive_myCategories() {
+        return (ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
     }
-
-    public ArrayList<BankAccount> getBankAccounts() {
-        return bankAccounts;
-    }
-
-    public Account setBankAccounts(ArrayList<BankAccount> bankAccounts) {
-        this.bankAccounts = bankAccounts;
-        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , this.bankAccounts);
+    public Account update_myCategories(ArrayList<Goal> categories) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES , categories);
         return this;
     }
 
-    public void setCategories(ArrayList<Goal> categories) {
-        this.categories = categories;
-        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES , this.categories);
+    public ArrayList<BankAccount> receive_myBankAccounts() {
+        return (ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
     }
+
+    public Account update_BankAccounts(ArrayList<BankAccount> bankAccounts) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , bankAccounts);
+        return this;
+    }
+
+
 
     public void InitCategoriesList(int moneyPerFood, int moneyPerLeisureAndRecreation, int moneyPerCar, int moneyPerApartment, int moneyPerClothingAndFootwear, int moneyPerVariousExpenses){
+        ArrayList<Goal> categories =  receive_myCategories();
         categories.add(new Goal()
         .setName("Food").setMoneyPerMonth(moneyPerFood));
         categories.add(new Goal()
