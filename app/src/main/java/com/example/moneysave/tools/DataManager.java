@@ -81,4 +81,8 @@ public class DataManager {
         if (activeCallBack instanceof LoginCallBack)
             ((LoginCallBack) activeCallBack).login(new UserDetails(body));
     }
+    
+    public  void getAllAccounts () {
+        // TODO: 19/05/2022
+    }
 }

@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/imgapp" />
+        android:src="@drawable/background" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -31,8 +31,6 @@
             app:liftOnScroll="true">
 
 
-        </com.google.android.material.appbar.AppBarLayout>
-
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_FRG_container"
@@ -41,7 +39,6 @@
             android:layout_marginBottom="0dp"
             android:clipToPadding="false"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
             />
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -56,6 +53,28 @@
             app:title="my accounts"
             app:titleCentered="true"
             app:titleTextColor="#F1A94F" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/panel_text"
+            android:text="Hello\nuser name!\nTo start using the app\nadd your first account"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:visibility="invisible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/account_LST_AccountsBank"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingTop="20dp"
+            tools:listitem="@layout/activity_account_for_list" />
+
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -69,10 +88,6 @@
             app:layout_anchor="@id/account_BottomAppBar"
             app:maxImageSize="50dp"
             />
-
-
-<!---->
-
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/account_BottomAppBar"
