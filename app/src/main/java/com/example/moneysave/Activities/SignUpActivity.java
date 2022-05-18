@@ -122,9 +122,6 @@ public class SignUpActivity extends AppCompatActivity {
             newUserBoundary.setUsername(sign_up_EDT_user_name.getText().toString());
             newUserBoundary.setEmail(sign_up_EDT_email.getText().toString());
             ServerCommunicator.getInstance().createUser(newUserBoundary);
-
-            //TODO: find indication that sign up was successful. if successful then finish, else Toast a message.
-            finish();
         });
 
         fab_return.setOnClickListener(view -> finish());

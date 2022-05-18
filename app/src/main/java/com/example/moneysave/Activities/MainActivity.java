@@ -57,16 +57,16 @@ public class MainActivity extends AppCompatActivity {
 
         main_FAB_sign_up.setOnClickListener(view -> {
             Intent myIntent = new Intent(MainActivity.this, SignUpActivity.class);
-            startActivity(myIntent);
+            startActivity(myIntent); // TODO: 18/05/2022 finish???
         });
     }
 
     private void signInClicked(){
         if(!isValidEmail(main_EDT_email.getText().toString())){
-            Toast.makeText(MainActivity.this, "Invalid Email! Try again.", Toast.LENGTH_SHORT).show();
+            MyServices.getInstance().makeToast("Invalid Email! Try again.");
         }
         else if(main_EDT_password.getText().toString().isEmpty()){
-            Toast.makeText(MainActivity.this, "Password cannot be empty! Try again.", Toast.LENGTH_SHORT).show();
+            MyServices.getInstance().makeToast("Password cannot be empty! Try again.");
         }
         else if (!callInProgress) {
             callInProgress = true;
