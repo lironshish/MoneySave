@@ -25,7 +25,7 @@ public class ServerCommunicator  {
             Log.d("myLog", response.code() + "");
             if(response.code() == STATUS_OK){
                 Log.d("myLog", response.body().toString());
-                DataManager.getDataManager().setUser(response.body());
+                DataManager.getDataManager().setUser(response.body()); //TODO errors not po! move to activity
             }
             else if(response.code() == FOUND){
                 MyServices.getInstance().makeToast("User already exists");
@@ -37,7 +37,7 @@ public class ServerCommunicator  {
             }
         }
         @Override
-        public void onFailure(Call<UserBoundary> call, Throwable t) {
+        public void onFailure(Call<UserBoundary> call, Throwable t) {//TODO its ok
             MyServices.getInstance().makeToast(t.getMessage());
             Log.d("myLog", t.getMessage());
             DataManager.getDataManager().failed(0);
