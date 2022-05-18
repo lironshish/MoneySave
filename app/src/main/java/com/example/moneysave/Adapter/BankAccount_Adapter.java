@@ -2,16 +2,13 @@ package com.example.moneysave.Adapter;
 
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.moneysave.Acivities.AccountActivity;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.R;
 import com.google.android.material.button.MaterialButton;
@@ -23,7 +20,6 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     public interface BankAccountListener{
         void clicked(BankAccount bankAccount, int position);
-        void showDistribution(BankAccount bankAccount, int position);
         void deleteBankAccount(BankAccount bankAccount, int position);
 
     }
@@ -75,7 +71,6 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public BankAccountHolder(@NonNull View itemView) {
             super(itemView);
 
-            bank_BTN_distribution =itemView.findViewById(R.id.bank_BTN_distribution);
             bank_BTN_delete =itemView.findViewById(R.id.bank_BTN_delete);
             bank_TXT_name = itemView.findViewById(R.id.bank_TXT_name);
 

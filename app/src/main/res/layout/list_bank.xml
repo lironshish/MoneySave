@@ -37,18 +37,6 @@
             android:text="bank name"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/bank_BTN_distribution"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_gravity="center"
-            app:iconGravity="end"
-
-            android:background="@drawable/ic_cake"
-            app:iconTint="@color/black"/>
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/bank_BTN_delete"
             android:layout_width="30dp"
             android:layout_height="30dp"

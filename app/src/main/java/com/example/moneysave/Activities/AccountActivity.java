@@ -1,4 +1,4 @@
-package com.example.moneysave.Acivities;
+package com.example.moneysave.Activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -80,7 +80,7 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("MY ACCOUNT");
-        toolbar.setTitleTextColor(Integer.parseInt("#FFA726"));
+        //toolbar.setTitleTextColor(Integer.parseInt("#FFA726"));
 //        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -149,6 +149,24 @@ public class AccountActivity extends AppCompatActivity {
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_logout:
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        AlertDialog alertDialog = new AlertDialog.Builder(AccountActivity.this)
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .setTitle("warning")
+                                .setMessage("Are you sure you want to delete the bank account?")
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        finish();
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                    }
+                                })
+                                .show();
+
                 }
                 return true;
             }
@@ -192,11 +210,6 @@ public class AccountActivity extends AppCompatActivity {
                 //we need to decide if show now all the over vashav
             }
 
-            @Override
-            public void showDistribution(BankAccount bankAccount, int position) {
-                Intent pieChart_activity = new Intent(AccountActivity.this, PieChartActivity.class);
-                startActivity(pieChart_activity);
-            }
 
             @Override
             public void deleteBankAccount(BankAccount bankAccount, int position) {
