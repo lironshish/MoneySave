@@ -23,6 +23,7 @@ public class MyAccountsActivity extends AppCompatActivity {
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
     private TextView firstTexst;
+    private View allAccounts;
 
 
     @Override
@@ -31,13 +32,19 @@ public class MyAccountsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_accounts);
 
         InitButtons();
-        initAdapter();
+
 
        if (DataManager.getDataManager().getMyAccounts().size()==0) {
            firstTexst.setText("Hello\n"+DataManager.getDataManager().getMyUser().getUsername()+"\nTo start using the app\nadd your first account");
             firstTexst.setVisibility(View.VISIBLE);
             Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
            firstTexst.startAnimation(aniFade);
+       }
+       else{
+           allAccounts = findViewById(R.id.all_accounts);
+           allAccounts.setVisibility(View.VISIBLE);
+           initAdapter();
+
        }
     }
 
@@ -79,5 +86,6 @@ public class MyAccountsActivity extends AppCompatActivity {
     private void replaceActivity(){
         Intent intent = new Intent(this, AddAccount_Activity.class);
         startActivity(intent);
+        finish();
     }
 }

@@ -57,7 +57,7 @@ public class AddAccount_Activity extends AppCompatActivity {
         submit_add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addAccount(); // Unchecked!!
+                addAccount();
                 //TODO: Connect all objects and data to the database to continue functionality
                 backToMyAccounts();
             }
@@ -65,12 +65,12 @@ public class AddAccount_Activity extends AppCompatActivity {
     }
 
     public void addAccount() {
-        Account newAccount = new Account(category_LBL_title.getText().toString());
+        Account newAccount = new Account(addAccount_EDT_name.getText().toString());
         DataManager.getDataManager().addAccount(newAccount);
 
 
             for (int i = 0; i<categories.size(); i++) {
-                categories.get(i).setMoneyPerMonth(Integer.valueOf(addAccount_EDT_name.getText().toString()));
+                categories.get(i).setMoneyPerMonth(100);
             }
 
         DataManager.getDataManager().addAccountCategories(newAccount,categories);
@@ -82,6 +82,7 @@ public class AddAccount_Activity extends AppCompatActivity {
     private void backToMyAccounts() {
         Intent intent = new Intent(this, MyAccountsActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void initAdapter(){
