@@ -7,7 +7,7 @@
     android:background="#F8C586"
     android:fitsSystemWindows="true"
     android:layoutDirection="rtl"
-    tools:showIn="@layout/account_activity1">
+    tools:showIn="@layout/account_activity">
 
     <FrameLayout
         android:id="@+id/profile_FRM_nav"

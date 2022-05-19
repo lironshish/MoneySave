@@ -49,6 +49,7 @@ public class Account extends InstanceBoundary {
     public ArrayList<Goal> receive_myCategories() {
         return (ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
     }
+
     public Account update_myCategories(ArrayList<Goal> categories) {
         this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES , categories);
         return this;
