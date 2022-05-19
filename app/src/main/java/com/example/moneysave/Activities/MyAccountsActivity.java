@@ -1,12 +1,16 @@
 package com.example.moneysave.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.moneysave.Adapter.Account_Adapter;
+import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
+import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
@@ -24,15 +28,13 @@ public class MyAccountsActivity extends AppCompatActivity {
 
         InitButtons();
 
-//        account_list = findViewById(R.id.accounts_list);
-//
-//
-//        AccountAdapter accountAdapter = new AccountAdapter(this, accounts);
+//        ArrayList<Account> accounts = Data.generateAccounts();
+//        Account_Adapter accountAdapter = new Account_Adapter(this, accounts);
 //        account_list.setLayoutManager(new LinearLayoutManager(this));
 //        account_list.setHasFixedSize(true);
 //        account_list.setAdapter(accountAdapter);
 //
-//        accountAdapter.setAccountlistener(new AccountAdapter.Accountlistener() {
+//        accountAdapter.setAccountlistener(new Account_Adapter.Accountlistener() {
 //
 //            @Override
 //            public void sharedWith(Account account, int position) {
@@ -44,11 +46,13 @@ public class MyAccountsActivity extends AppCompatActivity {
 //                //TODO
 //            }
 //        });
-
+//
     }
 
 
     public void InitButtons(){
+
+        account_list = findViewById(R.id.accounts_list);
         addAccount = findViewById(R.id.account_BTN_Add);
 
         addAccount.setOnClickListener(new View.OnClickListener() {
