@@ -31,6 +31,8 @@ public class DataManager {
 
 
     public void setUser(UserBoundary userBoundary) {
+        if (this.activeCallBack == null)
+            return;
         if (userBoundary == null) {
             activeCallBack.failed(0);
             return;
