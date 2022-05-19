@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,6 +24,7 @@ public class MyAccountsActivity extends AppCompatActivity {
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
     private TextView firstTexst;
+    private View allAccounts;
     ArrayList<Account> accounts = new ArrayList<>();
 
     @Override
@@ -40,7 +42,7 @@ public class MyAccountsActivity extends AppCompatActivity {
             firstTexst.startAnimation(aniFade);
        }
        else {
-
+           allAccounts.setVisibility(View.VISIBLE);
        }
     }
 
@@ -71,7 +73,7 @@ public class MyAccountsActivity extends AppCompatActivity {
         account_list = findViewById(R.id.myAccounts_LST_accounts);
         addAccount = findViewById(R.id.account_BTN_Add);
         firstTexst = findViewById(R.id.panel_text);
-
+        allAccounts = findViewById(R.id.all_accounts);
         addAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
