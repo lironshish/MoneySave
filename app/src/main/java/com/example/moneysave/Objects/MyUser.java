@@ -14,7 +14,7 @@ public class MyUser extends UserBoundary {
 
 
     private String password;
-    private List<Account> myAccounts;
+    private ArrayList<Account> myAccounts;
     private UserDetails userDetails;
 
     public MyUser(){
@@ -32,6 +32,18 @@ public class MyUser extends UserBoundary {
         myAccounts = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "MyUser{" +
+                "password='" + password + '\'' +
+                ", myAccounts=" + myAccounts +
+                ", userDetails=" + userDetails +
+                ", role=" + role +
+                ", username='" + username + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 
     public String getPassword() {
         return password;
@@ -41,11 +53,11 @@ public class MyUser extends UserBoundary {
         this.password = password;
     }
 
-    public List<Account> getMyAccounts() {
+    public ArrayList<Account> getMyAccounts() {
         return myAccounts;
     }
 
-    public MyUser setMyAccounts(List<Account> myAccounts) {
+    public MyUser setMyAccounts(ArrayList<Account> myAccounts) {
         this.myAccounts = myAccounts;
         return this;
     }

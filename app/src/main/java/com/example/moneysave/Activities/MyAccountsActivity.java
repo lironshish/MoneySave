@@ -23,8 +23,6 @@ public class MyAccountsActivity extends AppCompatActivity {
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
     private TextView firstTexst;
-    ArrayList<Account> accounts = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +33,16 @@ public class MyAccountsActivity extends AppCompatActivity {
         initAdapter();
 
        if (DataManager.getDataManager().getMyAccounts().size()==0) {
-            firstTexst.setVisibility(View.VISIBLE);
-            Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+           firstTexst.setVisibility(View.VISIBLE);
+           Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
            firstTexst.startAnimation(aniFade);
+
        }
+
     }
 
     private void initAdapter() {
-        ArrayList<Account> accounts = Data.generateAccounts();
+        ArrayList<Account> accounts = DataManager.getDataManager().getMyAccounts();
         Account_Adapter accountAdapter = new Account_Adapter(this, accounts);
         account_list.setLayoutManager(new LinearLayoutManager(this));
         account_list.setHasFixedSize(true);

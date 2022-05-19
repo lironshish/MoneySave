@@ -31,7 +31,7 @@ public class AddAccount_Activity extends AppCompatActivity {
 
     private MaterialButton submit_add_account;
     private RecyclerView category_LST_items;
-
+    private ArrayList<Goal> categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,17 +66,17 @@ public class AddAccount_Activity extends AppCompatActivity {
 
     public void addAccount() {
         Account newAccount = new Account(category_LBL_title.getText().toString());
-
-        for (Goal category : newAccount.receive_myCategories()) {
-            for (int i = 0; i < 7; i++) {
-                newAccount.receive_myCategories().get(i).setMoneyPerMonth(Integer.valueOf(addAccount_EDT_name.getText().toString()));
-            }
-        }
-        Log.d("pttt", newAccount.receive_myCategories().toString());
-        Toast.makeText(AddAccount_Activity.this, newAccount.getName() + " account saved", Toast.LENGTH_SHORT).show();
-        //??????
-        newAccount.receive_myCategories();
         DataManager.getDataManager().addAccount(newAccount);
+
+
+            for (int i = 0; i<categories.size(); i++) {
+                categories.get(i).setMoneyPerMonth(Integer.valueOf(addAccount_EDT_name.getText().toString()));
+            }
+
+        DataManager.getDataManager().addAccountCategories(newAccount,categories);
+
+        Toast.makeText(AddAccount_Activity.this, newAccount.getName() + " account saved", Toast.LENGTH_SHORT).show();
+
     }
 
     private void backToMyAccounts() {
@@ -86,7 +86,7 @@ public class AddAccount_Activity extends AppCompatActivity {
 
     private void initAdapter(){
 
-        ArrayList<Goal> categories = Data.generateCategories();
+        categories = DataManager.getDataManager().generateCategories();
         Category_Adapter category_adapter = new Category_Adapter(this, categories);
         category_LST_items.setLayoutManager(new LinearLayoutManager(this));
         category_LST_items.setHasFixedSize(true);
