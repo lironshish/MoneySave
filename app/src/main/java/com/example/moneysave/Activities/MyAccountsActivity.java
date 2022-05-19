@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.example.moneysave.Adapter.Account_Adapter;
 import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
-import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.tools.DataManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
@@ -19,7 +22,9 @@ public class MyAccountsActivity extends AppCompatActivity {
 
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
+    private TextView firstTexst;
     ArrayList<Account> accounts = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,12 @@ public class MyAccountsActivity extends AppCompatActivity {
 
         InitButtons();
         initAdapter();
+
+       if (DataManager.getDataManager().getMyAccounts().size()==0) {
+            firstTexst.setVisibility(View.VISIBLE);
+            Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+           firstTexst.startAnimation(aniFade);
+       }
     }
 
     private void initAdapter() {
@@ -38,7 +49,6 @@ public class MyAccountsActivity extends AppCompatActivity {
         account_list.setAdapter(accountAdapter);
 
         accountAdapter.setAccountlistener(new Account_Adapter.Accountlistener() {
-
             @Override
             public void sharedWith(Account account, int position) {
                 //TODO
@@ -56,6 +66,8 @@ public class MyAccountsActivity extends AppCompatActivity {
 
         account_list = findViewById(R.id.myAccounts_LST_accounts);
         addAccount = findViewById(R.id.account_BTN_Add);
+        firstTexst = findViewById(R.id.panel_text);
+
         addAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
