@@ -16,6 +16,7 @@ import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.tools.DataManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
@@ -75,6 +76,7 @@ public class AddAccount_Activity extends AppCompatActivity {
         Toast.makeText(AddAccount_Activity.this, newAccount.getName() + " account saved", Toast.LENGTH_SHORT).show();
         //??????
         newAccount.receive_myCategories();
+        DataManager.getDataManager().addAccount(newAccount);
     }
 
     private void backToMyAccounts() {
