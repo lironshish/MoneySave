@@ -7,6 +7,14 @@ import com.example.moneysave.Objects.Goal;
 import java.util.ArrayList;
 
 public class Data {
+    // TODO: 5/19/2022 add bank , remove bank
+    // TODO: 5/19/2022 get banks
+    // TODO: 5/19/2022 update bank
+    // TODO: 5/19/2022 add account, remove account
+    // TODO: 5/19/2022 get accounts
+    // TODO: 5/19/2022 add goal
+    // TODO: 5/19/2022 get goals
+
 
     public static ArrayList<BankAccount> generateBankAccounts(){
         ArrayList<BankAccount>bankAccounts = new ArrayList<>();

@@ -1,10 +1,12 @@
 package com.example.moneysave.tools;
 
 
+import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.MyUser;
 import com.example.moneysave.Objects.UserDetails;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
 import com.example.moneysave.Server.boundaries.UserBoundary;
+import com.example.moneysave.call_backs.GetAccounts_callback;
 import com.example.moneysave.call_backs.LoginCallBack;
 import com.example.moneysave.call_backs.ServerCallback;
 
@@ -29,6 +31,8 @@ public class DataManager {
 
 
     public void setUser(UserBoundary userBoundary) {
+        if (this.activeCallBack == null)
+            return;
         if (userBoundary == null) {
             activeCallBack.failed(0);
             return;
@@ -58,6 +62,8 @@ public class DataManager {
 
 
     public void getInstancesFromServerByName(InstanceBoundary[] body) {
+        if (this.activeCallBack == null)
+            return;
         if (body == null || body.length <= 0) {
             this.activeCallBack.empty();
             return;
@@ -72,18 +78,36 @@ public class DataManager {
     }
 
     public void failed(int code) {
-        if(this.activeCallBack != null)
+        if (this.activeCallBack != null)
             this.activeCallBack.failed(code);
     }
 
     public void getInstance(InstanceBoundary body) {
+        if (this.activeCallBack == null)
+            return;
         if (body == null)
             activeCallBack.empty();
         if (activeCallBack instanceof LoginCallBack)
             ((LoginCallBack) activeCallBack).login(new UserDetails(body));
+        if (activeCallBack instanceof GetAccounts_callback) {
+            myUser.getMyAccounts().add(new Account(body));
+            ((GetAccounts_callback) activeCallBack).getAccount();
+        }
     }
-    
-    public  void getAllAccounts () {
-        // TODO: 19/05/2022
+    public List<Account> getMyAccounts() {
+        return myUser.getMyAccounts();
     }
+
+    public void addAccount(Account myAccount) {
+        myAccount.add_user(myUser.getUserId());
+        myUser.getUserDetails().add_Account(myAccount.getInstanceId());
+        myUser.getMyAccounts().add(myAccount);
+    }
+    public void removeAccount(Account myAccount) {
+        myAccount.remove_user(myUser.getUserId());
+        myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
+        myUser.getMyAccounts().remove(myAccount);
+    }
+
+
 }

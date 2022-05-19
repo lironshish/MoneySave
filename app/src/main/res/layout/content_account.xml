@@ -14,32 +14,32 @@
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="400dp"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="50dp"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        app:layout_anchorGravity="center">
+        android:fillViewport="true">
 
-        <com.google.android.material.textview.MaterialTextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+
+    <com.google.android.material.textview.MaterialTextView
             android:id="@+id/bank_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
             android:gravity="center"
             android:text="MY BANK ACCOUNTS"
-            android:textColor="#AFE0F8"
+            android:textColor="#8DBDE3"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/account_LST_AccountsBank"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingTop="20dp"
             tools:listitem="layout/list_bank" />
@@ -52,7 +52,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="ALL MY GOALS"
-            android:textColor="@android:color/holo_orange_dark"
+            android:textColor="#FAEFBD"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -68,7 +68,7 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_margin="70dp"
             android:layout_weight="0.5"
@@ -117,4 +117,5 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
