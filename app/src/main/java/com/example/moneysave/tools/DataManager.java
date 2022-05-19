@@ -31,6 +31,8 @@ public class DataManager {
 
 
     public void setUser(UserBoundary userBoundary) {
+        if (this.activeCallBack == null)
+            return;
         if (userBoundary == null) {
             activeCallBack.failed(0);
             return;
@@ -91,6 +93,20 @@ public class DataManager {
             myUser.getMyAccounts().add(new Account(body));
             ((GetAccounts_callback) activeCallBack).getAccount();
         }
+    }
+    public List<Account> getMyAccounts() {
+        return myUser.getMyAccounts();
+    }
+
+    public void addAccount(Account myAccount) {
+        myAccount.add_user(myUser.getUserId());
+        myUser.getUserDetails().add_Account(myAccount.getInstanceId());
+        myUser.getMyAccounts().add(myAccount);
+    }
+    public void removeAccount(Account myAccount) {
+        myAccount.remove_user(myUser.getUserId());
+        myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
+        myUser.getMyAccounts().remove(myAccount);
     }
 
 

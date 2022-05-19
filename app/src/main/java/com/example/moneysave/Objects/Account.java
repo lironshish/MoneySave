@@ -1,5 +1,6 @@
 package com.example.moneysave.Objects;
 
+import com.example.moneysave.Server.ServerCommunicator;
 import com.example.moneysave.Server.boundaries.CreatedBy;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
 import com.example.moneysave.Server.boundaries.UserId;
@@ -41,8 +42,9 @@ public class Account extends InstanceBoundary {
         return (ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS);
     }
 
-    public Account update_myUsers(ArrayList<UserId> myUsers) {
-        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , myUsers);
+    public Account add_user(UserId myUser) {
+        ((ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS)).add(myUser);
+        updateOnServer();
         return this;
     }
 
@@ -80,6 +82,14 @@ public class Account extends InstanceBoundary {
                 .setName("Clothing and footwear").setMoneyPerMonth(moneyPerClothingAndFootwear));
         categories.add(new Goal()
                 .setName("Various expenses").setMoneyPerMonth(moneyPerVariousExpenses));
+    }
+
+    public void remove_user(UserId userId) {
+        ((ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS)).remove(userId);
+        updateOnServer();
+    }
+    public void updateOnServer(){
+        ServerCommunicator.getInstance().updateInstanceDetails(this);
     }
 
 
