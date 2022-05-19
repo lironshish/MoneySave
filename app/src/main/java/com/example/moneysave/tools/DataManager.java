@@ -94,6 +94,18 @@ public class DataManager {
             ((GetAccounts_callback) activeCallBack).getAccount();
         }
     }
+    public List<Account> getMyAccounts() {
+        return myUser.getMyAccounts();
+    }
+
+    public void addAccount(Account myAccount) {
+        myAccount.add_user(myUser.getUserId());
+        myUser.getUserDetails().add_Account(myAccount.getInstanceId());
+    }
+    public void removeAccount(Account myAccount) {
+        myAccount.remove_user(myUser.getUserId());
+        myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
+    }
 
 
 }
