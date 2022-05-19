@@ -25,7 +25,6 @@ public class MyAccountsActivity extends AppCompatActivity {
     private TextView firstTexst;
     ArrayList<Account> accounts = new ArrayList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +37,9 @@ public class MyAccountsActivity extends AppCompatActivity {
             firstTexst.setVisibility(View.VISIBLE);
             Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
            firstTexst.startAnimation(aniFade);
+       }
+       else {
+
        }
     }
 
