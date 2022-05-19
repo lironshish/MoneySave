@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import com.example.moneysave.Server.boundaries.UserBoundary;
 import com.example.moneysave.Server.boundaries.UserId;
 import com.example.moneysave.Server.boundaries.UserRole;
+import com.example.moneysave.tools.DataManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class MyUser extends UserBoundary {
 
     public MyUser(UserBoundary userBoundary) {
         super(userBoundary.getRole(), userBoundary.getUsername(), userBoundary.getAvatar(), userBoundary.getUserId());
+        myAccounts = new ArrayList<>();
     }
 
 
