@@ -34,9 +34,10 @@ public class MyAccountsActivity extends AppCompatActivity {
         initAdapter();
 
        if (DataManager.getDataManager().getMyAccounts().size()==0) {
+            firstTexst.setText("Hello\n"+DataManager.getDataManager().getMyUser().getUsername()+"\nTo start using the app\nadd your first account");
             firstTexst.setVisibility(View.VISIBLE);
             Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-           firstTexst.startAnimation(aniFade);
+            firstTexst.startAnimation(aniFade);
        }
        else {
 
@@ -58,7 +59,8 @@ public class MyAccountsActivity extends AppCompatActivity {
 
             @Override
             public void minus(Account account, int position) {
-                //TODO
+                DataManager.getDataManager().removeAccount(account);
+
             }
         });
     }
