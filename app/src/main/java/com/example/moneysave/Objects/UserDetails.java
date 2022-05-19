@@ -2,8 +2,10 @@ package com.example.moneysave.Objects;
 
 import com.example.moneysave.Server.boundaries.CreatedBy;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
+import com.example.moneysave.Server.boundaries.UserId;
 import com.example.moneysave.tools.DataManager;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class UserDetails extends InstanceBoundary {
@@ -29,5 +31,13 @@ public class UserDetails extends InstanceBoundary {
                 instanceBoundary.getLocation(),
                 instanceBoundary.getInstanceAttributes());
 
+    }
+    public ArrayList<Account> receive_myAccounts() {
+        return (ArrayList<Account>) this.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS);
+    }
+
+    public UserDetails update_myAccounts(ArrayList<Account> myAccounts) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_ACCOUNTS , myAccounts);
+        return this;
     }
 }

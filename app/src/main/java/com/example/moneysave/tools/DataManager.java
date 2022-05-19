@@ -72,7 +72,8 @@ public class DataManager {
     }
 
     public void failed(int code) {
-        this.activeCallBack.failed(code);
+        if(this.activeCallBack != null)
+            this.activeCallBack.failed(code);
     }
 
     public void getInstance(InstanceBoundary body) {

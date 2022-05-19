@@ -25,7 +25,7 @@ public class ServerCommunicator  {
             Log.d("myLog", response.code() + "");
             if(response.code() == STATUS_OK){
                 Log.d("myLog", response.body().toString());
-                DataManager.getDataManager().setUser(response.body()); //TODO errors not po! move to activity
+                DataManager.getDataManager().setUser(response.body());
             }
             else if(response.code() == FOUND){
                 MyServices.getInstance().makeToast("User already exists");
@@ -37,7 +37,7 @@ public class ServerCommunicator  {
             }
         }
         @Override
-        public void onFailure(Call<UserBoundary> call, Throwable t) {//TODO its ok
+        public void onFailure(Call<UserBoundary> call, Throwable t) {
             MyServices.getInstance().makeToast(t.getMessage());
             Log.d("myLog", t.getMessage());
             DataManager.getDataManager().failed(0);
@@ -54,7 +54,6 @@ public class ServerCommunicator  {
             }
             else{
                 DataManager.getDataManager().failed(response.code());
-                MyServices.getInstance().makeToast("Wrong user details");
             }
         }
         @Override
@@ -64,7 +63,7 @@ public class ServerCommunicator  {
             DataManager.getDataManager().failed(0);
         }
     };
-    private Callback<InstanceBoundary> createInstance_callback = new Callback<InstanceBoundary>() {
+    private Callback<InstanceBoundary> instance_callback = new Callback<InstanceBoundary>() {
         @Override
         public void onResponse(Call<InstanceBoundary> call, Response<InstanceBoundary> response) {
             Log.d("myLog", response.code() + "");
@@ -72,7 +71,7 @@ public class ServerCommunicator  {
                 DataManager.getDataManager().getInstance(response.body());
             }
             else{
-                MyServices.getInstance().makeToast("Wrong user details");
+                MyServices.getInstance().makeToast("Wrong details");
                 DataManager.getDataManager().failed(response.code());
             }
         }
@@ -83,6 +82,22 @@ public class ServerCommunicator  {
             DataManager.getDataManager().failed(0);
         }
     };
+    private Callback<Void> updateInstance_callback = new Callback<Void>() {
+        @Override
+        public void onResponse(Call<Void> call, Response<Void> response) {
+            Log.d("myLog", response.code() + "");
+            if(response.code() != STATUS_OK){
+                MyServices.getInstance().makeToast("Update Failed");
+            }
+        }
+        @Override
+        public void onFailure(Call<Void> call, Throwable t) {
+            MyServices.getInstance().makeToast(t.getMessage());
+            Log.d("myLog", t.getMessage());
+            DataManager.getDataManager().failed(0);
+        }
+    };
+
 
     private ServerCommunicator() {
 
@@ -100,21 +115,24 @@ public class ServerCommunicator  {
     }
 
 
-    public void updateUserDetails(String userDomain, String userEmail, UserBoundary userBoundary) {
-        // TODO: 14/05/2022
+
+    public void updateInstanceDetails(InstanceBoundary instanceBoundary){
+        myApiServer.updateInstanceDetails(instanceBoundary)
+                .enqueue(updateInstance_callback);
     }
 
 
-   // public void getInstanceDetails(String instanceDomain, String instanceId , String userDomain, String userEmail){
-      //  myApiServer.getInstanceDetails(instanceDomain,instanceId, userDomain, userEmail)
-            //    .enqueue(getUserDetails_callback);
-   // }
-    // TODO: 15/05/2022
+
+    public void getInstanceDetails(String instanceDomain, String instanceId , String userDomain, String userEmail){
+        myApiServer.getInstanceDetails(instanceDomain,instanceId, userDomain, userEmail)
+                .enqueue(instance_callback);
+    }
+
 
 
     public void createInstance(InstanceBoundary instanceBoundary) {
         myApiServer.createInstance(instanceBoundary)
-                .enqueue(createInstance_callback);
+                .enqueue(instance_callback);
     }
 
     public void  searchInstancesByName(String name, String userDomain, String userEmail){
