@@ -2,67 +2,74 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="100dp"
-    android:layout_height="150dp"
-    android:layout_margin="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:backgroundTint="@color/white"
+    android:layout_margin="10dp"
     android:elevation="10dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
 
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/category_LBL_title"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:maxLines="2"
-            android:minLines="2"
-            android:text="category"
-            android:textColor="#000000"
-            android:textSize="10sp" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/category_IMG_image"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_food" />
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:hint="add budget"
-            android:padding="10dp"
-            android:textColorHint="@color/black"
-            app:boxBackgroundColor="#DCC8C8"
-            app:boxBackgroundMode="filled"
-            app:boxStrokeColor="@color/black"
-            app:counterEnabled="true"
-            app:counterMaxLength="5"
-            app:errorEnabled="true">
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/category_EDT_amount"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/category_LBL_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="category"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/category_IMG_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_food" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="numberDecimal"
-                android:textColor="@color/black"
-                android:textSize="8sp"
-                android:textStyle="bold" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:hint="add budget"
+                android:textColorHint="@color/black"
+                app:boxBackgroundColor="#DCC8C8"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeColor="@color/black"
+                app:counterEnabled="true"
+                app:counterMaxLength="5"
+                app:errorEnabled="true">
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/category_EDT_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>
