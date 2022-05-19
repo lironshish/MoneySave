@@ -55,6 +55,7 @@
             app:titleTextColor="#F1A94F" />
         </com.google.android.material.appbar.AppBarLayout>
 
+        <include layout="@layout/activity_account_for_list" />
 
         <TextView
             android:layout_width="match_parent"
@@ -67,13 +68,6 @@
             android:fontFamily="@font/comfortaa_bold"
             android:visibility="invisible" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/account_LST_AccountsBank"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:paddingTop="20dp"
-            tools:listitem="@layout/activity_account_for_list" />
 
 
 

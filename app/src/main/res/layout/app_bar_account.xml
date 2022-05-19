@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.AccountActivity"
-    tools:showIn="@layout/account_activity1">
+    tools:showIn="@layout/account_activity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
