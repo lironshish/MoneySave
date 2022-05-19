@@ -66,15 +66,15 @@ public class AddAccount_Activity extends AppCompatActivity {
     public void addAccount() {
         Account newAccount = new Account(category_LBL_title.getText().toString());
 
-        for (Goal category : newAccount.getCategories()) {
+        for (Goal category : newAccount.receive_myCategories()) {
             for (int i = 0; i < 7; i++) {
-                newAccount.getCategories().get(i).setMoneyPerMonth(Integer.valueOf(addAccount_EDT_name.getText().toString()));
+                newAccount.receive_myCategories().get(i).setMoneyPerMonth(Integer.valueOf(addAccount_EDT_name.getText().toString()));
             }
         }
-        Log.d("pttt", newAccount.getCategories().toString());
+        Log.d("pttt", newAccount.receive_myCategories().toString());
         Toast.makeText(AddAccount_Activity.this, newAccount.getName() + " account saved", Toast.LENGTH_SHORT).show();
-
-        //send the newAccount to DB
+        //??????
+        newAccount.receive_myCategories();
     }
 
     private void backToMyAccounts() {

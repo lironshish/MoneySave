@@ -1,5 +1,6 @@
 package com.example.moneysave;
 
+import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 
@@ -26,6 +27,16 @@ public class Data {
 
         return goals;
     }
+
+    public static ArrayList<Account> generateAccounts(){
+        ArrayList<Account>accounts = new ArrayList<>();
+
+        accounts.add(new Account("yuval&lilach"));
+
+
+        return accounts;
+    }
+
 
 
     public static ArrayList<Goal> generateCategories(){
