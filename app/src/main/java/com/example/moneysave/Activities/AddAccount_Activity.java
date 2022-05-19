@@ -91,8 +91,6 @@ public class AddAccount_Activity extends AppCompatActivity {
         category_LST_items.setLayoutManager(new LinearLayoutManager(this));
         category_LST_items.setHasFixedSize(true);
         category_LST_items.setAdapter(category_adapter);
-
-
     }
 
 }

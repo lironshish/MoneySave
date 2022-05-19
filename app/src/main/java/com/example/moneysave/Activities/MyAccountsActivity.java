@@ -23,7 +23,6 @@ public class MyAccountsActivity extends AppCompatActivity {
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
     private TextView firstTexst;
-    ArrayList<Account> accounts = new ArrayList<>();
 
 
     @Override
@@ -35,6 +34,7 @@ public class MyAccountsActivity extends AppCompatActivity {
         initAdapter();
 
        if (DataManager.getDataManager().getMyAccounts().size()==0) {
+           firstTexst.setText("Hello\n"+DataManager.getDataManager().getMyUser().getUsername()+"\nTo start using the app\nadd your first account");
             firstTexst.setVisibility(View.VISIBLE);
             Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
            firstTexst.startAnimation(aniFade);
@@ -42,7 +42,7 @@ public class MyAccountsActivity extends AppCompatActivity {
     }
 
     private void initAdapter() {
-        ArrayList<Account> accounts = Data.generateAccounts();
+        ArrayList<Account> accounts = DataManager.getDataManager().getMyAccounts();
         Account_Adapter accountAdapter = new Account_Adapter(this, accounts);
         account_list.setLayoutManager(new LinearLayoutManager(this));
         account_list.setHasFixedSize(true);
