@@ -51,4 +51,5 @@ public class Goal {
         this.moneyWested = moneyWested;
         return this;
     }
+
 }

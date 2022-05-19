@@ -54,6 +54,17 @@ public class Account extends InstanceBoundary {
 
     public Account update_myCategories(ArrayList<Goal> categories) {
         this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES , categories);
+        updateOnServer();
+        return this;
+    }
+    public Account addCategory(Goal category) {
+        ((ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_CATEGORIES)).add(category);
+        updateOnServer();
+        return this;
+    }
+    public Account removeCategory(Goal category) {
+        ((ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_CATEGORIES)).remove(category);
+        updateOnServer();
         return this;
     }
 

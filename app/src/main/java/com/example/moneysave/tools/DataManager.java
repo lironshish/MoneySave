@@ -2,8 +2,10 @@ package com.example.moneysave.tools;
 
 
 import com.example.moneysave.Objects.Account;
+import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.Objects.MyUser;
 import com.example.moneysave.Objects.UserDetails;
+import com.example.moneysave.Server.ServerCommunicator;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
 import com.example.moneysave.Server.boundaries.UserBoundary;
 import com.example.moneysave.call_backs.GetAccounts_callback;
@@ -99,6 +101,7 @@ public class DataManager {
     }
 
     public void addAccount(Account myAccount) {
+        ServerCommunicator.getInstance().createInstance(myAccount);
         myAccount.add_user(myUser.getUserId());
         myUser.getUserDetails().add_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().add(myAccount);
@@ -107,6 +110,17 @@ public class DataManager {
         myAccount.remove_user(myUser.getUserId());
         myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().remove(myAccount);
+    }
+
+    public void addAccountCategories(Account myAccount , ArrayList<Goal> categories) {
+        myAccount.update_myCategories(categories);
+    }
+    public void addAccountCategory(Account myAccount , Goal category) {
+        myAccount.addCategory(category);
+    }
+
+    public void removeAccountCategory(Account myAccount , Goal category) {
+        myAccount.removeCategory(category);
     }
 
 

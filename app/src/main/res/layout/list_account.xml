@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp">
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/account"
         android:layout_width="match_parent"
@@ -11,46 +12,42 @@
         android:layout_marginTop="40dp"
         android:elevation="7dp"
         app:cardElevation="7dp"
-        app:cardCornerRadius="18dp"
-        >
+        app:cardCornerRadius="18dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:background="#FAEFBD"
             android:orientation="horizontal">
 
-
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="5dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/account_name"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Account Name"
                         android:padding="10dp"
                         android:textColor="@color/black"
-                        android:textSize="25dp" />
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:textSize="18dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/share_account"
                         style="@style/Widget.Material3.Button.IconButton"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginLeft="130dp"
-                        android:insetTop="0dp"
                         android:insetBottom="0dp"
-                        android:padding="5dp"
                         app:icon="@drawable/ic_share_account"
                         app:iconGravity="textStart"
                         app:iconSize="25dp"
@@ -71,14 +68,7 @@
                         app:iconSize="25dp"
                         app:iconTint="@color/black" />
                 </LinearLayout>
-
-
             </LinearLayout>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
-
     </com.google.android.material.card.MaterialCardView>
-
-
-
 </RelativeLayout>
