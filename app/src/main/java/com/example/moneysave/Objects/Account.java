@@ -1,58 +1,83 @@
 package com.example.moneysave.Objects;
 
-import com.example.moneysave.Server.boundaries.User;
+import com.example.moneysave.Server.boundaries.CreatedBy;
+import com.example.moneysave.Server.boundaries.InstanceBoundary;
+import com.example.moneysave.Server.boundaries.UserId;
+import com.example.moneysave.tools.DataManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Account {
-    private String name = "";
-    private ArrayList<User> SharedWith = new ArrayList<User>();
-    private ArrayList<Goal> Categories = new ArrayList<Goal>();
+public class Account extends InstanceBoundary {
 
-
-    public Account(){ }
-
-    public Account(String name){
-        setName(name);
+    public Account() {
+        super();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<User> getSharedWith() {
-        return SharedWith;
-    }
-
-    public void setSharedWith(ArrayList<User> sharedWith) {
-        SharedWith = sharedWith;
-    }
-
-    public ArrayList<Goal> getCategories() {
-        return Categories;
+    public Account(String name) {
+        this.setActive(true);
+        this.setCreatedBy(new CreatedBy(DataManager.getDataManager().getMyUser().getUserId()));
+        this.setType(UserDetails.class.getSimpleName());
+        this.setName(name);
+        this.setInstanceAttributes(new HashMap<>());
+        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , new ArrayList<UserId>() );
+        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES ,  new ArrayList<Goal>());
+        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , new ArrayList<BankAccount>());
     }
 
 
-    public void setCategories(ArrayList<Goal> categories) {
-        Categories = categories;
+    public Account(InstanceBoundary instanceBoundary) {
+        super(instanceBoundary.getInstanceId() ,
+                instanceBoundary.getType() ,
+                instanceBoundary.getName() ,
+                instanceBoundary.getActive(),
+                instanceBoundary.getCreatedTimestamp(),
+                instanceBoundary.getCreatedBy(),
+                instanceBoundary.getLocation(),
+                instanceBoundary.getInstanceAttributes());
     }
+
+    public ArrayList<UserId> receive_myUsers() {
+        return (ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS);
+    }
+
+    public Account update_myUsers(ArrayList<UserId> myUsers) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , myUsers);
+        return this;
+    }
+
+    public ArrayList<Goal> receive_myCategories() {
+        return (ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
+    }
+    public Account update_myCategories(ArrayList<Goal> categories) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES , categories);
+        return this;
+    }
+
+    public ArrayList<BankAccount> receive_myBankAccounts() {
+        return (ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
+    }
+
+    public Account update_BankAccounts(ArrayList<BankAccount> bankAccounts) {
+        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , bankAccounts);
+        return this;
+    }
+
+
 
     public void InitCategoriesList(int moneyPerFood, int moneyPerLeisureAndRecreation, int moneyPerCar, int moneyPerApartment, int moneyPerClothingAndFootwear, int moneyPerVariousExpenses){
-        Categories.add(new Goal()
+        ArrayList<Goal> categories =  receive_myCategories();
+        categories.add(new Goal()
         .setName("Food").setMoneyPerMonth(moneyPerFood));
-        Categories.add(new Goal()
+        categories.add(new Goal()
                 .setName("Leisure and recreation").setMoneyPerMonth(moneyPerLeisureAndRecreation));
-        Categories.add(new Goal()
+        categories.add(new Goal()
                 .setName("Car").setMoneyPerMonth(moneyPerCar));
-        Categories.add(new Goal()
+        categories.add(new Goal()
                 .setName("Apartment").setMoneyPerMonth(moneyPerApartment));
-        Categories.add(new Goal()
+        categories.add(new Goal()
                 .setName("Clothing and footwear").setMoneyPerMonth(moneyPerClothingAndFootwear));
-        Categories.add(new Goal()
+        categories.add(new Goal()
                 .setName("Various expenses").setMoneyPerMonth(moneyPerVariousExpenses));
     }
 

@@ -6,10 +6,14 @@ import com.example.moneysave.Server.boundaries.UserBoundary;
 import com.example.moneysave.Server.boundaries.UserId;
 import com.example.moneysave.Server.boundaries.UserRole;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyUser extends UserBoundary {
 
 
     private String password;
+    private List<Account> myAccounts;
 
     public MyUser(){
         super();
@@ -18,6 +22,7 @@ public class MyUser extends UserBoundary {
     public MyUser(UserRole role, String userName, String avatar, UserId userId){
         super(role, userName, avatar, userId);
         setPassword(password);
+        myAccounts = new ArrayList<>();
     }
 
     public MyUser(UserBoundary userBoundary) {
@@ -33,6 +38,14 @@ public class MyUser extends UserBoundary {
         this.password = password;
     }
 
+    public List<Account> getMyAccounts() {
+        return myAccounts;
+    }
 
-    //Need to add functions that pull and push data to the database
+    public MyUser setMyAccounts(List<Account> myAccounts) {
+        this.myAccounts = myAccounts;
+        return this;
+    }
+
+//Need to add functions that pull and push data to the database
 }

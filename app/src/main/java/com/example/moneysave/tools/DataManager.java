@@ -2,13 +2,11 @@ package com.example.moneysave.tools;
 
 
 import com.example.moneysave.Objects.MyUser;
-import com.example.moneysave.Objects.UserPassword;
+import com.example.moneysave.Objects.UserDetails;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
 import com.example.moneysave.Server.boundaries.UserBoundary;
-import com.example.moneysave.Server.boundaries.UserRole;
 import com.example.moneysave.call_backs.LoginCallBack;
 import com.example.moneysave.call_backs.ServerCallback;
-import com.example.moneysave.call_backs.getInstancesCallBack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +17,10 @@ public class DataManager {
     private static DataManager _instance = new DataManager();
     public static final String MAIN_DOMAIN = "2022b.Lilach.Laniado";
     public static final String KEY_PASSWORD = "KEY_PASSWORD";
+    public static final String KEY_MY_ACCOUNTS = "KEY_MY_ACCOUNTS";
+    public static final String KEY_MY_USERS = "KEY_MY_USERS";
+    public static final String KEY_MY_CATEGORIES = "KEY_MY_CATEGORIES";
+    public static final String KEY_MY_BANKS = "KEY_MY_BANKS";
     private MyUser myUser = null;
     private ServerCallback activeCallBack;
 
@@ -63,7 +65,7 @@ public class DataManager {
 
         List<InstanceBoundary> instanceBoundaries = new ArrayList<>(Arrays.asList(body));
         if (activeCallBack instanceof LoginCallBack)
-            ((LoginCallBack) activeCallBack).login(new UserPassword(instanceBoundaries.get(0)));
+            ((LoginCallBack) activeCallBack).login(new UserDetails(instanceBoundaries.get(0)));
 
 
         //this.instancesCallBack.Instances(instanceBoundaries);
@@ -77,6 +79,10 @@ public class DataManager {
         if (body == null)
             activeCallBack.empty();
         if (activeCallBack instanceof LoginCallBack)
-            ((LoginCallBack) activeCallBack).login(new UserPassword(body));
+            ((LoginCallBack) activeCallBack).login(new UserDetails(body));
+    }
+    
+    public  void getAllAccounts () {
+        // TODO: 19/05/2022
     }
 }

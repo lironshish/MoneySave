@@ -3,65 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/ic_baseline_dry_cleaning_24.xml" value="0.148" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.116" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/ic_recreations.xml" value="0.1305" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/drawable/shape_stroke.xml" value="0.1" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity.xml" value="0.22" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/account_activity1.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_account_for_list.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_account.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_account1.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_add_goal.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_all_manual.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_details.xml" value="0.1796875" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_manual.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/activity_my_accounts.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/add.xml" value="0.1" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/addaccount.xml" value="0.1203125" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/app_bar_account.xml" value="0.1796875" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/app_bar_main.xml" value="0.1796875" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_account.xml" value="0.1796875" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/content_main.xml" value="0.1203125" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_account.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_bank.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_category.xml" value="0.5" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_detail.xml" value="0.22" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/list_goal.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/navigation_header.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/pie_chart.xml" value="0.13854166666666667" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/pop_up_window.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/sign_in.xml" value="0.22" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/sign_up.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/layout/temp.xml" value="0.14447463768115942" />
-        <entry key="..\:/Users/Lilach Laniado/AndroidStudioProjects/MoneySave1/app/src/main/res/menu/drawer_menu.xml" value="0.22" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_expense_diagram.xml" value="0.365625" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.1" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_pie_chart.xml" value="0.33" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/add_account_popup_window.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/fragment_bank_acoounts.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/navigation_header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Yuval/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/account_activity.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_account_for_list.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_add_account.xml" value="0.176" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_add_goal.xml" value="0.2" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/activity_my_accounts.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/list_account.xml" value="0.176" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/list_bank.xml" value="0.23854166666666668" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/layout/list_goal.xml" value="0.2" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.124" />
-        <entry key="..\:/Users/liron0/AndroidStudioProjects/MoneySave/integrative/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.124" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/content_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/my_accounts_activity.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/navigation_header.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity.xml" value="0.1546875" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/account_activity1.xml" value="0.1" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_account_for_list.xml" value="0.1" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_add_account.xml" value="0.1" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_details.xml" value="0.1546875" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/activity_my_accounts.xml" value="0.1546875" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/add.xml" value="0.1" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/content_account.xml" value="0.3438095238095238" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/content_main.xml" value="0.15081521739130435" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/list_bank.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/list_category.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/list_detail.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/list_goal.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/popup_balance.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/popup_expenses.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/popup_revenue.xml" value="0.18127404873877725" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.33" />
+        <entry key="..\:/Users/ronshmaya/AndroidStudioProjects/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.25" />
       </map>
     </option>
   </component>
