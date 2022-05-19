@@ -4,17 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    tools:context=".Activities.MyAccountsActivity"
-    >
+    android:layout_height="wrap_content"
+    tools:context=".Activities.MyAccountsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myAccounts_LST_accounts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/list_account"
-        />
-
+        tools:listitem="@layout/list_account" />
 </androidx.constraintlayout.widget.ConstraintLayout>

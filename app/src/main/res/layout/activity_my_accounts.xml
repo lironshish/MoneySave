@@ -9,7 +9,6 @@
     android:layoutDirection="rtl"
     tools:context=".Activities.MyAccountsActivity">
 
-
     <ImageView
         android:id="@+id/sign_up_IMG_back1"
         android:layout_width="match_parent"
@@ -23,14 +22,11 @@
         android:animateLayoutChanges="true"
         android:fitsSystemWindows="true">
 
-
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:liftOnScroll="true">
-
-
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_FRG_container"
@@ -38,8 +34,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp"
             android:clipToPadding="false"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/panel_Toolbar_Top"
@@ -55,7 +50,6 @@
             app:titleTextColor="#F1A94F" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/activity_account_for_list" />
 
         <TextView
             android:layout_width="match_parent"
@@ -68,8 +62,12 @@
             android:fontFamily="@font/comfortaa_bold"
             android:visibility="invisible" />
 
-
-
+            <include
+                layout="@layout/activity_account_for_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/panel_Toolbar_Top" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/account_BTN_Add"

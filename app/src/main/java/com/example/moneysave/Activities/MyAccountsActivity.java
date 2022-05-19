@@ -27,34 +27,35 @@ public class MyAccountsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_accounts);
 
         InitButtons();
+        initAdapter();
+    }
 
-//        ArrayList<Account> accounts = Data.generateAccounts();
-//        Account_Adapter accountAdapter = new Account_Adapter(this, accounts);
-//        account_list.setLayoutManager(new LinearLayoutManager(this));
-//        account_list.setHasFixedSize(true);
-//        account_list.setAdapter(accountAdapter);
-//
-//        accountAdapter.setAccountlistener(new Account_Adapter.Accountlistener() {
-//
-//            @Override
-//            public void sharedWith(Account account, int position) {
-//                //TODO
-//            }
-//
-//            @Override
-//            public void minus(Account account, int position) {
-//                //TODO
-//            }
-//        });
-//
+    private void initAdapter() {
+        ArrayList<Account> accounts = Data.generateAccounts();
+        Account_Adapter accountAdapter = new Account_Adapter(this, accounts);
+        account_list.setLayoutManager(new LinearLayoutManager(this));
+        account_list.setHasFixedSize(true);
+        account_list.setAdapter(accountAdapter);
+
+        accountAdapter.setAccountlistener(new Account_Adapter.Accountlistener() {
+
+            @Override
+            public void sharedWith(Account account, int position) {
+                //TODO
+            }
+
+            @Override
+            public void minus(Account account, int position) {
+                //TODO
+            }
+        });
     }
 
 
     public void InitButtons(){
 
-        account_list = findViewById(R.id.accounts_list);
+        account_list = findViewById(R.id.myAccounts_LST_accounts);
         addAccount = findViewById(R.id.account_BTN_Add);
-
         addAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,12 +67,5 @@ public class MyAccountsActivity extends AppCompatActivity {
     private void replaceActivity(){
         Intent intent = new Intent(this, AddAccount_Activity.class);
         startActivity(intent);
-
     }
-
-
-
-
-
-
 }
