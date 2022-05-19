@@ -16,6 +16,8 @@ import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.call_backs.CreateAndUpdateAccount;
+import com.example.moneysave.call_backs.GetAccounts_callback;
 import com.example.moneysave.tools.DataManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -65,17 +67,13 @@ public class AddAccount_Activity extends AppCompatActivity {
     }
 
     public void addAccount() {
+        DataManager.getDataManager().setActiveCallBack(createAndUpdateAccount);
         Account newAccount = new Account(addAccount_EDT_name.getText().toString());
         DataManager.getDataManager().addAccount(newAccount);
 
-
-            for (int i = 0; i<categories.size(); i++) {
-                categories.get(i).setMoneyPerMonth(100);
-            }
-
-        DataManager.getDataManager().addAccountCategories(newAccount,categories);
-
-        Toast.makeText(AddAccount_Activity.this, newAccount.getName() + " account saved", Toast.LENGTH_SHORT).show();
+        for (int i = 0; i < categories.size(); i++) {
+            categories.get(i).setMoneyPerMonth(100);
+        }
 
     }
 
@@ -85,7 +83,7 @@ public class AddAccount_Activity extends AppCompatActivity {
         finish();
     }
 
-    private void initAdapter(){
+    private void initAdapter() {
 
         categories = DataManager.getDataManager().generateCategories();
         Category_Adapter category_adapter = new Category_Adapter(this, categories);
@@ -94,4 +92,21 @@ public class AddAccount_Activity extends AppCompatActivity {
         category_LST_items.setAdapter(category_adapter);
     }
 
+    private CreateAndUpdateAccount createAndUpdateAccount = new CreateAndUpdateAccount() {
+        @Override
+        public void createOkUpdateBegin(Account account) {
+            DataManager.getDataManager().addAccountCategories(account, categories);
+
+            Toast.makeText(AddAccount_Activity.this, account.getName() + " account saved", Toast.LENGTH_SHORT).show();
+            DataManager.getDataManager().setActiveCallBack(null);
+        }
+        @Override
+        public void failed(int status_code) {
+
+        }
+        @Override
+        public void empty() {
+
+        }
+    };
 }

@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         main_FAB_sign_up.setOnClickListener(view -> {
             Intent myIntent = new Intent(MainActivity.this, SignUpActivity.class);
             startActivity(myIntent); // TODO: 18/05/2022 finish???
+            //finish();
         });
     }
 
