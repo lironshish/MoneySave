@@ -84,15 +84,7 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             });
 
-            bank_BTN_distribution.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view) {
-                    if (bankAccountListener != null) {
-                        bankAccountListener.clicked(getBankAccount(getAdapterPosition()), getAdapterPosition());
-                    }
-                }
 
-            });
 
             bank_BTN_delete.setOnClickListener(new View.OnClickListener(){
                 @Override

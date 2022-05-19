@@ -19,7 +19,7 @@ public class MyAccountsActivity extends AppCompatActivity {
 
     private FloatingActionButton addAccount;
     private RecyclerView account_list;
-
+    ArrayList<Account> accounts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,22 +28,6 @@ public class MyAccountsActivity extends AppCompatActivity {
 
         InitButtons();
         initAdapter();
-
-
-
-    }
-
-
-    public void InitButtons(){
-        account_list = findViewById(R.id.myAccounts_LST_accounts);
-        addAccount = findViewById(R.id.account_BTN_Add);
-
-        addAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceActivity();
-            }
-        });
     }
 
     private void initAdapter() {
@@ -67,15 +51,21 @@ public class MyAccountsActivity extends AppCompatActivity {
         });
     }
 
+
+    public void InitButtons(){
+
+        account_list = findViewById(R.id.myAccounts_LST_accounts);
+        addAccount = findViewById(R.id.account_BTN_Add);
+        addAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceActivity();
+            }
+        });
+    }
+
     private void replaceActivity(){
         Intent intent = new Intent(this, AddAccount_Activity.class);
         startActivity(intent);
-
     }
-
-
-
-
-
-
 }

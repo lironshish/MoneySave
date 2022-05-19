@@ -1,51 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:elevation="7dp"
-    app:cardElevation="7dp"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="20dp">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/account"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="match_parent"
-        android:background="#AFE0F8"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:elevation="7dp"
+        app:cardElevation="7dp"
+        app:cardCornerRadius="18dp"
         >
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="60dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_card"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#8DBDE3"
+            android:orientation="horizontal">
 
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/bank_TXT_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:gravity="left"
-            android:layout_marginStart="20dp"
-            android:textColor="#000000"
-            android:text="bank name"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bank_BTN_delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:paddingRight="20dp"
-            android:layout_gravity="center"
-            app:iconGravity="textEnd"
-            android:background="@drawable/ic_delete" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_card"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/bank_TXT_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="bank Name"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="25dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/bank_BTN_delete"
+                        style="@style/Widget.Material3.Button.IconButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="130dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:padding="5dp"
+                        app:icon="@drawable/ic_delete"
+                        app:iconGravity="textStart"
+                        app:iconSize="25dp"
+                        app:iconTint="@color/black" />
 
 
-    </LinearLayout>
+                </LinearLayout>
 
-</com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>
