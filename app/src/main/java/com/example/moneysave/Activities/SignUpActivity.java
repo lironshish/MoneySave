@@ -172,6 +172,7 @@ public class SignUpActivity extends AppCompatActivity {
         public void login(UserDetails userDetails) {
             DataManager.getDataManager().setActiveCallBack(null);
             DataManager.getDataManager().getMyUser().setPassword((String) userDetails.getInstanceAttributes().get(DataManager.KEY_PASSWORD));
+            DataManager.getDataManager().getMyUser().setUserDetails(userDetails);
             Intent myIntent = new Intent(SignUpActivity.this, MyAccountsActivity.class);
             startActivity(myIntent);
             finish();

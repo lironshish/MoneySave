@@ -14,6 +14,7 @@ public class MyUser extends UserBoundary {
 
     private String password;
     private List<Account> myAccounts;
+    private UserDetails userDetails;
 
     public MyUser(){
         super();
@@ -47,5 +48,13 @@ public class MyUser extends UserBoundary {
         return this;
     }
 
+    public UserDetails getUserDetails() {
+        return userDetails;
+    }
+
+    public MyUser setUserDetails(UserDetails userDetails) {
+        this.userDetails = userDetails;
+        return this;
+    }
 //Need to add functions that pull and push data to the database
 }
