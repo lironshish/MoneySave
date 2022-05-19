@@ -41,7 +41,12 @@ public interface MyApiServer {
             @Query("userEmail") String userEmail);
 
     @PUT("/iob/instances/{instanceDomain}/{instanceId}")
-    Call<Void> updateInstanceDetails(@Body InstanceBoundary instanceBoundary);
+    Call<Void> updateInstanceDetails(
+            @Path("instanceDomain") String instanceDomain,
+            @Path("instanceId") String instanceId,
+            @Query("userDomain") String userDomain,
+            @Query("userEmail") String userEmail,
+            @Body InstanceBoundary instanceBoundary);
 
 
 }

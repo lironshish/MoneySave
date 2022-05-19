@@ -12,6 +12,10 @@ import com.example.moneysave.tools.MyServices;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Body;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public class ServerCommunicator  {
     private static ServerCommunicator serverCommunicator = new ServerCommunicator();
@@ -116,8 +120,8 @@ public class ServerCommunicator  {
 
 
 
-    public void updateInstanceDetails(InstanceBoundary instanceBoundary){
-        myApiServer.updateInstanceDetails(instanceBoundary)
+    public void updateInstanceDetails( String instanceDomain,  String instanceId,  String userDomain,String userEmail,InstanceBoundary instanceBoundary){
+        myApiServer.updateInstanceDetails(instanceDomain, instanceId, userDomain, userEmail, instanceBoundary)
                 .enqueue(updateInstance_callback);
     }
 
