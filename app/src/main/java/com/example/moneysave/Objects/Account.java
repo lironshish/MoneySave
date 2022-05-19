@@ -100,7 +100,12 @@ public class Account extends InstanceBoundary {
         updateOnServer();
     }
     public void updateOnServer(){
-        ServerCommunicator.getInstance().updateInstanceDetails(this);
+        ServerCommunicator.getInstance().updateInstanceDetails(
+                this.getInstanceId().getDomain(),
+                this.getInstanceId().getId(),
+                DataManager.getDataManager().getMyUser().getUserId().getDomain(),
+                DataManager.getDataManager().getMyUser().getUserId().getEmail(),
+                this);
     }
 
 
