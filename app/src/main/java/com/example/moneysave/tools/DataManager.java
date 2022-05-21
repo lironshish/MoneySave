@@ -8,6 +8,7 @@ import com.example.moneysave.Objects.UserDetails;
 import com.example.moneysave.Server.ServerCommunicator;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
 import com.example.moneysave.Server.boundaries.UserBoundary;
+import com.example.moneysave.call_backs.CreateAndUpdateAccount;
 import com.example.moneysave.call_backs.GetAccounts_callback;
 import com.example.moneysave.call_backs.LoginCallBack;
 import com.example.moneysave.call_backs.ServerCallback;
@@ -89,11 +90,15 @@ public class DataManager {
             return;
         if (body == null)
             activeCallBack.empty();
-        if (activeCallBack instanceof LoginCallBack)
+        else if (activeCallBack instanceof LoginCallBack)
             ((LoginCallBack) activeCallBack).login(new UserDetails(body));
-        if (activeCallBack instanceof GetAccounts_callback) {
+        else if (activeCallBack instanceof GetAccounts_callback) {
             myUser.getMyAccounts().add(new Account(body));
             ((GetAccounts_callback) activeCallBack).getAccount();
+        }
+        else if(activeCallBack instanceof CreateAndUpdateAccount){
+            serverAddAccount(new Account(body));
+            ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(new Account(body));
         }
     }
     public ArrayList<Account> getMyAccounts() {
@@ -102,6 +107,8 @@ public class DataManager {
 
     public void addAccount(Account myAccount) {
         ServerCommunicator.getInstance().createInstance(myAccount);
+    }
+    public void serverAddAccount(Account myAccount) {
         myAccount.add_user(myUser.getUserId());
         myUser.getUserDetails().add_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().add(myAccount);

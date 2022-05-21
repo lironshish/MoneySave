@@ -18,7 +18,7 @@ public class Account extends InstanceBoundary {
     public Account(String name) {
         this.setActive(true);
         this.setCreatedBy(new CreatedBy(DataManager.getDataManager().getMyUser().getUserId()));
-        this.setType(UserDetails.class.getSimpleName());
+        this.setType(Account.class.getSimpleName());
         this.setName(name);
         this.setInstanceAttributes(new HashMap<>());
         this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , new ArrayList<UserId>() );

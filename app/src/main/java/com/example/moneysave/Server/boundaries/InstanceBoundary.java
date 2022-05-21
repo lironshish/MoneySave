@@ -25,7 +25,6 @@ public class InstanceBoundary {
 		this.type = type;
 		this.name = name;
 		this.active = active;
-		this.createdTimestamp = timeStamp;
 		this.createdBy = creator;
 		this.location = myLocation;
 		this.instanceAttributes = flexibleField;
