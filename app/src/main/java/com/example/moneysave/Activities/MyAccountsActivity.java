@@ -78,8 +78,7 @@ public class MyAccountsActivity extends AppCompatActivity {
         accountAdapter.setAccountlistener(new Account_Adapter.Accountlistener() {
             @Override
             public void sharedWith(Account account, int position) {
-                onButtonShowPopupWindowClick(currentView);
-                DataManager.getDataManager().share_Account(DataManager.getDataManager().getActiveAccount(),sendEmail);
+                onButtonShowPopupWindowClick(currentView , account);
             }
 
             @Override
@@ -135,7 +134,7 @@ public class MyAccountsActivity extends AppCompatActivity {
     }
 
 
-    public void onButtonShowPopupWindowClick(View view) {
+    public void onButtonShowPopupWindowClick(View view, Account accountToShare) {
 
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -155,6 +154,7 @@ public class MyAccountsActivity extends AppCompatActivity {
                     return;
                 }
                 sendEmail = popup_LBL_email.getText().toString();
+                DataManager.getDataManager().share_Account(accountToShare , sendEmail);
                 popupWindow.dismiss();
             }
         });
