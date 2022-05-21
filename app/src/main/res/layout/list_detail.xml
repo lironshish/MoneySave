@@ -34,7 +34,8 @@
 
 
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/detail_IMG_category"
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/ic_food"/>

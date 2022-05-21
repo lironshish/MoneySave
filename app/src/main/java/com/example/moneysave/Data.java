@@ -2,6 +2,7 @@ package com.example.moneysave;
 
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.BankAccount;
+import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.Objects.Goal;
 
 import java.util.ArrayList;
@@ -31,5 +32,9 @@ public class Data {
     }
 
 
-
+    public static ArrayList<Detail> generateDetails() {
+        ArrayList<Detail> details = new ArrayList<>();
+        details.add(new Detail().setDescription("electric bill").setAmount(100).setImage("ic_home").setCategory(new Goal().setName("HOME")));
+    return details;
+    }
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AddAccount_Activity"
+    android:background="#444444">
+
+    <ImageView
+        android:id="@+id/account_IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_add_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MoneySave.AppBarOverlay">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/addAccount_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:title="REVENUE AND EXPENSES"
+            app:titleCentered="true"
+            app:titleTextColor="@color/color_four"
+            app:popupTheme="@style/Theme.MoneySave.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar_add_account"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_LST_items"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="9"
+            android:clipToPadding="false"
+            android:padding="20dp"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="1"
+            tools:listitem="@layout/list_detail" />
+
+
+
+    </LinearLayout>
+</RelativeLayout>
