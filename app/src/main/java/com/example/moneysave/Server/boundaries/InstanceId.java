@@ -14,10 +14,6 @@ public class InstanceId {
 		this.domain = domain;
 		this.id = id;
 	}
-	public InstanceId(LinkedTreeMap<String , String> domainAndId) {
-		this.domain = domainAndId.get("domain");
-		this.id = domainAndId.get("id");
-	}
 
 	public String getDomain() {
 		return domain;

@@ -31,6 +31,7 @@ public class DataManager {
     private MyUser myUser = null;
     private ServerCallback activeCallBack;
     private Account activeAccount;
+    private Account accountToShare;
 
     private DataManager() {
     }
@@ -146,6 +147,9 @@ public class DataManager {
     public void addCategoryDetail(Account myAccount,  Goal category, Detail detail) {
         myAccount.addDetail(category , detail);
     }
+    public void updateAccountInfo(Account account){
+        account.updateOnServer();
+    }
 
     public Account getActiveAccount() {
         return activeAccount;
@@ -179,18 +183,19 @@ public class DataManager {
         return categories;
     }
 
-//    public void findAnotherUser(UserBoundary body) {
-//        ServerCommunicator.getInstance().searchAnotherUserDetails(UserDetails.class.getSimpleName()+body.getUserId().getEmail(), myUser.getUserId().getDomain(), myUser.getUserId().getEmail());
-//
-//    }
+    public void find_another_User(InstanceBoundary[] body) {
+        if (body == null || body.length <= 0) {
+            MyServices.getInstance().makeToast("User not exists");
+            return;
+        }
+        List<InstanceBoundary> instanceBoundaries = new ArrayList<>(Arrays.asList(body));
+        UserDetails userDetails = new UserDetails(instanceBoundaries.get(0));
+        userDetails.add_Account(accountToShare.getInstanceId());
+        MyServices.getInstance().makeToast("account shared");
 
-//    public void getAnotherUserDetailes(InstanceBoundary[] body) {
-//        if (body == null || body.length <= 0)
-//            return;
-//
-//        List<InstanceBoundary> instanceBoundaries = new ArrayList<>(Arrays.asList(body));
-//
-//        UserDetails userDetails = new UserDetails(instanceBoundaries.get(0));
-//        userDetails.receive_myAccounts().add()
-//    }
+    }
+    public void share_Account(Account account , String userEmail){
+        accountToShare = account;
+        ServerCommunicator.getInstance().searchAnotherUserDetails(UserDetails.class.getSimpleName()+userEmail, myUser.getUserId().getDomain(), myUser.getUserId().getEmail());
+    }
 }
