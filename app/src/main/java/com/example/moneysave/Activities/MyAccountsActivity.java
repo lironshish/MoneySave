@@ -85,15 +85,19 @@ public class MyAccountsActivity extends AppCompatActivity {
                             }
                         })
                         .show();
+            }
 
-
+            @Override
+            public void clickName(Account account, int position) {
+                startActivity(new Intent(MyAccountsActivity.this, AccountActivity.class));
+                account_list.getAdapter().notifyItemChanged(position);
+                finish();
             }
         });
     }
 
 
     public void InitButtons(){
-
         account_list = findViewById(R.id.myAccounts_LST_accounts);
         addAccount = findViewById(R.id.account_BTN_Add);
         firstTexst = findViewById(R.id.panel_text);

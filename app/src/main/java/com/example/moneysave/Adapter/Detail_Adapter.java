@@ -40,7 +40,7 @@ public class Detail_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Detail detail = getDetail(position);
 
         holder.detail_TXT_description.setText(detail.getDescription());
-        holder.detail_TXT_Account.setText((Integer)detail.getAmount());
+        holder.detail_TXT_Account.setText((int) detail.getAmount());
         int resourceId = activity.getResources().getIdentifier(detail.getImage(), "drawable", activity.getPackageName());
         holder.detail_IMG_category.setImageResource(resourceId);
 

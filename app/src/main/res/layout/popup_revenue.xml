@@ -6,33 +6,38 @@
     tools:context=".Activities.ManualBankActivity"
     android:background="#C2F68C">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
-        android:text="Category:"
-        android:layout_marginBottom="5dp"/>
+
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner"
         android:layout_marginTop="10dip"
         android:layout_marginBottom="5dp"
-        android:text="Title" />
+        android:hint="Title" />
 
-    <TextView
-        android:layout_below="@+id/title"
+    <EditText
         android:id="@+id/how_much"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
         android:layout_marginTop="10dip"
-        android:text="How much"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:inputType="numberDecimal"
+        android:hint="How much" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_revenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/how_much"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_plus"
+        />
 </RelativeLayout>
