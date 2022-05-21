@@ -28,6 +28,7 @@ import com.example.moneysave.Data;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.tools.DataManager;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
@@ -116,6 +117,7 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddBankAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DataManager.getDataManager().addAccountBank(DataManager.getDataManager().getActiveAccount(), new BankAccount().setName(accountName));
 
             }
         });
@@ -202,7 +204,7 @@ public class AccountActivity extends AppCompatActivity {
 
 
     private void initAdapters(){
-        ArrayList<BankAccount> bankAccounts = Data.generateBankAccounts();
+        ArrayList<BankAccount> bankAccounts = DataManager.getDataManager().getAccountBanks(DataManager.getDataManager().getActiveAccount());
         BankAccount_Adapter bankAccount_adapter = new BankAccount_Adapter(this,bankAccounts);
         account_LST_AccountsBank.setLayoutManager(new LinearLayoutManager(this));
         account_LST_AccountsBank.setHasFixedSize(true);
@@ -226,7 +228,7 @@ public class AccountActivity extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                //add delete function
+                                DataManager.getDataManager().removeAccountBank(DataManager.getDataManager().getActiveAccount(), bankAccount);
                                 Toast.makeText(getApplicationContext(),bankAccount.getName()+" deleted",Toast.LENGTH_LONG).show();
                             }
                         })
@@ -241,7 +243,7 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList<Goal> goals = Data.generategoals();
+        ArrayList<Goal> goals = DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount());
         Goal_Adapter goal_adapter = new Goal_Adapter(this,goals);
         account_LST_goals.setLayoutManager(new LinearLayoutManager(this));
         account_LST_goals.setHasFixedSize(true);
@@ -251,7 +253,7 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void clicked(Goal goal, int position) {
                 Toast.makeText(AccountActivity.this, goal.getName(), Toast.LENGTH_SHORT).show();
-
+                // TODO: 5/21/2022 add all details
             }
 
         });
@@ -305,7 +307,8 @@ public class AccountActivity extends AppCompatActivity {
 
     private void saveManuelAccount() {
         Toast.makeText(getApplicationContext(),accountName +" saved",Toast.LENGTH_LONG).show();
-        // TODO: 5/21/2022 save to DB
+        DataManager.getDataManager().addAccountBank(DataManager.getDataManager().getActiveAccount(),
+                new BankAccount().setName(accountName));
     }
 
 
