@@ -98,7 +98,6 @@ public class DataManager {
         }
         else if(activeCallBack instanceof CreateAndUpdateAccount){
             serverAddAccount(new Account(body));
-            ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(new Account(body));
         }
     }
     public ArrayList<Account> getMyAccounts() {
@@ -109,12 +108,13 @@ public class DataManager {
         ServerCommunicator.getInstance().createInstance(myAccount);
     }
     public void serverAddAccount(Account myAccount) {
-       // myAccount.add_user(myUser.getUserId());
+        myAccount.add_user(myUser.getUserId());
         myUser.getUserDetails().add_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().add(myAccount);
+        ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(myAccount);
     }
     public void removeAccount(Account myAccount) {
-       // myAccount.remove_user(myUser.getUserId());
+        myAccount.remove_user(myUser.getUserId());
         myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().remove(myAccount);
     }
