@@ -90,6 +90,7 @@ public class MyAccountsActivity extends AppCompatActivity {
             @Override
             public void clickName(Account account, int position) {
                 startActivity(new Intent(MyAccountsActivity.this, AccountActivity.class));
+                DataManager.getDataManager().setActiveAccount(account);
                 account_list.getAdapter().notifyItemChanged(position);
                 finish();
             }
