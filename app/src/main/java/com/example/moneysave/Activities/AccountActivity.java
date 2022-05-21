@@ -56,10 +56,13 @@ public class AccountActivity extends AppCompatActivity {
 
     private TextInputEditText popup_LBL_accountName;
     private MaterialButton popup_BTN_save;
-    String accountName;
-
+    String accountName = " ";
+    private PopupWindow popupWindow;
 
     private boolean isFBTOpen = false;
+
+    public AccountActivity() {
+    }
 
 
     @Override
@@ -72,6 +75,7 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_activity);
+
 
 
 
@@ -112,7 +116,7 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddBankAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AccountActivity.this, AddBankActivity.class));
+
             }
         });
 
@@ -136,23 +140,26 @@ public class AccountActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_addBankAccount:
-                        startActivity(new Intent(AccountActivity.this, AddBankActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_addGoal:
                         startActivity(new Intent(AccountActivity.this, AddGoalActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_share:
+                        // TODO: 5/21/2022 add functional of sharing
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_allAccounts:
+                        startActivity(new Intent(AccountActivity.this, MyAccountsActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_Distribution:
+                        startActivity(new Intent(AccountActivity.this, PieChartActivity.class));
+                        // TODO: 5/21/2022 add all the information that needed for that 
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_logout:
                         drawer_layout.closeDrawer(GravityCompat.START);
                         AlertDialog alertDialog = new AlertDialog.Builder(AccountActivity.this)
                                 .setIcon(android.R.drawable.ic_dialog_alert)
                                 .setTitle("warning")
-                                .setMessage("Are you sure you want to delete the bank account?")
+                                .setMessage("Are you sure you want to logout?")
                                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -190,8 +197,6 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddManualBank = findViewById(R.id.account_BTN_AddManualBank);
         account_LST_AccountsBank = findViewById(R.id.account_LST_AccountsBank);
         account_LST_goals = findViewById(R.id.account_LST_goals);
-        popup_LBL_accountName = findViewById(R.id.popup_LBL_accountName);
-        popup_BTN_save = findViewById(R.id.popup_BTN_save);
 
     }
 
@@ -206,8 +211,8 @@ public class AccountActivity extends AppCompatActivity {
         bankAccount_adapter.setBankAccountListener(new BankAccount_Adapter.BankAccountListener() {
             @Override
             public void clicked(BankAccount bankAccount, int position) {
-                Toast.makeText(AccountActivity.this, bankAccount.getName(), Toast.LENGTH_SHORT).show();
-                //we need to decide if show now all the over vashav
+                startActivity(new Intent(AccountActivity.this,ManualBankActivity.class));
+
             }
 
 
@@ -246,7 +251,7 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void clicked(Goal goal, int position) {
                 Toast.makeText(AccountActivity.this, goal.getName(), Toast.LENGTH_SHORT).show();
-                //we need to decide if show now all the over vashav
+
             }
 
         });
@@ -278,32 +283,29 @@ public class AccountActivity extends AppCompatActivity {
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
         boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow = new PopupWindow(popupView, width, height, focusable);
 
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+        popup_BTN_save =(MaterialButton) popupView.findViewById(R.id.popup_BTN_save);
+        popup_LBL_accountName = (TextInputEditText) popupView.findViewById(R.id.popup_LBL_accountName);;
 
 
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        popup_BTN_save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
+                accountName = popup_LBL_accountName.getText().toString();
                 popupWindow.dismiss();
-                return true;
+                saveManuelAccount();
             }
         });
 
 
-        //clickOnButton();
-       // popupWindow.dismiss();
-
     }
 
-    private void clickOnButton() {
-        popup_BTN_save.setOnClickListener(view -> {
-            accountName = popup_LBL_accountName.getText().toString();
-            saveManuelAccount();
-        });
-    }
+
     private void saveManuelAccount() {
+        Toast.makeText(getApplicationContext(),accountName +" saved",Toast.LENGTH_LONG).show();
+        // TODO: 5/21/2022 save to DB
     }
 
 

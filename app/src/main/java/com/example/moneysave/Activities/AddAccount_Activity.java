@@ -1,5 +1,7 @@
 package com.example.moneysave.Activities;
 
+import static java.lang.Integer.valueOf;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,9 +13,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.moneysave.Adapter.BankAccount_Adapter;
 import com.example.moneysave.Adapter.Category_Adapter;
 import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
+import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.example.moneysave.call_backs.CreateAndUpdateAccount;
@@ -71,9 +75,6 @@ public class AddAccount_Activity extends AppCompatActivity {
         Account newAccount = new Account(addAccount_EDT_name.getText().toString());
         DataManager.getDataManager().addAccount(newAccount);
 
-        for (int i = 0; i < categories.size(); i++) {
-            categories.get(i).setMoneyPerMonth(100);
-        }
 
     }
 
@@ -90,6 +91,15 @@ public class AddAccount_Activity extends AppCompatActivity {
         category_LST_items.setLayoutManager(new LinearLayoutManager(this));
         category_LST_items.setHasFixedSize(true);
         category_LST_items.setAdapter(category_adapter);
+
+        category_adapter.setCategoryListener(new Category_Adapter.CategoryListener() {
+            @Override
+            public void inputAmount(Goal category, int position) {
+                category.setMoneyPerMonth(Integer.parseInt(category_EDT_amount.getText().toString()));
+                category_LST_items.getAdapter().notifyItemChanged(position);
+            }
+
+        });
     }
 
     private CreateAndUpdateAccount createAndUpdateAccount = new CreateAndUpdateAccount() {
