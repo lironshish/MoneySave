@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -213,6 +214,7 @@ public class AccountActivity extends AppCompatActivity {
         bankAccount_adapter.setBankAccountListener(new BankAccount_Adapter.BankAccountListener() {
             @Override
             public void clicked(BankAccount bankAccount, int position) {
+                DataManager.getDataManager().setActiveBankAccount(bankAccount);
                 startActivity(new Intent(AccountActivity.this,ManualBankActivity.class));
 
             }

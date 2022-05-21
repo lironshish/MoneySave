@@ -5,12 +5,12 @@ public class Detail {
     private String description;
     private String image;
     private float amount;
-    private Goal category;
+    private String category;
 
     public Detail() {
     }
 
-    public Detail(String description, String image, int amount, Goal category) {
+    public Detail(String description, String image, int amount, String category) {
         this.description = description;
         this.image = image;
         this.amount = amount;
@@ -44,12 +44,22 @@ public class Detail {
         return this;
     }
 
-    public Goal getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public Detail setCategory(Goal category) {
+    public Detail setCategory(String category) {
         this.category = category;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                ", amount=" + amount +
+                ", category=" + category +
+                '}';
     }
 }

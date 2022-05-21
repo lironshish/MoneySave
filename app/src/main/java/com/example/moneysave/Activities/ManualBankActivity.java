@@ -3,6 +3,7 @@ package com.example.moneysave.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -27,6 +28,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ManualBankActivity extends AppCompatActivity {
 
@@ -43,16 +45,17 @@ public class ManualBankActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual);
 
+
         findViews();
         InitButtons();
         InitToolBar();
     }
 
-    private void findViews(){
+    private void findViews() {
         manual_toolbar = findViewById(R.id.manual_toolbar);
     }
 
-    private void InitButtons(){
+    private void InitButtons() {
         manual_FAB_balance = findViewById(R.id.manual_FAB_balance);
         manual_FAB_revenue = findViewById(R.id.manual_FAB_revenue);
         manual_FAB_expenses = findViewById(R.id.manual_FAB_expenses);
@@ -68,19 +71,19 @@ public class ManualBankActivity extends AppCompatActivity {
         manual_FAB_revenue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                   addPopUpWindowRevenue(view);
+                addPopUpWindowRevenue(view);
             }
         });
 
         manual_FAB_expenses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    addPopUpWindowExpense(view);
+                addPopUpWindowExpense(view);
             }
         });
     }
 
-    private void addPopUpWindowExpense(View view){
+    private void addPopUpWindowExpense(View view) {
         popUpExpenseOpen = true;
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
@@ -96,27 +99,31 @@ public class ManualBankActivity extends AppCompatActivity {
         EditText title = popupView.findViewById(R.id.title);
         EditText howMuch = popupView.findViewById(R.id.how_much);
         Spinner spinner = popupView.findViewById(R.id.spinner);
-        FloatingActionButton fab_add= popupView.findViewById(R.id.fab_add_expense);
+        FloatingActionButton fab_add = popupView.findViewById(R.id.fab_add_expense);
         addCategorySpinner(spinner);
 
         fab_add.setOnClickListener(view1 -> {
             String amount = howMuch.getText().toString();
             String expenseTitle = title.getText().toString();
             String category = spinner.getSelectedItem().toString();
-            if(expenseTitle.isEmpty()) {
+            if (expenseTitle.isEmpty()) {
                 MyServices.getInstance().makeToast("Title cannot be empty!");
                 return;
             }
-            if(amount.isEmpty()){
+            if (amount.isEmpty()) {
                 MyServices.getInstance().makeToast("Amount cannot be empty!");
                 return;
             }
-            if(category.isEmpty() || category.equals("Categoty")){
-                MyServices.getInstance().makeToast("Must choose a categoty ");
+            if (category.isEmpty() || category.equals("Category")) {
+                MyServices.getInstance().makeToast("Must choose a category ");
                 return;
             }
-            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(new Goal().setName(category));
-            DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(), detail.getCategory(), detail);
+            Goal real_category = getCategoryByName(category);
+            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(category);
+            DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(), real_category, detail);
+            DataManager.getDataManager().getActiveBankAccount().getDetails().add(detail);
+            DataManager.getDataManager().updateAccountInfo(DataManager.getDataManager().getActiveAccount());
+
             popupWindow.dismiss();
         });
 
@@ -132,7 +139,16 @@ public class ManualBankActivity extends AppCompatActivity {
         });
     }
 
-    private void addPopUpWindowRevenue(View view){
+    private Goal getCategoryByName(String category) {
+        ArrayList<Goal> real_categories = DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount());
+        for (int i = 0; i < real_categories.size(); i++) {
+            if( real_categories.get(i).getName().equals(category))
+                return real_categories.get(i);
+        }
+        return null;
+    }
+
+    private void addPopUpWindowRevenue(View view) {
         popUpRevenuOpen = true;
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
@@ -147,25 +163,23 @@ public class ManualBankActivity extends AppCompatActivity {
 
         EditText title = popupView.findViewById(R.id.title);
         EditText howMuch = popupView.findViewById(R.id.how_much);
-        FloatingActionButton fab_add= popupView.findViewById(R.id.fab_add_revenue);
+        FloatingActionButton fab_add = popupView.findViewById(R.id.fab_add_revenue);
 
         fab_add.setOnClickListener(view1 -> {
             String amount = howMuch.getText().toString();
             String expenseTitle = title.getText().toString();
-            if(expenseTitle.isEmpty()) {
+            if (expenseTitle.isEmpty()) {
                 MyServices.getInstance().makeToast("Title cannot be empty!");
                 return;
             }
-            if(amount.isEmpty()){
+            if (amount.isEmpty()) {
                 MyServices.getInstance().makeToast("Amount cannot be empty!");
                 return;
             }
 
-            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(new Goal().setName("Revenue"));
+            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory("Revenue");
             //TODO 21/5/2022 : send Detail Object!
         });
-
-
 
 
         // show the popup window
@@ -180,17 +194,21 @@ public class ManualBankActivity extends AppCompatActivity {
         });
     }
 
-    private void addCategorySpinner(Spinner spinner){
+    private void addCategorySpinner(Spinner spinner) {
 
         // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Category");
-        categories.add("Food");
-        categories.add("Leisure and recreation");
-        categories.add("Car");
-        categories.add("Apartment");
-        categories.add("Clothing and footwear");
-        categories.add("Various expenses");
+          ArrayList<Goal> real_categories = DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount());
+          ArrayList<String> categories = new ArrayList<>();
+            categories.add("Category");
+            real_categories.forEach(c -> categories.add(c.getName()));
+//        new ArrayList<String>();
+//        categories.add("Category");
+//        categories.add("Food");
+//        categories.add("Leisure and recreation");
+//        categories.add("Car");
+//        categories.add("Apartment");
+//        categories.add("Clothing and footwear");
+//        categories.add("Various expenses");
 
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
@@ -215,7 +233,7 @@ public class ManualBankActivity extends AppCompatActivity {
         });
     }
 
-    private void InitToolBar(){
+    private void InitToolBar() {
         manual_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

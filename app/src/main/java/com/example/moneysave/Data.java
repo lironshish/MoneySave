@@ -32,7 +32,7 @@ public class Data {
 
     public static ArrayList<Detail> generateDetails() {
         ArrayList<Detail> details = new ArrayList<>();
-        details.add(new Detail().setDescription("electric bill").setAmount(100).setImage("ic_home").setCategory(new Goal().setName("HOME")));
+        details.add(new Detail().setDescription("electric bill").setAmount(100).setImage("ic_home").setCategory("HOME"));
     return details;
     }
 }

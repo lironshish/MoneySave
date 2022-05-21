@@ -1,5 +1,7 @@
 package com.example.moneysave.Objects;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class Goal {
@@ -60,10 +62,22 @@ public class Goal {
     }
     public void addDetails(Detail detail) {
         this.details.add(detail);
+        Log.d("myLog",this.details.toString()+"");
     }
 
     public Goal setDetails(ArrayList<Detail> details) {
         this.details = details;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Goal{" +
+                "name='" + name + '\'' +
+                ", moneyPerMonth=" + moneyPerMonth +
+                ", moneyWested=" + moneyWested +
+                ", image='" +
+                ", details=" +
+                '}';
     }
 }

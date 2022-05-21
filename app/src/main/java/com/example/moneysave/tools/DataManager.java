@@ -1,6 +1,8 @@
 package com.example.moneysave.tools;
 
 
+import android.util.Log;
+
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Detail;
@@ -146,6 +148,9 @@ public class DataManager {
        return myAccount.receive_myBankAccounts();
     }
     public void addCategoryDetail(Account myAccount,  Goal category, Detail detail) {
+        Log.d("myLog",myAccount.toString());
+        Log.d("myLog",category.toString());
+        Log.d("myLog",detail.toString());
         myAccount.addDetail(category , detail);
     }
     public void updateAccountInfo(Account account){

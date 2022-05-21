@@ -1,5 +1,7 @@
 package com.example.moneysave.Objects;
 
+import android.util.Log;
+
 import com.example.moneysave.Server.ServerCommunicator;
 import com.example.moneysave.Server.boundaries.CreatedBy;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
@@ -112,6 +114,7 @@ public class Account extends InstanceBoundary {
         ArrayList<Goal> myCategories =  receive_myCategories();
         if(myCategories.contains(category)) {
             category.addDetails(detail);
+            Log.d("myLog",category.toString());
             updateOnServer();
         }
 

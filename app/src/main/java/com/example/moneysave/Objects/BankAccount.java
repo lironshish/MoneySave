@@ -56,4 +56,15 @@ public class BankAccount {
         isManual = manual;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "name='" + name + '\'' +
+                ", expenses=" + expenses +
+                ", revenues=" + revenues +
+                ", isManual=" + isManual +
+                ", details=" + details +
+                '}';
+    }
 }
