@@ -2,6 +2,7 @@ package com.example.moneysave.tools;
 
 
 import com.example.moneysave.Objects.Account;
+import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.Objects.MyUser;
 import com.example.moneysave.Objects.UserDetails;
@@ -98,7 +99,6 @@ public class DataManager {
         }
         else if(activeCallBack instanceof CreateAndUpdateAccount){
             serverAddAccount(new Account(body));
-            ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(new Account(body));
         }
     }
     public ArrayList<Account> getMyAccounts() {
@@ -109,12 +109,13 @@ public class DataManager {
         ServerCommunicator.getInstance().createInstance(myAccount);
     }
     public void serverAddAccount(Account myAccount) {
-       // myAccount.add_user(myUser.getUserId());
+        myAccount.add_user(myUser.getUserId());
         myUser.getUserDetails().add_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().add(myAccount);
+        ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(myAccount);
     }
     public void removeAccount(Account myAccount) {
-       // myAccount.remove_user(myUser.getUserId());
+        myAccount.remove_user(myUser.getUserId());
         myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().remove(myAccount);
     }
@@ -125,9 +126,22 @@ public class DataManager {
     public void addAccountCategory(Account myAccount , Goal category) {
         myAccount.addCategory(category);
     }
+    public ArrayList<Goal> getAccountCategories(Account myAccount) {
+        return myAccount.receive_myCategories();
+    }
 
     public void removeAccountCategory(Account myAccount , Goal category) {
         myAccount.removeCategory(category);
+    }
+    public void addAccountBank(Account myAccount , BankAccount bankAccount) {
+        myAccount.addBank(bankAccount);
+    }
+
+    public void removeAccountBank(Account myAccount , BankAccount bankAccount) {
+        myAccount.removeBank(bankAccount);
+    }
+    public ArrayList<BankAccount> getAccountBanks(Account myAccount) {
+       return myAccount.receive_myBankAccounts();
     }
 
     public ArrayList<Goal> generateCategories(){

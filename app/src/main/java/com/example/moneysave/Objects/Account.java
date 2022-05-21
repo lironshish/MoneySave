@@ -49,7 +49,7 @@ public class Account extends InstanceBoundary {
     }
 
     public ArrayList<Goal> receive_myCategories() {
-        return (ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
+        return (ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_CATEGORIES);
     }
 
     public Account update_myCategories(ArrayList<Goal> categories) {
@@ -71,12 +71,18 @@ public class Account extends InstanceBoundary {
     public ArrayList<BankAccount> receive_myBankAccounts() {
         return (ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
     }
-
-    public Account update_BankAccounts(ArrayList<BankAccount> bankAccounts) {
-        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , bankAccounts);
-        return this;
+    public void remove_user(UserId userId) {
+        ((ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS)).remove(userId);
+        updateOnServer();
     }
-
+    public void addBank(BankAccount bankAccount) {
+        ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).add(bankAccount);
+        updateOnServer();
+    }
+    public void removeBank(BankAccount bankAccount) {
+        ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).remove(bankAccount);
+        updateOnServer();
+    }
 
 
     public void InitCategoriesList(int moneyPerFood, int moneyPerLeisureAndRecreation, int moneyPerCar, int moneyPerApartment, int moneyPerClothingAndFootwear, int moneyPerVariousExpenses){
@@ -95,10 +101,6 @@ public class Account extends InstanceBoundary {
                 .setName("Various expenses").setMoneyPerMonth(moneyPerVariousExpenses));
     }
 
-    public void remove_user(UserId userId) {
-        ((ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS)).remove(userId);
-        updateOnServer();
-    }
     public void updateOnServer(){
         ServerCommunicator.getInstance().updateInstanceDetails(
                 this.getInstanceId().getDomain(),
@@ -107,6 +109,8 @@ public class Account extends InstanceBoundary {
                 DataManager.getDataManager().getMyUser().getUserId().getEmail(),
                 this);
     }
+
+
 
 
     //TODO: Add functions that pull and push data to the database

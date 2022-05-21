@@ -60,13 +60,10 @@ public class AddAccount_Activity extends AppCompatActivity {
 
     private void InitAddAccountButton() {
         submit_add_account = findViewById(R.id.submit_add_account);
-        submit_add_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addAccount();
-                //TODO: Connect all objects and data to the database to continue functionality
-                backToMyAccounts();
-            }
+        submit_add_account.setOnClickListener(view -> {
+            addAccount();
+            //TODO: Connect all objects and data to the database to continue functionality
+
         });
     }
 
@@ -109,6 +106,7 @@ public class AddAccount_Activity extends AppCompatActivity {
 
             Toast.makeText(AddAccount_Activity.this, account.getName() + " account saved", Toast.LENGTH_SHORT).show();
             DataManager.getDataManager().setActiveCallBack(null);
+            backToMyAccounts();
         }
         @Override
         public void failed(int status_code) {
