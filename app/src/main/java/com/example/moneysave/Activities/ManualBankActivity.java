@@ -79,7 +79,6 @@ public class ManualBankActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                     addPopUpWindowExpense(view);
-
             }
         });
 
