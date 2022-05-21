@@ -2,6 +2,7 @@ package com.example.moneysave.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,7 @@ import com.example.moneysave.tools.MyServices;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.internal.LinkedTreeMap;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -57,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         main_FAB_sign_up.setOnClickListener(view -> {
             Intent myIntent = new Intent(MainActivity.this, SignUpActivity.class);
-            startActivity(myIntent); // TODO: 18/05/2022 finish???
-            //finish();
+            startActivity(myIntent);
+            finish();
         });
     }
 
@@ -127,10 +129,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void getAllAccount(UserDetails userDetails) {
         DataManager.getDataManager().setActiveCallBack(getAccounts_callback);
-        ((ArrayList<InstanceId>) userDetails.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS))
-                .forEach(accountId -> ServerCommunicator
-                                    .getInstance()
-                                    .getInstanceDetails(accountId.getDomain() , accountId.getId() , main_user.getUserId().getDomain() , main_user.getUserId().getEmail() ));
+        Log.d("myLog" , userDetails.toString());
+        ArrayList<LinkedTreeMap<String,String>> accountsFromServer = ((ArrayList<LinkedTreeMap<String,String>>) userDetails.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS));
+        ArrayList<InstanceId> accountsId = new ArrayList<>();
+        for (LinkedTreeMap<String,String> accountId: accountsFromServer) {
+            accountsId.add(new InstanceId(accountId));
+        }
+        accountsId.forEach(instanceId ->
+                ServerCommunicator
+                        .getInstance()
+                        .getInstanceDetails(instanceId.getDomain() , instanceId.getId() , main_user.getUserId().getDomain() , main_user.getUserId().getEmail())
+
+                );
     }
     private GetAccounts_callback getAccounts_callback = new GetAccounts_callback() {
         @Override

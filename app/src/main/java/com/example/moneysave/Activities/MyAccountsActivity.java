@@ -3,6 +3,9 @@ package com.example.moneysave.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -41,6 +44,7 @@ public class MyAccountsActivity extends AppCompatActivity {
            firstTexst.startAnimation(aniFade);
        }
        else{
+           firstTexst.setVisibility(View.INVISIBLE);
            allAccounts = findViewById(R.id.all_accounts);
            allAccounts.setVisibility(View.VISIBLE);
            initAdapter();
@@ -63,14 +67,37 @@ public class MyAccountsActivity extends AppCompatActivity {
 
             @Override
             public void minus(Account account, int position) {
-                //TODO
+                AlertDialog alertDialog = new AlertDialog.Builder(MyAccountsActivity.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("warning")
+                        .setMessage("Are you sure you want to remove this account?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                DataManager.getDataManager().removeAccount(account);
+                                initAdapter();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .show();
+            }
+
+            @Override
+            public void clickName(Account account, int position) {
+                startActivity(new Intent(MyAccountsActivity.this, AccountActivity.class));
+                account_list.getAdapter().notifyItemChanged(position);
+                finish();
             }
         });
     }
 
 
     public void InitButtons(){
-
         account_list = findViewById(R.id.myAccounts_LST_accounts);
         addAccount = findViewById(R.id.account_BTN_Add);
         firstTexst = findViewById(R.id.panel_text);

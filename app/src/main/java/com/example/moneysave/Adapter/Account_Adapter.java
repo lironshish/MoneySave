@@ -20,6 +20,7 @@ public class Account_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public interface Accountlistener {
         void sharedWith(Account account, int position);
         void minus(Account account, int position);
+        void clickName (Account account, int position);
     }
 
     private Activity activity;
@@ -87,7 +88,14 @@ public class Account_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 //TODO: how to share account?
                 }
             });
-
+            account_name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (accountlistener != null) {
+                        accountlistener.clickName(getItem(getAdapterPosition()), getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 }

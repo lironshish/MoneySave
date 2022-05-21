@@ -56,4 +56,5 @@ public class UserDetails extends InstanceBoundary {
                 DataManager.getDataManager().getMyUser().getUserId().getEmail(),
                 this);
     }
+
 }

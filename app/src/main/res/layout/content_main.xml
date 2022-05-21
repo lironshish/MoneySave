@@ -22,6 +22,7 @@
         android:text="Welcome to MoneySave"
         android:textColor="@color/white"
         android:textSize="30sp"
+        android:fontFamily="@font/comfortaa_bold"
         android:textStyle="bold" />
 
     <ImageView
@@ -88,11 +89,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
-
         android:text="Sign in"
         android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
         android:textSize="20dp"
+        android:fontFamily="@font/comfortaa_regular"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:backgroundTint="#AA7CB342" />
@@ -114,12 +115,13 @@
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="25dp"
             android:backgroundTint="@color/black"
-            android:text="Sign Up"
+            android:fontFamily="@font/comfortaa_regular"
             android:gravity="center"
-            app:iconGravity="textStart"
+            android:text="Sign Up"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:icon="@drawable/ic_sign_up"
+            app:iconGravity="textStart"
             app:iconTint="@color/white" />
     </RelativeLayout>
 
