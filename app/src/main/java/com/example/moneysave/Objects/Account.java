@@ -110,7 +110,14 @@ public class Account extends InstanceBoundary {
                 this);
     }
 
+    public void addDetail(Goal category, Detail detail) {
+        ArrayList<Goal> myCategories =  receive_myCategories();
+        if(myCategories.contains(category)) {
+            category.addDetails(detail);
+            updateOnServer();
+        }
 
+    }
 
 
     //TODO: Add functions that pull and push data to the database

@@ -3,6 +3,7 @@ package com.example.moneysave.tools;
 
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.BankAccount;
+import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.Objects.MyUser;
 import com.example.moneysave.Objects.UserDetails;
@@ -29,6 +30,7 @@ public class DataManager {
     public static final String KEY_MY_BANKS = "KEY_MY_BANKS";
     private MyUser myUser = null;
     private ServerCallback activeCallBack;
+    private Account activeAccount;
 
     private DataManager() {
     }
@@ -142,6 +144,18 @@ public class DataManager {
     }
     public ArrayList<BankAccount> getAccountBanks(Account myAccount) {
        return myAccount.receive_myBankAccounts();
+    }
+    public void addCategoryDetail(Account myAccount,  Goal category, Detail detail) {
+        myAccount.addDetail(category , detail);
+    }
+
+    public Account getActiveAccount() {
+        return activeAccount;
+    }
+
+    public DataManager setActiveAccount(Account activeAccount) {
+        this.activeAccount = activeAccount;
+        return this;
     }
 
     public ArrayList<Goal> generateCategories(){
