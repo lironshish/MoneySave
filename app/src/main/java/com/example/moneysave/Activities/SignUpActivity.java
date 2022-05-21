@@ -2,6 +2,7 @@ package com.example.moneysave.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -124,7 +125,11 @@ public class SignUpActivity extends AppCompatActivity {
             ServerCommunicator.getInstance().createUser(newUserBoundary);
         });
 
-        fab_return.setOnClickListener(view -> finish());
+        fab_return.setOnClickListener(view -> {
+            Intent myIntent = new Intent(SignUpActivity.this, MainActivity.class);
+            SignUpActivity.this.startActivity(myIntent);
+            SignUpActivity.this.finish();
+        });
     }
 
     private boolean isValidEmail() {
