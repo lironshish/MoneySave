@@ -111,13 +111,11 @@ public class DataManager {
         ServerCommunicator.getInstance().createInstance(myAccount);
     }
     public void serverAddAccount(Account myAccount) {
-        myAccount.add_user(myUser.getUserId());
         myUser.getUserDetails().add_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().add(myAccount);
         ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(myAccount);
     }
     public void removeAccount(Account myAccount) {
-        myAccount.remove_user(myUser.getUserId());
         myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().remove(myAccount);
     }
@@ -180,4 +178,19 @@ public class DataManager {
                 .setName("VARIOUS").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_various"));
         return categories;
     }
+
+//    public void findAnotherUser(UserBoundary body) {
+//        ServerCommunicator.getInstance().searchAnotherUserDetails(UserDetails.class.getSimpleName()+body.getUserId().getEmail(), myUser.getUserId().getDomain(), myUser.getUserId().getEmail());
+//
+//    }
+
+//    public void getAnotherUserDetailes(InstanceBoundary[] body) {
+//        if (body == null || body.length <= 0)
+//            return;
+//
+//        List<InstanceBoundary> instanceBoundaries = new ArrayList<>(Arrays.asList(body));
+//
+//        UserDetails userDetails = new UserDetails(instanceBoundaries.get(0));
+//        userDetails.receive_myAccounts().add()
+//    }
 }

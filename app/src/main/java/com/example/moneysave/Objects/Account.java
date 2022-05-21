@@ -5,6 +5,8 @@ import com.example.moneysave.Server.boundaries.CreatedBy;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
 import com.example.moneysave.Server.boundaries.UserId;
 import com.example.moneysave.tools.DataManager;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +23,6 @@ public class Account extends InstanceBoundary {
         this.setType(Account.class.getSimpleName());
         this.setName(name);
         this.setInstanceAttributes(new HashMap<>());
-        this.getInstanceAttributes().put(DataManager.KEY_MY_USERS , new ArrayList<UserId>() );
         this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES ,  new ArrayList<Goal>());
         this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , new ArrayList<BankAccount>());
     }
@@ -36,17 +37,18 @@ public class Account extends InstanceBoundary {
                 instanceBoundary.getCreatedBy(),
                 instanceBoundary.getLocation(),
                 instanceBoundary.getInstanceAttributes());
+
+        String jsonGoal = new Gson().toJson( this.getInstanceAttributes().get(DataManager.KEY_MY_CATEGORIES));
+        String jsonBank = new Gson().toJson( this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS));
+
+        TypeToken tokenGoal = new TypeToken<ArrayList<Goal>>() {};
+        TypeToken tokenBank = new TypeToken<ArrayList<BankAccount>>() {};
+
+        this.getInstanceAttributes().put(DataManager.KEY_MY_CATEGORIES ,  new Gson().fromJson(jsonGoal , tokenGoal.getType()));
+        this.getInstanceAttributes().put(DataManager.KEY_MY_BANKS , new Gson().fromJson(jsonBank , tokenBank.getType()));
+
     }
 
-    public ArrayList<UserId> receive_myUsers() {
-        return (ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS);
-    }
-
-    public Account add_user(UserId myUser) {
-        ((ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS)).add(myUser);
-        updateOnServer();
-        return this;
-    }
 
     public ArrayList<Goal> receive_myCategories() {
         return (ArrayList<Goal>) this.getInstanceAttributes().get(DataManager.KEY_MY_CATEGORIES);
@@ -70,10 +72,6 @@ public class Account extends InstanceBoundary {
 
     public ArrayList<BankAccount> receive_myBankAccounts() {
         return (ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS);
-    }
-    public void remove_user(UserId userId) {
-        ((ArrayList<UserId>) this.getInstanceAttributes().get(DataManager.KEY_MY_USERS)).remove(userId);
-        updateOnServer();
     }
     public void addBank(BankAccount bankAccount) {
         ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).add(bankAccount);
