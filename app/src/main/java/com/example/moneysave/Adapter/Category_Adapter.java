@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -71,12 +72,14 @@ public class Category_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         private MaterialTextView category_LBL_title;
         private AppCompatImageView category_IMG_image;
+        private TextInputEditText category_EDT_amount;
 
 
         public CategoryHolder(@NonNull View itemView) {
             super(itemView);
             category_LBL_title = itemView.findViewById(R.id.category_LBL_title);
             category_IMG_image = itemView.findViewById(R.id.category_IMG_image);
+            category_EDT_amount = itemView.findViewById(R.id.category_EDT_amount);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override

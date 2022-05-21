@@ -20,13 +20,13 @@
             android:name=".Activities.ManualBankActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.Activity_Splash"
+            android:name=".Activities.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.MyAccountsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.AccountActivity"
+            android:name=".Activities.Activity_Splash"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
