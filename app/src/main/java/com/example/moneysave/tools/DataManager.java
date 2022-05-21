@@ -31,6 +31,7 @@ public class DataManager {
     private MyUser myUser = null;
     private ServerCallback activeCallBack;
     private Account activeAccount;
+    private BankAccount activeBankAccount;
     private Account accountToShare;
 
     private DataManager() {
@@ -197,5 +198,14 @@ public class DataManager {
     public void share_Account(Account account , String userEmail){
         accountToShare = account;
         ServerCommunicator.getInstance().searchAnotherUserDetails(UserDetails.class.getSimpleName()+userEmail, myUser.getUserId().getDomain(), myUser.getUserId().getEmail());
+    }
+
+    public BankAccount getActiveBankAccount() {
+        return activeBankAccount;
+    }
+
+    public DataManager setActiveBankAccount(BankAccount activeBankAccount) {
+        this.activeBankAccount = activeBankAccount;
+        return this;
     }
 }
