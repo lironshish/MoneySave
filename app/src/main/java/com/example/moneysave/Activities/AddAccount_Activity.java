@@ -31,9 +31,6 @@ import java.util.ArrayList;
 
 public class AddAccount_Activity extends AppCompatActivity {
     private TextInputEditText addAccount_EDT_name;
-    private MaterialTextView category_LBL_title;
-    private AppCompatImageView category_IMG_image;
-    private TextInputEditText category_EDT_amount;
 
     private MaterialButton submit_add_account;
     private RecyclerView category_LST_items;
@@ -50,11 +47,8 @@ public class AddAccount_Activity extends AppCompatActivity {
 
     private void InitViews() {
 
-        category_LBL_title = findViewById(R.id.category_LBL_title);
-        category_IMG_image = findViewById(R.id.category_IMG_image);
         category_LST_items = findViewById(R.id.category_LST_items);
         addAccount_EDT_name = findViewById(R.id.addAccount_EDT_name);
-        category_EDT_amount = findViewById(R.id.category_EDT_amount);
 
     }
 
@@ -92,7 +86,7 @@ public class AddAccount_Activity extends AppCompatActivity {
         category_adapter.setCategoryListener(new Category_Adapter.CategoryListener() {
             @Override
             public void inputAmount(Goal category, int position) {
-                category.setMoneyPerMonth(Integer.parseInt(category_EDT_amount.getText().toString()));
+                categories.get(position).setMoneyPerMonth(category.getMoneyPerMonth());
                 category_LST_items.getAdapter().notifyItemChanged(position);
             }
 

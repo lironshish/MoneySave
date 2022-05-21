@@ -69,6 +69,13 @@
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/rbtn_keep_changes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Keep Changes"/>
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
