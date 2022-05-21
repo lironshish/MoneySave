@@ -90,7 +90,7 @@ public class BankAccount_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View view) {
                     if (bankAccountListener != null) {
-                        bankAccountListener.clicked(getBankAccount(getAdapterPosition()), getAdapterPosition());
+                        bankAccountListener.deleteBankAccount(getBankAccount(getAdapterPosition()), getAdapterPosition());
                     }
                 }
 
