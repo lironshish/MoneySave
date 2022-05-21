@@ -2,6 +2,8 @@ package com.example.moneysave.tools;
 
 
 import com.example.moneysave.Objects.Account;
+import com.example.moneysave.Objects.BankAccount;
+import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.Objects.MyUser;
 import com.example.moneysave.Objects.UserDetails;
@@ -28,6 +30,7 @@ public class DataManager {
     public static final String KEY_MY_BANKS = "KEY_MY_BANKS";
     private MyUser myUser = null;
     private ServerCallback activeCallBack;
+    private Account activeAccount;
 
     private DataManager() {
     }
@@ -98,7 +101,6 @@ public class DataManager {
         }
         else if(activeCallBack instanceof CreateAndUpdateAccount){
             serverAddAccount(new Account(body));
-            ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(new Account(body));
         }
     }
     public ArrayList<Account> getMyAccounts() {
@@ -109,12 +111,11 @@ public class DataManager {
         ServerCommunicator.getInstance().createInstance(myAccount);
     }
     public void serverAddAccount(Account myAccount) {
-       // myAccount.add_user(myUser.getUserId());
         myUser.getUserDetails().add_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().add(myAccount);
+        ((CreateAndUpdateAccount)activeCallBack).createOkUpdateBegin(myAccount);
     }
     public void removeAccount(Account myAccount) {
-       // myAccount.remove_user(myUser.getUserId());
         myUser.getUserDetails().remove_Account(myAccount.getInstanceId());
         myUser.getMyAccounts().remove(myAccount);
     }
@@ -125,9 +126,34 @@ public class DataManager {
     public void addAccountCategory(Account myAccount , Goal category) {
         myAccount.addCategory(category);
     }
+    public ArrayList<Goal> getAccountCategories(Account myAccount) {
+        return myAccount.receive_myCategories();
+    }
 
     public void removeAccountCategory(Account myAccount , Goal category) {
         myAccount.removeCategory(category);
+    }
+    public void addAccountBank(Account myAccount , BankAccount bankAccount) {
+        myAccount.addBank(bankAccount);
+    }
+
+    public void removeAccountBank(Account myAccount , BankAccount bankAccount) {
+        myAccount.removeBank(bankAccount);
+    }
+    public ArrayList<BankAccount> getAccountBanks(Account myAccount) {
+       return myAccount.receive_myBankAccounts();
+    }
+    public void addCategoryDetail(Account myAccount,  Goal category, Detail detail) {
+        myAccount.addDetail(category , detail);
+    }
+
+    public Account getActiveAccount() {
+        return activeAccount;
+    }
+
+    public DataManager setActiveAccount(Account activeAccount) {
+        this.activeAccount = activeAccount;
+        return this;
     }
 
     public ArrayList<Goal> generateCategories(){
@@ -152,4 +178,19 @@ public class DataManager {
                 .setName("VARIOUS").setMoneyPerMonth(0).setMoneyWested(0).setImage("ic_various"));
         return categories;
     }
+
+//    public void findAnotherUser(UserBoundary body) {
+//        ServerCommunicator.getInstance().searchAnotherUserDetails(UserDetails.class.getSimpleName()+body.getUserId().getEmail(), myUser.getUserId().getDomain(), myUser.getUserId().getEmail());
+//
+//    }
+
+//    public void getAnotherUserDetailes(InstanceBoundary[] body) {
+//        if (body == null || body.length <= 0)
+//            return;
+//
+//        List<InstanceBoundary> instanceBoundaries = new ArrayList<>(Arrays.asList(body));
+//
+//        UserDetails userDetails = new UserDetails(instanceBoundaries.get(0));
+//        userDetails.receive_myAccounts().add()
+//    }
 }

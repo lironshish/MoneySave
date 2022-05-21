@@ -1,11 +1,14 @@
 package com.example.moneysave.Objects;
 
+import java.util.ArrayList;
+
 public class Goal {
 
     private String name;
     private int moneyPerMonth = 0;
     private int moneyWested = 0;
     private String image;
+    private ArrayList<Detail> details = new ArrayList<>();
 
 
     public Goal(){}
@@ -52,4 +55,15 @@ public class Goal {
         return this;
     }
 
+    public ArrayList<Detail> getDetails() {
+        return details;
+    }
+    public void addDetails(Detail detail) {
+        this.details.add(detail);
+    }
+
+    public Goal setDetails(ArrayList<Detail> details) {
+        this.details = details;
+        return this;
+    }
 }

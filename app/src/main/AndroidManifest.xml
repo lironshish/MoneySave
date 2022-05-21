@@ -15,25 +15,20 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Activities.AddAccount_Activity"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Activities.ManualBankActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.Activity_Splash"
+            android:name=".Activities.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.MyAccountsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.AccountActivity"
-            android:exported="false">
+            android:name=".Activities.Activity_Splash"
+            android:exported="true" >
+
         </activity>
         <activity
             android:name=".Activities.AddGoalActivity"
@@ -52,9 +47,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="Account Activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

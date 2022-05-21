@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.tools.DataManager;
 import com.example.moneysave.tools.MyServices;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -33,8 +34,6 @@ public class ManualBankActivity extends AppCompatActivity {
     private ImageButton manual_FAB_revenue;
     private ImageButton manual_FAB_expenses;
     private MaterialToolbar manual_toolbar;
-
-
 
     private boolean popUpRevenuOpen = false;
     private boolean popUpExpenseOpen = false;
@@ -66,8 +65,6 @@ public class ManualBankActivity extends AppCompatActivity {
             }
         });
 
-
-
         manual_FAB_revenue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,8 +78,6 @@ public class ManualBankActivity extends AppCompatActivity {
                     addPopUpWindowExpense(view);
             }
         });
-
-
     }
 
     private void addPopUpWindowExpense(View view){
@@ -121,7 +116,7 @@ public class ManualBankActivity extends AppCompatActivity {
                 return;
             }
             Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(new Goal().setName(category));
-            //TODO 21/5/2022 : send Detail Object!
+            DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(), detail.getCategory(), detail);
         });
 
         // show the popup window
