@@ -4,7 +4,7 @@ public class Detail {
 
     private String description;
     private String image;
-    private int amount;
+    private float amount;
     private Goal category;
 
     public Detail() {
@@ -35,11 +35,11 @@ public class Detail {
         return this;
     }
 
-    public int getAmount() {
+    public float getAmount() {
         return amount;
     }
 
-    public Detail setAmount(int amount) {
+    public Detail setAmount(float amount) {
         this.amount = amount;
         return this;
     }
