@@ -2,6 +2,7 @@ package com.example.moneysave.tools;
 
 
 import com.example.moneysave.Objects.Account;
+import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.Objects.MyUser;
 import com.example.moneysave.Objects.UserDetails;
@@ -125,9 +126,22 @@ public class DataManager {
     public void addAccountCategory(Account myAccount , Goal category) {
         myAccount.addCategory(category);
     }
+    public ArrayList<Goal> getAccountCategories(Account myAccount) {
+        return myAccount.receive_myCategories();
+    }
 
     public void removeAccountCategory(Account myAccount , Goal category) {
         myAccount.removeCategory(category);
+    }
+    public void addAccountBank(Account myAccount , BankAccount bankAccount) {
+        myAccount.addBank(bankAccount);
+    }
+
+    public void removeAccountBank(Account myAccount , BankAccount bankAccount) {
+        myAccount.removeBank(bankAccount);
+    }
+    public ArrayList<BankAccount> getAccountBanks(Account myAccount) {
+       return myAccount.receive_myBankAccounts();
     }
 
     public ArrayList<Goal> generateCategories(){
