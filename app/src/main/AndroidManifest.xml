@@ -17,13 +17,16 @@
             android:name=".Activities.AddAccount_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activities.ManualBankActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Activity_Splash"
             android:exported="false" />
         <activity
             android:name=".Activities.MyAccountsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.Activity_Splash"
+            android:name=".Activities.AccountActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +50,7 @@
             android:label="Sign Up"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.AccountActivity"
+            android:name=".Activities.MainActivity"
             android:exported="false"
             android:label="Account Activity"
             android:screenOrientation="portrait" />
