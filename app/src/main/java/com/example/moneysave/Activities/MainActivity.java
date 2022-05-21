@@ -130,11 +130,8 @@ public class MainActivity extends AppCompatActivity {
     private void getAllAccount(UserDetails userDetails) {
         DataManager.getDataManager().setActiveCallBack(getAccounts_callback);
         Log.d("myLog" , userDetails.toString());
-        ArrayList<LinkedTreeMap<String,String>> accountsFromServer = ((ArrayList<LinkedTreeMap<String,String>>) userDetails.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS));
-        ArrayList<InstanceId> accountsId = new ArrayList<>();
-        for (LinkedTreeMap<String,String> accountId: accountsFromServer) {
-            accountsId.add(new InstanceId(accountId));
-        }
+        ArrayList<InstanceId> accountsId = (ArrayList<InstanceId>) userDetails.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS);
+
         accountsId.forEach(instanceId ->
                 ServerCommunicator
                         .getInstance()

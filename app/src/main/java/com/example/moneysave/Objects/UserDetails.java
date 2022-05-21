@@ -35,6 +35,12 @@ public class UserDetails extends InstanceBoundary {
                 instanceBoundary.getLocation(),
                 instanceBoundary.getInstanceAttributes());
 
+        String jsonAccount = new Gson().toJson( this.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS));
+
+        TypeToken tokenAccount = new TypeToken<ArrayList<InstanceId>>() {};
+
+        this.getInstanceAttributes().put(DataManager.KEY_MY_ACCOUNTS ,new Gson().fromJson(jsonAccount , tokenAccount.getType()));
+
     }
     public ArrayList<InstanceId> receive_myAccounts() {
         return (ArrayList<InstanceId>) this.getInstanceAttributes().get(DataManager.KEY_MY_ACCOUNTS);

@@ -7,17 +7,10 @@
     android:background="#C2F68C">
 
 
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
         android:layout_marginTop="10dip"
         android:layout_marginBottom="5dp"
         android:hint="Title" />

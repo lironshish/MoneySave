@@ -35,14 +35,13 @@ public class ManualBankActivity extends AppCompatActivity {
     private ImageButton manual_FAB_expenses;
     private MaterialToolbar manual_toolbar;
 
-
     private boolean popUpRevenuOpen = false;
     private boolean popUpExpenseOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manual);
+        setContentView(R.layout.activity_manual_bank);
 
         findViews();
         InitButtons();
@@ -147,14 +146,11 @@ public class ManualBankActivity extends AppCompatActivity {
 
         EditText title = popupView.findViewById(R.id.title);
         EditText howMuch = popupView.findViewById(R.id.how_much);
-        Spinner spinner = popupView.findViewById(R.id.spinner);
         FloatingActionButton fab_add= popupView.findViewById(R.id.fab_add_revenue);
-        addCategorySpinner(spinner);
 
         fab_add.setOnClickListener(view1 -> {
             String amount = howMuch.getText().toString();
             String expenseTitle = title.getText().toString();
-            String category = spinner.getSelectedItem().toString();
             if(expenseTitle.isEmpty()) {
                 MyServices.getInstance().makeToast("Title cannot be empty!");
                 return;
@@ -163,12 +159,8 @@ public class ManualBankActivity extends AppCompatActivity {
                 MyServices.getInstance().makeToast("Amount cannot be empty!");
                 return;
             }
-            if(category.isEmpty() || category.equalsIgnoreCase("category")){
-                MyServices.getInstance().makeToast("Must choose a category ");
-                return;
-            }
 
-            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(new Goal().setName(category));
+            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(new Goal().setName("Revenue"));
             //TODO 21/5/2022 : send Detail Object!
         });
 

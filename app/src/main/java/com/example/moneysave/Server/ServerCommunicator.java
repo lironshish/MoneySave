@@ -48,26 +48,6 @@ public class ServerCommunicator  {
             DataManager.getDataManager().failed(0);
         }
     };
-    private Callback<UserBoundary> getAnotherUser_callback = new Callback<UserBoundary>() {
-        @Override
-        public void onResponse(Call<UserBoundary> call, Response<UserBoundary> response) {
-            Log.d("myLog", response.code() + "");
-            if(response.code() == STATUS_OK){
-                Log.d("myLog", response.body().toString());
-               // DataManager.getDataManager().findAnotherUser(response.body());
-            }
-            else if(response.code() == NOT_FOUND){
-                MyServices.getInstance().makeToast("User not exists");
-                DataManager.getDataManager().failed(NOT_FOUND);
-            }
-        }
-        @Override
-        public void onFailure(Call<UserBoundary> call, Throwable t) {
-            MyServices.getInstance().makeToast(t.getMessage());
-            Log.d("myLog", t.getMessage());
-            DataManager.getDataManager().failed(0);
-        }
-    };
 
     private Callback<InstanceBoundary[]> searchInstancesByName_callback = new Callback<InstanceBoundary[]>() {
         @Override
@@ -87,22 +67,18 @@ public class ServerCommunicator  {
             DataManager.getDataManager().failed(0);
         }
     };
-    private Callback<InstanceBoundary[]> searchAnotherUserByName_callback = new Callback<InstanceBoundary[]>() {
+    private Callback<InstanceBoundary[]> find_another_User_callback = new Callback<InstanceBoundary[]>() {
         @Override
         public void onResponse(Call<InstanceBoundary[]> call, Response<InstanceBoundary[]> response) {
             Log.d("myLog", response.code() + "");
             if(response.code() == STATUS_OK){
-               // DataManager.getDataManager().getAnotherUserDetailes(response.body());
-            }
-            else{
-                DataManager.getDataManager().failed(response.code());
+                DataManager.getDataManager().find_another_User(response.body());
             }
         }
         @Override
         public void onFailure(Call<InstanceBoundary[]> call, Throwable t) {
             MyServices.getInstance().makeToast(t.getMessage());
             Log.d("myLog", t.getMessage());
-            DataManager.getDataManager().failed(0);
         }
     };
     private Callback<InstanceBoundary> instance_callback = new Callback<InstanceBoundary>() {
@@ -150,10 +126,7 @@ public class ServerCommunicator  {
         myApiServer.getUserDetails(userDomain , userEmail )
                 .enqueue(getUserDetails_callback);
     }
-    public void getAnotherUser(String userDomain, String userEmail) { //"2022b.Lilach.Laniado", "rogygggyn@gmail.com"
-        myApiServer.getUserDetails(userDomain , userEmail )
-                .enqueue(getAnotherUser_callback);
-    }
+
 
     public void createUser(NewUserBoundary newUserBoundary) {
         myApiServer.createUser(newUserBoundary)
@@ -194,6 +167,6 @@ public class ServerCommunicator  {
 
     public void searchAnotherUserDetails(String name, String domain, String email) {
         myApiServer.searchInstancesByName(name , domain, email)
-                .enqueue(searchInstancesByName_callback);
+                .enqueue(find_another_User_callback);
     }
 }
