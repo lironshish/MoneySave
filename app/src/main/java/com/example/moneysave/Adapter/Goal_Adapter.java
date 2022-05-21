@@ -50,7 +50,7 @@ public class Goal_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         Goal goal = getGoal(position);
 
         holder.goal_TXT_category.setText(goal.getName());
-        holder.goal_TXT_progressbar.setText("lolo");
+        holder.goal_TXT_progressbar.setText(goal.getMoneyWested()/goal.getMoneyPerMonth() + "% complete");
         holder.goal_progressBar.setProgress(goal.getMoneyWested()/goal.getMoneyPerMonth());
 
         int resourceId = activity.getResources().getIdentifier(goal.getImage(), "drawable", activity.getPackageName());

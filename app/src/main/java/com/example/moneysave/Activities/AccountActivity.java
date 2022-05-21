@@ -247,7 +247,7 @@ public class AccountActivity extends AppCompatActivity {
         Goal_Adapter goal_adapter = new Goal_Adapter(this,goals);
         account_LST_goals.setLayoutManager(new LinearLayoutManager(this));
         account_LST_goals.setHasFixedSize(true);
-        account_LST_goals.setAdapter(bankAccount_adapter);
+        account_LST_goals.setAdapter(goal_adapter);
 
         goal_adapter.setGoalListener(new Goal_Adapter.GoalListener(){
             @Override

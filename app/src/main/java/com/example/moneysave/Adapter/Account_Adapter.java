@@ -85,9 +85,12 @@ public class Account_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             share_account.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                //TODO: how to share account?
+                    if (accountlistener != null) {
+                        accountlistener.sharedWith(getItem(getAdapterPosition()), getAdapterPosition());
+                    }
                 }
             });
+
             account_name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

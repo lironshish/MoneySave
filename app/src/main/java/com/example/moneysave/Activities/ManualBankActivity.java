@@ -41,7 +41,7 @@ public class ManualBankActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manual_bank);
+        setContentView(R.layout.activity_manual);
 
         findViews();
         InitButtons();
@@ -117,6 +117,7 @@ public class ManualBankActivity extends AppCompatActivity {
             }
             Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(new Goal().setName(category));
             DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(), detail.getCategory(), detail);
+            popupWindow.dismiss();
         });
 
         // show the popup window
