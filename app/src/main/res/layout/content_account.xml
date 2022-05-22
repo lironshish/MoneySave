@@ -31,7 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="MY BANK ACCOUNTS"
+            android:text="My Bank Accounts"
+            android:fontFamily="@font/comfortaa_bold"
             android:textColor="#8DBDE3"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -51,7 +52,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="ALL MY GOALS"
+            android:text="All My Goals"
+            android:fontFamily="@font/comfortaa_bold"
             android:textColor="#FAEFBD"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -90,8 +92,9 @@
                 android:layout_marginRight="20dp"
                 android:gravity="center"
                 android:text="Incomes"
+                android:fontFamily="@font/comfortaa_bold"
                 android:textColor="#19A51F"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
 
@@ -110,8 +113,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Expenses"
+                android:fontFamily="@font/comfortaa_bold"
                 android:textColor="#D82420"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
 
