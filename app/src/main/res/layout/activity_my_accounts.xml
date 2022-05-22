@@ -45,7 +45,8 @@
             app:layout_anchorGravity="center"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:menu="@menu/top_app_bar_menu"
-            app:title="my accounts"
+            app:title="My Accounts"
+            android:fontFamily="@font/comfortaa_bold"
             app:titleCentered="true"
             app:titleTextColor="#F1A94F" />
         </com.google.android.material.appbar.AppBarLayout>

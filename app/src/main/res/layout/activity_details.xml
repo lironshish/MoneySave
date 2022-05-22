@@ -26,7 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:title="REVENUE AND EXPENSES"
+            app:title="Revenue And Expenses"
+            android:fontFamily="@font/comfortaa_bold"
             app:titleCentered="true"
             app:titleTextColor="@color/color_four"
             app:popupTheme="@style/Theme.MoneySave.PopupOverlay" />
