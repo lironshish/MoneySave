@@ -5,7 +5,6 @@ import android.util.Log;
 import com.example.moneysave.Server.ServerCommunicator;
 import com.example.moneysave.Server.boundaries.CreatedBy;
 import com.example.moneysave.Server.boundaries.InstanceBoundary;
-import com.example.moneysave.Server.boundaries.UserId;
 import com.example.moneysave.tools.DataManager;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

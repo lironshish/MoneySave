@@ -8,7 +8,7 @@
         android:id="@+id/nav_Distribution"
         android:icon="@drawable/ic_cake"
         android:title="DISTRIBUTION"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <group
         android:id="@+id/group1"

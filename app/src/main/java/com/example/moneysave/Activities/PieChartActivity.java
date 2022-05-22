@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.tools.DataManager;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
@@ -31,19 +33,25 @@ public class PieChartActivity extends AppCompatActivity {
         setContentView(R.layout.pie_chart);
         HashMap<String,Integer> data=new HashMap<>();
         InitViews();
+        
         //test
-        data.put("option1", 20);
-        data.put("option2",60);
-        data.put("option3",20);
-        data.put("option4",20);
-        data.put("option5",30);
-        data.put("option6",20);
-        data.put("option7",20);
-        data.put("option8",10);
-        data.put("option9",5);
-        data.put("option10",2);
-        String year = "2000";
-        String month = "December";
+//        data.put("option1", 20);
+//        data.put("option2",60);
+//        data.put("option3",20);
+//        data.put("option4",20);
+//        data.put("option5",30);
+//        data.put("option6",20);
+//        data.put("option7",20);
+//        data.put("option8",10);
+//        data.put("option9",5);
+//        data.put("option10",2);
+        for (Goal category : DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount())){
+            data.put(category.getName(),(int)category.getMoneyWested());
+            // TODO: 5/22/2022 add how much we expenses in all account 
+        }
+        
+        String year = "2022";
+        String month = "May";
         setData(data);
         setYearMonth(year, month);
     }

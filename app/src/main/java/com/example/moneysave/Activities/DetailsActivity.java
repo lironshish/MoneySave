@@ -29,7 +29,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void initAdapter() {
-        ArrayList<Detail> details = Data.generateDetails();
+        ArrayList<Detail> details = DataManager.getDataManager().getActiveBankAccount().getDetails();
         Detail_Adapter detail_adapter = new Detail_Adapter(this, details);
         category_LST_items.setLayoutManager(new LinearLayoutManager(this));
         category_LST_items.setHasFixedSize(true);

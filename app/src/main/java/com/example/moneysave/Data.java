@@ -1,6 +1,5 @@
 package com.example.moneysave;
 
-import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.Objects.Goal;

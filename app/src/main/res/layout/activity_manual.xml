@@ -50,6 +50,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/manual_TXT_revenues"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -57,8 +58,8 @@
                 android:gravity="center"
                 android:text="revenues"
                 android:fontFamily="@font/comfortaa_bold"
-                android:textColor="@color/black"
-                android:textSize="30dp">
+                android:textColor="@color/color_four"
+                android:textSize="20dp">
 
             </com.google.android.material.textview.MaterialTextView>
 
@@ -68,10 +69,11 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/ic_food"
+                android:background="@drawable/ic_balance"
                 android:gravity="center" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/manual_TXT_expenses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -79,8 +81,8 @@
                 android:gravity="center"
                 android:fontFamily="@font/comfortaa_bold"
                 android:hint="expenses"
-                android:textColorHint="@color/black"
-                android:textSize="30dp">
+                android:textColorHint="@color/color_five"
+                android:textSize="20dp">
 
             </com.google.android.material.textview.MaterialTextView>
             <!--                </LinearLayout>-->
@@ -92,7 +94,8 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/comfortaa_regular"
-                android:hint="BALANCE: "
+                android:hint="  BALANCE:  "
+                android:background="@drawable/shape_stroke"
                 android:textColorHint="@color/white"
                 android:textSize="40dp">
 

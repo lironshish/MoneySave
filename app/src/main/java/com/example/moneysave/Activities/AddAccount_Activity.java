@@ -3,29 +3,21 @@ package com.example.moneysave.Activities;
 import static java.lang.Integer.valueOf;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.moneysave.Adapter.BankAccount_Adapter;
 import com.example.moneysave.Adapter.Category_Adapter;
-import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
-import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.example.moneysave.call_backs.CreateAndUpdateAccount;
-import com.example.moneysave.call_backs.GetAccounts_callback;
 import com.example.moneysave.tools.DataManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 

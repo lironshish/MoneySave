@@ -39,6 +39,10 @@
             android:name=".Activities.PieChartActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".Activities.DetailsActivity"
+            android:exported="true">
+        </activity>
 
         <activity
             android:name=".Activities.SignUpActivity"

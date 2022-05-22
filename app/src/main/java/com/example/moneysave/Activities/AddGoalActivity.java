@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
+import com.example.moneysave.tools.DataManager;
+import com.example.moneysave.tools.MyServices;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 
@@ -39,13 +41,14 @@ public class AddGoalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Goal newGoal = addGoal();
-                //TODO: Save newGoal on DATABASE
                 backToAccountActivity();
             }
         });
     }
     public Goal addGoal(){
         Goal newGoal = new Goal(enter_goal_name.getText().toString(),Integer.valueOf(enter_money.getText().toString()));
+        DataManager.getDataManager().getActiveAccount().addCategory(newGoal.setImage("ic_default"));
+        MyServices.getInstance().makeToast(enter_goal_name.getText().toString() + " goal saved");
         return newGoal;
     }
 

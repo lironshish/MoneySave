@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class Goal {
 
     private String name;
-    private int moneyPerMonth = 0;
-    private int moneyWested = 0;
+    private double moneyPerMonth = 0;
+    private double moneyWested = 0;
     private String image;
     private ArrayList<Detail> details = new ArrayList<>();
 
@@ -29,11 +29,11 @@ public class Goal {
         return this;
     }
 
-    public int getMoneyPerMonth() {
+    public double getMoneyPerMonth() {
         return moneyPerMonth;
     }
 
-    public Goal setMoneyPerMonth(int moneyPerMonth) {
+    public Goal setMoneyPerMonth(double moneyPerMonth) {
         this.moneyPerMonth = moneyPerMonth;
         return this;
     }
@@ -48,11 +48,11 @@ public class Goal {
         return this;
     }
 
-    public int getMoneyWested() {
+    public double getMoneyWested() {
         return moneyWested;
     }
 
-    public Goal setMoneyWested(int moneyWested) {
+    public Goal setMoneyWested(double moneyWested) {
         this.moneyWested = moneyWested;
         return this;
     }

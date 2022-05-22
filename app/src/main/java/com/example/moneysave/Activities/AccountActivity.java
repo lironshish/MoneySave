@@ -37,6 +37,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
@@ -45,6 +46,8 @@ public class AccountActivity extends AppCompatActivity {
     private RecyclerView account_LST_AccountsBank;
     private RecyclerView account_LST_goals;
 
+    private MaterialTextView Income_title;
+    private MaterialTextView expenses_title;
     private FloatingActionButton account_FBT_Add;
     private BottomAppBar account_BottomAppBar;
     private DrawerLayout drawer_layout;
@@ -79,8 +82,6 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.account_activity);
 
 
-
-
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -99,8 +100,12 @@ public class AccountActivity extends AppCompatActivity {
         initButton();
         closeFBT();
         initAdapters();
+        updateInCome();
 
 
+    }
+
+    private void updateInCome() {
     }
 
     private void initButton() {
@@ -155,7 +160,7 @@ public class AccountActivity extends AppCompatActivity {
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_Distribution:
                         startActivity(new Intent(AccountActivity.this, PieChartActivity.class));
-                        // TODO: 5/21/2022 add all the information that needed for that 
+
                         drawer_layout.closeDrawer(GravityCompat.START);
                     case R.id.nav_logout:
                         drawer_layout.closeDrawer(GravityCompat.START);
@@ -192,7 +197,8 @@ public class AccountActivity extends AppCompatActivity {
         drawer_layout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-
+        Income_title = findViewById(R.id.Income_title);
+        expenses_title = findViewById(R.id.expenses_title);
         account_FBTmenu = findViewById(R.id.account_FBTmenu);
         account_FBT_Add = findViewById(R.id.account_FBT_Add);
         account_BTN_AddGoal = findViewById(R.id.account_BTN_AddGoal);

@@ -2,11 +2,10 @@ package com.example.moneysave.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,7 +14,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.Objects.Goal;
@@ -23,18 +21,18 @@ import com.example.moneysave.R;
 import com.example.moneysave.tools.DataManager;
 import com.example.moneysave.tools.MyServices;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class ManualBankActivity extends AppCompatActivity {
 
     private ImageButton manual_FAB_balance;
     private ImageButton manual_FAB_revenue;
     private ImageButton manual_FAB_expenses;
+    private MaterialTextView manual_TXT_revenues;
+    private MaterialTextView manual_TXT_expenses;
     private MaterialToolbar manual_toolbar;
 
     private boolean popUpRevenuOpen = false;
@@ -59,12 +57,13 @@ public class ManualBankActivity extends AppCompatActivity {
         manual_FAB_balance = findViewById(R.id.manual_FAB_balance);
         manual_FAB_revenue = findViewById(R.id.manual_FAB_revenue);
         manual_FAB_expenses = findViewById(R.id.manual_FAB_expenses);
-
+        manual_TXT_expenses = findViewById(R.id.manual_TXT_expenses);
+        manual_TXT_revenues = findViewById(R.id.manual_TXT_revenues);
 
         manual_FAB_balance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ManualBankActivity.this, DetailsActivity.class));
             }
         });
 
@@ -118,6 +117,7 @@ public class ManualBankActivity extends AppCompatActivity {
                 MyServices.getInstance().makeToast("Must choose a category ");
                 return;
             }
+            MyServices.getInstance().makeToast("your update complete");
             Goal real_category = getCategoryByName(category);
             real_category.setMoneyWested(real_category.getMoneyWested()+Integer.parseInt(amount));
             Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(category);
@@ -125,7 +125,7 @@ public class ManualBankActivity extends AppCompatActivity {
             DataManager.getDataManager().getActiveBankAccount().getDetails().add(detail);
             DataManager.getDataManager().updateAccountInfo(DataManager.getDataManager().getActiveAccount());
             DataManager.getDataManager().getActiveBankAccount().setExpenses(DataManager.getDataManager().getActiveBankAccount().getExpenses()+detail.getAmount());
-
+            //manual_TXT_expenses.setText((int) DataManager.getDataManager().getActiveBankAccount().getExpenses());
 
             popupWindow.dismiss();
         });
@@ -179,9 +179,14 @@ public class ManualBankActivity extends AppCompatActivity {
                 MyServices.getInstance().makeToast("Amount cannot be empty!");
                 return;
             }
-
+            Goal real_category = getCategoryByName("Revenue");
+            MyServices.getInstance().makeToast("your update complete");
             Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory("Revenue");
-            //TODO 21/5/2022 : send Detail Object!
+            DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(),real_category , detail);
+            DataManager.getDataManager().getActiveBankAccount().getDetails().add(detail);
+            DataManager.getDataManager().updateAccountInfo(DataManager.getDataManager().getActiveAccount());
+            DataManager.getDataManager().getActiveBankAccount().setExpenses(DataManager.getDataManager().getActiveBankAccount().getRevenues()+detail.getAmount());
+            //manual_TXT_revenues.setText(DataManager.getDataManager().getActiveBankAccount().getRevenues());
         });
 
 

@@ -1,7 +1,7 @@
 package com.example.moneysave.Adapter;
 
 import android.app.Activity;
-import android.os.FileUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.google.android.material.textview.MaterialTextView;
@@ -50,8 +49,18 @@ public class Goal_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         Goal goal = getGoal(position);
 
         holder.goal_TXT_category.setText(goal.getName());
-        holder.goal_TXT_progressbar.setText(goal.getMoneyWested()/goal.getMoneyPerMonth() + "% complete");
-        holder.goal_progressBar.setProgress(goal.getMoneyWested()/goal.getMoneyPerMonth());
+        double n1 = goal.getMoneyWested();
+        double n2 = goal.getMoneyPerMonth();
+        double temp = n1/n2;
+        double temp2=(temp*100);
+        holder.goal_TXT_progressbar.setText(temp2 + "% complete");
+        Log.d("ppp", "category:"+ goal.getName());
+        Log.d("ppp", "yuval:"+ holder.goal_TXT_progressbar.getText());
+        Log.d("ppp", "money wested:"+ goal.getMoneyWested());
+        Log.d("ppp", "money per:"+ goal.getMoneyPerMonth());
+        Log.d("ppp", "result:"+ temp2);
+        Log.d("ppp", "result:"+ temp);
+        holder.goal_progressBar.setProgress((int)temp2);
 
         int resourceId = activity.getResources().getIdentifier(goal.getImage(), "drawable", activity.getPackageName());
         holder.goal_IMG_pic.setImageResource(resourceId);
