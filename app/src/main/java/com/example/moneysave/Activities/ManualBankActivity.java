@@ -119,10 +119,13 @@ public class ManualBankActivity extends AppCompatActivity {
                 return;
             }
             Goal real_category = getCategoryByName(category);
+            real_category.setMoneyWested(real_category.getMoneyWested()+Integer.parseInt(amount));
             Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(category);
             DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(), real_category, detail);
             DataManager.getDataManager().getActiveBankAccount().getDetails().add(detail);
             DataManager.getDataManager().updateAccountInfo(DataManager.getDataManager().getActiveAccount());
+            DataManager.getDataManager().getActiveBankAccount().setExpenses(DataManager.getDataManager().getActiveBankAccount().getExpenses()+detail.getAmount());
+
 
             popupWindow.dismiss();
         });

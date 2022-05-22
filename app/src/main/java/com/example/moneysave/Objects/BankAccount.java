@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BankAccount {
 
     private String name = " ";
-    private int expenses = 0;
+    private float expenses = 0;
     private int revenues = 0;
     private boolean isManual = true;
     private ArrayList<Detail> details= new ArrayList<>();
@@ -30,11 +30,11 @@ public class BankAccount {
         return this;
     }
 
-    public int getExpenses() {
+    public float getExpenses() {
         return expenses;
     }
 
-    public BankAccount setExpenses(int expenses) {
+    public BankAccount setExpenses(float expenses) {
         this.expenses = expenses;
         return this;
     }
