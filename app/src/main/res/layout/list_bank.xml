@@ -23,25 +23,27 @@
 
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="5dp">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="50dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="match_parent"
+                        app:iconGravity="start"
                         android:background="@drawable/ic_card"/>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/bank_TXT_name"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="4"
                         android:text="bank Name"
                         android:padding="10dp"
                         android:textColor="@color/black"
@@ -50,23 +52,24 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/bank_BTN_delete"
                         style="@style/Widget.Material3.Button.IconButton"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginLeft="130dp"
+                        android:layout_gravity="center_vertical"
                         android:insetTop="0dp"
                         android:insetBottom="0dp"
                         android:padding="5dp"
                         app:icon="@drawable/ic_delete"
-                        app:iconGravity="textStart"
+                        app:iconGravity="end"
                         app:iconSize="25dp"
                         app:iconTint="@color/black" />
 
 
                 </LinearLayout>
-
-
             </LinearLayout>
+
+
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
