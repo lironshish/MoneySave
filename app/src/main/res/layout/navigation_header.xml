@@ -16,17 +16,6 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/navigation_header_container_FAB_profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
-            android:backgroundTint="@android:color/darker_gray"
-            app:elevation="8dp"
-            app:fabCustomSize="30dp"
-            app:srcCompat="@drawable/ic_edit"
-            app:tint="@color/white"
-            app:useCompatPadding="false" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/naviHeader_IMG_user"

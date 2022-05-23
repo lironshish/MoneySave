@@ -14,13 +14,14 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="20dp"
         android:layout_weight="0.5"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Welcome to MoneySave"
-        android:textColor="@color/white"
+        android:text="Welcome to\n MoneySave"
+        android:textColor="#03A9F4"
         android:textSize="30sp"
         android:fontFamily="@font/comfortaa_bold"
         android:textStyle="bold" />
@@ -30,8 +31,9 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:src="@drawable/icon" />
+        android:src="@drawable/ic_pigi" />
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="0dp"
@@ -56,6 +58,7 @@
             android:id="@+id/main_EDT_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/color_six"
             android:hint="Email"
             />
 
@@ -79,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:background="@color/color_six"
             android:inputType="textPassword"
             />
 
@@ -96,7 +100,7 @@
         android:fontFamily="@font/comfortaa_regular"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:backgroundTint="#AA7CB342" />
+        android:backgroundTint="#03A9F4" />
 
 
 </LinearLayout>
@@ -108,17 +112,19 @@
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/main_FAB_sign_up"
+            style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="25dp"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#222E73"
             android:fontFamily="@font/comfortaa_regular"
             android:gravity="center"
             android:text="Sign Up"
             android:textColor="@color/white"
+            android:textSize="15dp"
             android:textStyle="bold"
             app:icon="@drawable/ic_sign_up"
             app:iconGravity="textStart"

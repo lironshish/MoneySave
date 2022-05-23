@@ -1,5 +1,6 @@
 package com.example.moneysave.Activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -40,11 +41,14 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class AccountActivity extends AppCompatActivity {
 
     private RecyclerView account_LST_AccountsBank;
     private RecyclerView account_LST_goals;
-
+    private Activity activity;
+    private CircleImageView naviHeader_IMG_user;
     private FloatingActionButton account_FBT_Add;
     private BottomAppBar account_BottomAppBar;
     private FloatingActionButton fab_return;
@@ -207,6 +211,9 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddManualBank = findViewById(R.id.account_BTN_AddManualBank);
         account_LST_AccountsBank = findViewById(R.id.account_LST_AccountsBank);
         account_LST_goals = findViewById(R.id.account_LST_goals);
+        naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
+//        int resourceId = activity.getResources().getIdentifier(DataManager.getDataManager().getMyUser().getAvatar(), "drawable", activity.getPackageName());
+//        naviHeader_IMG_user.setImageResource(resourceId);
 
         fab_return = findViewById(R.id.fab_return);
     }

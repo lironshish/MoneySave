@@ -51,7 +51,7 @@ public class MyAccountsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_accounts);
         currentView = findViewById(android.R.id.content);
 
-        menu_ic_home = findViewById(R.id.menu_ic_home);
+        //menu_ic_home = findViewById(R.id.menu_ic_home);
         InitButtons();
 
 
@@ -128,12 +128,12 @@ public class MyAccountsActivity extends AppCompatActivity {
             }
         });
 
-        menu_ic_home.setOnMenuItemClickListener(menuItem -> {
-            Intent myIntent = new Intent(MyAccountsActivity.this, MainActivity.class);
-            MyAccountsActivity.this.startActivity(myIntent);
-            MyAccountsActivity.this.finish();
-            return true;
-        });
+//        menu_ic_home.setOnMenuItemClickListener(menuItem -> {
+//            Intent myIntent = new Intent(MyAccountsActivity.this, MainActivity.class);
+//            MyAccountsActivity.this.startActivity(myIntent);
+//            MyAccountsActivity.this.finish();
+//            return true;
+//        });
 
 
     }
