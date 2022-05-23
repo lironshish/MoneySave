@@ -16,6 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/account_navigation"
         android:layout_width="wrap_content"
@@ -24,6 +27,7 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/drawer_menu" />
+
 
     <LinearLayout
         android:id="@+id/account_FBTmenu"
@@ -79,5 +83,6 @@
 
 
     </LinearLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

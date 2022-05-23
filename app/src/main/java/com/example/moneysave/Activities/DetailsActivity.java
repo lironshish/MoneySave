@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.moneysave.Adapter.Account_Adapter;
@@ -13,21 +14,37 @@ import com.example.moneysave.Objects.Account;
 import com.example.moneysave.Objects.Detail;
 import com.example.moneysave.R;
 import com.example.moneysave.tools.DataManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class DetailsActivity extends AppCompatActivity {
 
     private RecyclerView category_LST_items;
+    private FloatingActionButton fab_return;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         category_LST_items=findViewById(R.id.category_LST_items);
+        findViews();
+        initButtons();
         initAdapter();
     }
 
+    private void findViews(){
+        fab_return = findViewById(R.id.fab_return);
+    }
+
+    private void initButtons(){
+        fab_return.setOnClickListener(view -> {
+            Intent myIntent = new Intent(DetailsActivity.this, ManualBankActivity.class);
+            DetailsActivity.this.startActivity(myIntent);
+            DetailsActivity.this.finish();
+        });
+    }
     private void initAdapter() {
         ArrayList<Detail> details = DataManager.getDataManager().getActiveBankAccount().getDetails();
         Detail_Adapter detail_adapter = new Detail_Adapter(this, details);

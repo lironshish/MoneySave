@@ -192,5 +192,13 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_return"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit_add_account"
+        android:layout_marginTop="165dp"
+        android:clickable="true"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
 </RelativeLayout>

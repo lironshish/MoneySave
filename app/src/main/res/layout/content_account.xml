@@ -19,107 +19,115 @@
         android:layout_height="wrap_content"
         android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-
-    <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/bank_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="My Bank Accounts"
-            android:fontFamily="@font/comfortaa_bold"
-            android:textColor="#8DBDE3"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/account_LST_AccountsBank"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="20dp"
-            tools:listitem="layout/list_bank" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/gaols_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="All My Goals"
-            android:fontFamily="@font/comfortaa_bold"
-            android:textColor="#FAEFBD"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/account_LST_goals"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="20dp"
-            tools:layout_editor_absoluteX="70dp"
-            tools:layout_editor_absoluteY="34dp"
-            tools:listitem="layout/list_goals" />
+            android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_margin="70dp"
-            android:layout_weight="0.5"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_revenue" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/Income_title"
+                android:id="@+id/bank_Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginRight="20dp"
+                android:fontFamily="@font/comfortaa_bold"
                 android:gravity="center"
-                android:text="Incomes"
-                android:fontFamily="@font/comfortaa_bold"
-                android:textColor="#19A51F"
-                android:textSize="13sp"
+                android:text="My Bank Accounts"
+                android:textColor="#8DBDE3"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_expenses" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/account_LST_AccountsBank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                tools:listitem="layout/list_bank" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/expenses_title"
+                android:id="@+id/gaols_Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Expenses"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/comfortaa_bold"
-                android:textColor="#D82420"
-                android:textSize="13sp"
+                android:gravity="center"
+                android:text="All My Goals"
+                android:textColor="#FAEFBD"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/account_LST_goals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                tools:layout_editor_absoluteX="70dp"
+                tools:layout_editor_absoluteY="34dp"
+                tools:listitem="layout/list_goals" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </LinearLayout>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_revenue" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/Income_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:gravity="center"
+                    android:text="Incomes"
+                    android:textColor="#19A51F"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_expenses" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/expenses_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:text="Expenses"
+                    android:textColor="#D82420"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_return"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:clickable="true"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>

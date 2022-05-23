@@ -9,7 +9,8 @@
         android:visible="false"
         app:showAsAction="always" />
 
-    <item android:id="@+id/menu_ic_home"
+    <item
+        android:id="@+id/menu_ic_home"
         android:icon="@drawable/ic_action_name"
         android:title="Item1"
         app:showAsAction="ifRoom"/>

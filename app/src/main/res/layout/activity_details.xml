@@ -57,5 +57,14 @@
 
 
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_return"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
+
     </LinearLayout>
 </RelativeLayout>
