@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:titleTextColor="#ECC089"
+            app:titleTextColor="#222E73"
             app:title="Add Goal!"
             android:layout_centerHorizontal="true"
             app:titleCentered="true"
@@ -45,7 +45,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FAEFBD"
+        android:background="#BCF7FF"
         android:elevation="7dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="7dp">
@@ -54,7 +54,7 @@
             android:id="@+id/add_goal_LL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FAEFBD"
+            android:background="#BCF7FF"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -115,7 +115,7 @@
         android:layout_marginTop="99dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#FAEFBD"
+        android:background="#BCF7FF"
         android:elevation="7dp"
 
         app:cardCornerRadius="20dp"
@@ -125,7 +125,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/card_goal"
-        android:background="#FAEFBD"
+        android:background="#BCF7FF"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
