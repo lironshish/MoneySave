@@ -211,10 +211,32 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddManualBank = findViewById(R.id.account_BTN_AddManualBank);
         account_LST_AccountsBank = findViewById(R.id.account_LST_AccountsBank);
         account_LST_goals = findViewById(R.id.account_LST_goals);
-        naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
-        int resourceId = activity.getResources().getIdentifier(DataManager.getDataManager().getMyUser().getAvatar(), "drawable", activity.getPackageName());
-        naviHeader_IMG_user.setImageResource(resourceId);
+        toolbar.setOnClickListener(view -> {
+            naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
+            String avatar = DataManager.getDataManager().getMyUser().getAvatar();
+            switch (avatar){
+                case "avatar1":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar1);
+                    break;
+                case "avatar2":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar2);
+                    break;
+                case "avatar3":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar3);
 
+                    break;
+                case "avatar4":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar4);
+
+                    break;
+                case "avatar5":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar5);
+                    break;
+
+                default:
+                    break;
+            }
+        });
         fab_return = findViewById(R.id.fab_return);
     }
 
