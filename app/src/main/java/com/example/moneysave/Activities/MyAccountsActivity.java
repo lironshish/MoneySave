@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -19,11 +18,11 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.moneysave.Adapter.Account_Adapter;
-import com.example.moneysave.Data;
 import com.example.moneysave.Objects.Account;
 import com.example.moneysave.R;
 import com.example.moneysave.tools.DataManager;
 import com.example.moneysave.tools.MyServices;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -43,7 +42,7 @@ public class MyAccountsActivity extends AppCompatActivity {
     private String sendEmail = " ";
     private View allAccounts;
     private View currentView;
-    private MenuItem menu_ic_home;
+    private MaterialToolbar material_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,8 @@ public class MyAccountsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_accounts);
         currentView = findViewById(android.R.id.content);
 
-        //menu_ic_home = findViewById(R.id.menu_ic_home);
+        material_menu = findViewById(R.id.panel_Toolbar_Top);
+
         InitButtons();
 
 
@@ -128,12 +128,12 @@ public class MyAccountsActivity extends AppCompatActivity {
             }
         });
 
-//        menu_ic_home.setOnMenuItemClickListener(menuItem -> {
-//            Intent myIntent = new Intent(MyAccountsActivity.this, MainActivity.class);
-//            MyAccountsActivity.this.startActivity(myIntent);
-//            MyAccountsActivity.this.finish();
-//            return true;
-//        });
+        material_menu.getMenu().getItem(0).setOnMenuItemClickListener(menuItem -> {
+            Intent myIntent = new Intent(MyAccountsActivity.this, MainActivity.class);
+            MyAccountsActivity.this.startActivity(myIntent);
+            MyAccountsActivity.this.finish();
+            return true;
+        });
 
 
     }
