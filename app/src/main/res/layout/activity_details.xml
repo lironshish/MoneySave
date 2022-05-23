@@ -29,7 +29,7 @@
             app:title="Revenue And Expenses"
             android:fontFamily="@font/comfortaa_bold"
             app:titleCentered="true"
-            app:titleTextColor="@color/color_four"
+            app:titleTextColor="#222E73"
             app:popupTheme="@style/Theme.MoneySave.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

@@ -88,7 +88,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#AA7CB342"
+            android:backgroundTint="#222E73"
             android:text="Add Account!"
             android:fontFamily="@font/comfortaa_bold"
             android:textColor="#FFFFFF"

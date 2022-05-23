@@ -29,7 +29,7 @@
             app:popupTheme="@style/Theme.MoneySave.PopupOverlay"
             app:title="manual bank account name"
             app:titleCentered="true"
-            app:titleTextColor="#ECC089" />
+            app:titleTextColor="#222E73" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
