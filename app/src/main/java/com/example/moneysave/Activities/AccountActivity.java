@@ -212,8 +212,8 @@ public class AccountActivity extends AppCompatActivity {
         account_LST_AccountsBank = findViewById(R.id.account_LST_AccountsBank);
         account_LST_goals = findViewById(R.id.account_LST_goals);
         naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
-//        int resourceId = activity.getResources().getIdentifier(DataManager.getDataManager().getMyUser().getAvatar(), "drawable", activity.getPackageName());
-//        naviHeader_IMG_user.setImageResource(resourceId);
+        int resourceId = activity.getResources().getIdentifier(DataManager.getDataManager().getMyUser().getAvatar(), "drawable", activity.getPackageName());
+        naviHeader_IMG_user.setImageResource(resourceId);
 
         fab_return = findViewById(R.id.fab_return);
     }
