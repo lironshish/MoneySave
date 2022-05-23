@@ -197,7 +197,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/submit_add_account"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="15dp"
         android:clickable="true"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 

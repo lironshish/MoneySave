@@ -38,9 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/app_bar_add_account"
-        android:orientation="vertical"
         android:layout_centerInParent="true"
-        >
+        android:orientation="vertical">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -56,12 +55,11 @@
             tools:listitem="@layout/list_detail" />
 
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_return"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="50dp"
             android:clickable="true"
             app:srcCompat="?attr/actionModeCloseDrawable" />
 

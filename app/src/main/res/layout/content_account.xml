@@ -14,7 +14,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true">
@@ -50,6 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_weight="1"
+
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/comfortaa_bold"
                 android:gravity="center"
@@ -62,7 +64,7 @@
                 android:id="@+id/account_LST_goals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:paddingTop="20dp"
                 tools:layout_editor_absoluteX="70dp"
                 tools:layout_editor_absoluteY="34dp"
@@ -72,8 +74,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:layout_weight="0.5"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -124,7 +126,8 @@
                 android:id="@+id/fab_return"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="7dp"
+                android:layout_marginBottom="100dp"
+                android:layout_weight="1"
                 android:clickable="true"
                 app:srcCompat="?attr/actionModeCloseDrawable" />
 
