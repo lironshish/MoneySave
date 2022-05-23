@@ -6,7 +6,7 @@ public class BankAccount {
 
     private String name = " ";
     private float expenses = 0;
-    private int revenues = 0;
+    private float revenues = 0;
     private boolean isManual = true;
     private ArrayList<Detail> details= new ArrayList<>();
 
@@ -39,11 +39,11 @@ public class BankAccount {
         return this;
     }
 
-    public int getRevenues() {
+    public float getRevenues() {
         return revenues;
     }
 
-    public BankAccount setRevenues(int revenues) {
+    public BankAccount setRevenues(float revenues) {
         this.revenues = revenues;
         return this;
     }
@@ -66,5 +66,18 @@ public class BankAccount {
                 ", isManual=" + isManual +
                 ", details=" + details +
                 '}';
+    }
+    public float[] myInAndOut(){
+        float in = 0;
+        float out = 0;
+        for (int i = 0; i < details.size(); i++) {
+            if(details.get(i).isRevenue())
+                in+= details.get(i).getAmount();
+            else
+                out+= details.get(i).getAmount();
+        }
+        float[] ret={in , out , in-out};
+        return ret;
+
     }
 }

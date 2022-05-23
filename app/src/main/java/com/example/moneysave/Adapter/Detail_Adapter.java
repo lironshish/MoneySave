@@ -38,10 +38,15 @@ public class Detail_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final DetailHolder holder = (DetailHolder) viewHolder;
         Detail detail = getDetail(position);
-
+        int resourceId;
         holder.detail_TXT_description.setText(detail.getDescription());
-        holder.detail_TXT_Account.setText((int) detail.getAmount());
-        int resourceId = activity.getResources().getIdentifier(detail.getImage(), "drawable", activity.getPackageName());
+        holder.detail_TXT_Account.setText(detail.getAmount() + "");
+        if (detail.isRevenue()){
+            resourceId = activity.getResources().getIdentifier("ic_revenue", "drawable", activity.getPackageName());
+        }
+        else {
+            resourceId = activity.getResources().getIdentifier("ic_expenses", "drawable", activity.getPackageName());
+        }
         holder.detail_IMG_category.setImageResource(resourceId);
 
     }

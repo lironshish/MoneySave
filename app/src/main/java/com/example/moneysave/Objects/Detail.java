@@ -1,14 +1,38 @@
 package com.example.moneysave.Objects;
 
+import java.util.Objects;
+
 public class Detail {
 
     private String description;
     private String image;
     private float amount;
     private String category;
+    private boolean isRevenue = false;
+    private String id;
 
     public Detail() {
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public Detail setId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    public boolean isRevenue() {
+        return isRevenue;
+    }
+
+    public Detail setRevenue(boolean revenue) {
+        isRevenue = revenue;
+        return this;
+    }
+
+
 
     public Detail(String description, String image, int amount, String category) {
         this.description = description;
@@ -62,4 +86,14 @@ public class Detail {
                 ", category=" + category +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Detail){
+           return ((Detail)o).id.equals(this.id);
+        }
+    return false;
+    }
+
+
 }

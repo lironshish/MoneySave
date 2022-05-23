@@ -78,10 +78,10 @@ public class Account extends InstanceBoundary {
         ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).add(bankAccount);
         updateOnServer();
     }
-    public void removeBank(BankAccount bankAccount) {
-        ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).remove(bankAccount);
-        updateOnServer();
-    }
+//    public void removeBank(BankAccount bankAccount) {
+//        ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).remove(bankAccount);
+//        updateOnServer();
+//    }
 
 
     public void InitCategoriesList(int moneyPerFood, int moneyPerLeisureAndRecreation, int moneyPerCar, int moneyPerApartment, int moneyPerClothingAndFootwear, int moneyPerVariousExpenses){
@@ -120,6 +120,28 @@ public class Account extends InstanceBoundary {
     }
 
 
-    //TODO: Add functions that pull and push data to the database
+    public float[] myInAndOut(){
+        float in = 0;
+        float out = 0;
+        ArrayList<BankAccount> bankAccounts = receive_myBankAccounts();
+        for (int i = 0; i < bankAccounts.size(); i++) {
+            float[] inAndOut = bankAccounts.get(i).myInAndOut();
+            in+=inAndOut[0];
+            out+=inAndOut[1];
+        }
+        float[] ret={in , out , in-out};
+        return ret;
 
+    }
+
+    public void removeBank(BankAccount bankAccount) {
+        ((ArrayList<BankAccount>) this.getInstanceAttributes().get(DataManager.KEY_MY_BANKS)).remove(bankAccount);
+        for (Goal goal: receive_myCategories()) {
+            for (int i = 0; i <goal.getDetails().size() ; i++) {
+                if(bankAccount.getDetails().contains(goal.getDetails().get(i)))
+                    goal.getDetails().remove(goal.getDetails().get(i));
+            }
+        }
+        updateOnServer();
+    }
 }

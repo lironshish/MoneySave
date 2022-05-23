@@ -25,7 +25,7 @@
             android:id="@+id/manual_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
+            android:background="#8AC3F0"
             app:popupTheme="@style/Theme.MoneySave.PopupOverlay"
             app:title="manual bank account name"
             app:titleCentered="true"
@@ -88,6 +88,7 @@
             <!--                </LinearLayout>-->
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/balance_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -97,7 +98,7 @@
                 android:hint="  BALANCE:  "
                 android:background="@drawable/shape_stroke"
                 android:textColorHint="@color/white"
-                android:textSize="40dp">
+                android:textSize="30dp">
 
             </com.google.android.material.textview.MaterialTextView>
 

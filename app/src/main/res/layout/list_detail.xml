@@ -8,7 +8,7 @@
         android:id="@+id/account"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:elevation="7dp"
         app:cardElevation="7dp"
         app:cardCornerRadius="18dp"
@@ -17,7 +17,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="#E0F1CC"
+            android:background="#9CC1DF"
             android:orientation="horizontal">
 
 
@@ -38,17 +38,21 @@
                         android:id="@+id/detail_IMG_category"
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/ic_food"/>
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/ic_food" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/detail_TXT_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="description"
+                        android:layout_gravity="center"
+
+                        android:layout_marginBottom="5dp"
                         android:padding="10dp"
                         android:fontFamily="@font/comfortaa_bold"
                         android:textColor="@color/black"
-                        android:textSize="25dp" />
+                        android:textSize="15dp" />
 
 
                     <com.google.android.material.textview.MaterialTextView
@@ -59,6 +63,8 @@
                         android:fontFamily="@font/comfortaa_regular"
                         android:layout_gravity="end|bottom"
                         android:padding="10dp"
+                        android:gravity="bottom|end"
+                        android:layout_marginLeft="60dp"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 

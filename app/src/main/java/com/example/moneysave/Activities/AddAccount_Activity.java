@@ -103,4 +103,11 @@ public class AddAccount_Activity extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( AddAccount_Activity.this,AccountActivity.class));
+        finish();
+    }
+
 }

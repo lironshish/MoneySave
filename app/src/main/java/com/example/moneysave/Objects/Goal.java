@@ -80,4 +80,13 @@ public class Goal {
                 ", details=" +
                 '}';
     }
+
+    public float updateMoneyWasted(){
+        float counter = 0;
+        for (int i = 0; i <details.size() ; i++) {
+            counter+=details.get(i).getAmount();
+        }
+        moneyWested = counter;
+        return counter;
+    }
 }

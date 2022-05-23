@@ -31,6 +31,7 @@ import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.example.moneysave.tools.DataManager;
+import com.example.moneysave.tools.MyServices;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
@@ -38,6 +39,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
 
@@ -60,6 +62,8 @@ public class AccountActivity extends AppCompatActivity {
     private ExtendedFloatingActionButton account_BTN_AddManualBank;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private LinearLayout account_FBTmenu;
+    private MaterialTextView expenses_title;
+    private MaterialTextView Income_title;
 
     private TextInputEditText popup_LBL_accountName;
     private MaterialButton popup_BTN_save;
@@ -91,13 +95,7 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("MY ACCOUNT");
-        //toolbar.setTitleTextColor(Integer.parseInt("#FFA726"));
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//            }
-//        });
+
 
 
         findView();
@@ -105,7 +103,9 @@ public class AccountActivity extends AppCompatActivity {
         closeFBT();
         initAdapters();
 
-
+        float [] inAndOut = DataManager.getDataManager().getActiveAccount().myInAndOut();
+        expenses_title.setText(inAndOut[1] +"");
+        Income_title.setText(inAndOut[0] + "");
     }
 
     private void initButton() {
@@ -123,7 +123,7 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddBankAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DataManager.getDataManager().addAccountBank(DataManager.getDataManager().getActiveAccount(), new BankAccount().setName(accountName));
+                MyServices.getInstance().makeToast("will be available on next update");
 
             }
         });
@@ -132,6 +132,7 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AccountActivity.this, AddGoalActivity.class));
+                finish();
             }
         });
         account_BTN_AddManualBank.setOnClickListener(new View.OnClickListener() {
@@ -148,20 +149,25 @@ public class AccountActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_addBankAccount:
+                        MyServices.getInstance().makeToast("will be available on next update");
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        break;
                     case R.id.nav_addGoal:
                         startActivity(new Intent(AccountActivity.this, AddGoalActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
-                    case R.id.nav_share:
-                        // TODO: 5/21/2022 add functional of sharing
-                        drawer_layout.closeDrawer(GravityCompat.START);
+                        finish();
+                        break;
                     case R.id.nav_allAccounts:
                         startActivity(new Intent(AccountActivity.this, MyAccountsActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        finish();
+                        break;
                     case R.id.nav_Distribution:
                         startActivity(new Intent(AccountActivity.this, PieChartActivity.class));
                         // TODO: 5/21/2022 add all the information that needed for that 
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        finish();
+                        break;
                     case R.id.nav_logout:
                         drawer_layout.closeDrawer(GravityCompat.START);
                         AlertDialog alertDialog = new AlertDialog.Builder(AccountActivity.this)
@@ -181,6 +187,7 @@ public class AccountActivity extends AppCompatActivity {
                                     }
                                 })
                                 .show();
+                        break;
 
                 }
                 return true;
@@ -188,11 +195,6 @@ public class AccountActivity extends AppCompatActivity {
 
         });
 
-        fab_return.setOnClickListener(view -> {
-            Intent myIntent = new Intent(AccountActivity.this, MyAccountsActivity.class);
-            AccountActivity.this.startActivity(myIntent);
-            AccountActivity.this.finish();
-        });
     }
 
     private void findView() {
@@ -212,15 +214,44 @@ public class AccountActivity extends AppCompatActivity {
         account_LST_AccountsBank = findViewById(R.id.account_LST_AccountsBank);
         account_LST_goals = findViewById(R.id.account_LST_goals);
         naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
-        int resourceId = activity.getResources().getIdentifier(DataManager.getDataManager().getMyUser().getAvatar(), "drawable", activity.getPackageName());
-        naviHeader_IMG_user.setImageResource(resourceId);
+        expenses_title = findViewById(R.id.expenses_title);
+        Income_title = findViewById(R.id.Income_title);
 
         fab_return = findViewById(R.id.fab_return);
+
+        toolbar.setOnClickListener(view -> {
+            naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
+            String avatar = DataManager.getDataManager().getMyUser().getAvatar();
+            switch (avatar){
+                case "avatar1":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar1);
+                    break;
+                case "avatar2":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar2);
+                    break;
+                case "avatar3":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar3);
+
+                    break;
+                case "avatar4":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar4);
+
+                    break;
+                case "avatar5":
+                    naviHeader_IMG_user.setImageResource(R.drawable.ic_avatar5);
+                    break;
+
+                default:
+                    break;
+            }
+        });
+
     }
 
 
     private void initAdapters(){
         ArrayList<BankAccount> bankAccounts = DataManager.getDataManager().getAccountBanks(DataManager.getDataManager().getActiveAccount());
+
         BankAccount_Adapter bankAccount_adapter = new BankAccount_Adapter(this,bankAccounts);
         account_LST_AccountsBank.setLayoutManager(new LinearLayoutManager(this));
         account_LST_AccountsBank.setHasFixedSize(true);
@@ -231,6 +262,7 @@ public class AccountActivity extends AppCompatActivity {
             public void clicked(BankAccount bankAccount, int position) {
                 DataManager.getDataManager().setActiveBankAccount(bankAccount);
                 startActivity(new Intent(AccountActivity.this,ManualBankActivity.class));
+                finish();
 
             }
 
@@ -246,7 +278,12 @@ public class AccountActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 DataManager.getDataManager().removeAccountBank(DataManager.getDataManager().getActiveAccount(), bankAccount);
+                                account_LST_AccountsBank.getAdapter().notifyDataSetChanged();
+                                account_LST_goals.getAdapter().notifyDataSetChanged();
                                 Toast.makeText(getApplicationContext(),bankAccount.getName()+" deleted",Toast.LENGTH_LONG).show();
+                                float [] inAndOut = DataManager.getDataManager().getActiveAccount().myInAndOut();
+                                expenses_title.setText(inAndOut[1] +"");
+                                Income_title.setText(inAndOut[0] + "");
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -256,7 +293,7 @@ public class AccountActivity extends AppCompatActivity {
                             }
                         })
                         .show();
-                account_LST_AccountsBank.getAdapter().notifyDataSetChanged();
+
             }
         });
 
@@ -274,6 +311,7 @@ public class AccountActivity extends AppCompatActivity {
             }
 
         });
+        account_LST_goals.getAdapter().notifyDataSetChanged();
     }
     private void showFBT() {
         isFBTOpen = true;
@@ -319,6 +357,11 @@ public class AccountActivity extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( AccountActivity.this, MyAccountsActivity.class));
+        finish();
     }
 
 

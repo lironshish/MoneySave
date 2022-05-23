@@ -49,17 +49,12 @@ public class Goal_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         Goal goal = getGoal(position);
 
         holder.goal_TXT_category.setText(goal.getName());
-        double n1 = goal.getMoneyWested();
+        double n1 = goal.updateMoneyWasted();
         double n2 = goal.getMoneyPerMonth();
         double temp = n1/n2;
         double temp2=(temp*100);
         holder.goal_TXT_progressbar.setText(temp2 + "% complete");
-        Log.d("ppp", "category:"+ goal.getName());
-        Log.d("ppp", "yuval:"+ holder.goal_TXT_progressbar.getText());
-        Log.d("ppp", "money wested:"+ goal.getMoneyWested());
-        Log.d("ppp", "money per:"+ goal.getMoneyPerMonth());
-        Log.d("ppp", "result:"+ temp2);
-        Log.d("ppp", "result:"+ temp);
+
         holder.goal_progressBar.setProgress((int)temp2);
 
         int resourceId = activity.getResources().getIdentifier(goal.getImage(), "drawable", activity.getPackageName());

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.moneysave.Adapter.Account_Adapter;
 import com.example.moneysave.Adapter.Detail_Adapter;
@@ -39,20 +40,27 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void initButtons(){
-        fab_return.setOnClickListener(view -> {
-            Intent myIntent = new Intent(DetailsActivity.this, ManualBankActivity.class);
-            DetailsActivity.this.startActivity(myIntent);
-            DetailsActivity.this.finish();
-        });
     }
     private void initAdapter() {
+        Log.d("mylog", "1111111111111111111111111111111");
         ArrayList<Detail> details = DataManager.getDataManager().getActiveBankAccount().getDetails();
+        Log.d("mylog", "222222222");
         Detail_Adapter detail_adapter = new Detail_Adapter(this, details);
+        Log.d("mylog", "33333333333");
         category_LST_items.setLayoutManager(new LinearLayoutManager(this));
+        Log.d("mylog", "444444444");
         category_LST_items.setHasFixedSize(true);
+        Log.d("mylog", "555555555");
         category_LST_items.setAdapter(detail_adapter);
-
+        Log.d("mylog", "66666666");
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( DetailsActivity.this, ManualBankActivity.class));
+        finish();
+    }
+
 
 
 }

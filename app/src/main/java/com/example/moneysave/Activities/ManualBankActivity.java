@@ -25,6 +25,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class ManualBankActivity extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class ManualBankActivity extends AppCompatActivity {
     private MaterialTextView manual_TXT_revenues;
     private MaterialTextView manual_TXT_expenses;
     private MaterialToolbar manual_toolbar;
+    private MaterialTextView balance_title;
 
     private boolean popUpRevenuOpen = false;
     private boolean popUpExpenseOpen = false;
@@ -47,6 +49,10 @@ public class ManualBankActivity extends AppCompatActivity {
         findViews();
         InitButtons();
         InitToolBar();
+     float[] inAndOut = DataManager.getDataManager().getActiveBankAccount().myInAndOut();
+        manual_TXT_revenues.setText(inAndOut[0]+"");
+        manual_TXT_expenses.setText(inAndOut[1]+"");
+        balance_title.setText( "total: "+ inAndOut[2]+"");
     }
 
     private void findViews() {
@@ -59,11 +65,12 @@ public class ManualBankActivity extends AppCompatActivity {
         manual_FAB_expenses = findViewById(R.id.manual_FAB_expenses);
         manual_TXT_expenses = findViewById(R.id.manual_TXT_expenses);
         manual_TXT_revenues = findViewById(R.id.manual_TXT_revenues);
-
+        balance_title = findViewById(R.id.balance_title);
         manual_FAB_balance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ManualBankActivity.this, DetailsActivity.class));
+                finish();
             }
         });
 
@@ -120,13 +127,16 @@ public class ManualBankActivity extends AppCompatActivity {
             MyServices.getInstance().makeToast("your update complete");
             Goal real_category = getCategoryByName(category);
             real_category.setMoneyWested(real_category.getMoneyWested()+Integer.parseInt(amount));
-            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(category);
+            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory(category).setId(UUID.randomUUID().toString());
             DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(), real_category, detail);
             DataManager.getDataManager().getActiveBankAccount().getDetails().add(detail);
             DataManager.getDataManager().updateAccountInfo(DataManager.getDataManager().getActiveAccount());
             DataManager.getDataManager().getActiveBankAccount().setExpenses(DataManager.getDataManager().getActiveBankAccount().getExpenses()+detail.getAmount());
             //manual_TXT_expenses.setText((int) DataManager.getDataManager().getActiveBankAccount().getExpenses());
-
+            float[] inAndOut = DataManager.getDataManager().getActiveBankAccount().myInAndOut();
+            manual_TXT_revenues.setText(inAndOut[1]+"");
+            manual_TXT_expenses.setText(inAndOut[0]+"");
+            balance_title.setText( "total: "+ inAndOut[2]+"");
             popupWindow.dismiss();
         });
 
@@ -179,14 +189,18 @@ public class ManualBankActivity extends AppCompatActivity {
                 MyServices.getInstance().makeToast("Amount cannot be empty!");
                 return;
             }
-            Goal real_category = getCategoryByName("Revenue");
+
             MyServices.getInstance().makeToast("your update complete");
-            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory("Revenue");
-            DataManager.getDataManager().addCategoryDetail(DataManager.getDataManager().getActiveAccount(),real_category , detail);
+            Detail detail = new Detail().setAmount(Float.parseFloat(amount)).setDescription(expenseTitle).setCategory("Revenue").setRevenue(true).setId(UUID.randomUUID().toString());
             DataManager.getDataManager().getActiveBankAccount().getDetails().add(detail);
             DataManager.getDataManager().updateAccountInfo(DataManager.getDataManager().getActiveAccount());
-            DataManager.getDataManager().getActiveBankAccount().setExpenses(DataManager.getDataManager().getActiveBankAccount().getRevenues()+detail.getAmount());
-            //manual_TXT_revenues.setText(DataManager.getDataManager().getActiveBankAccount().getRevenues());
+
+            float[] inAndOut = DataManager.getDataManager().getActiveBankAccount().myInAndOut();
+            manual_TXT_revenues.setText(inAndOut[1]+"");
+            manual_TXT_expenses.setText(inAndOut[0]+"");
+            balance_title.setText( "total: "+ inAndOut[2]+"");
+            popupWindow.dismiss();
+
         });
 
 
@@ -209,14 +223,7 @@ public class ManualBankActivity extends AppCompatActivity {
           ArrayList<String> categories = new ArrayList<>();
             categories.add("Category");
             real_categories.forEach(c -> categories.add(c.getName()));
-//        new ArrayList<String>();
-//        categories.add("Category");
-//        categories.add("Food");
-//        categories.add("Leisure and recreation");
-//        categories.add("Car");
-//        categories.add("Apartment");
-//        categories.add("Clothing and footwear");
-//        categories.add("Various expenses");
+
 
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);

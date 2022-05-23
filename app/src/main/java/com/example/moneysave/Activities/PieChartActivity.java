@@ -2,6 +2,7 @@ package com.example.moneysave.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -113,4 +114,11 @@ public class PieChartActivity extends AppCompatActivity {
 
 //        pieChart.setDrawEntryLabels(true);
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( PieChartActivity.this ,AccountActivity.class));
+        finish();
+    }
+
 }
