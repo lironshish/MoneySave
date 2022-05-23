@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -42,6 +43,7 @@ public class MyAccountsActivity extends AppCompatActivity {
     private String sendEmail = " ";
     private View allAccounts;
     private View currentView;
+    private MenuItem menu_ic_home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class MyAccountsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_accounts);
         currentView = findViewById(android.R.id.content);
 
-
+        menu_ic_home = findViewById(R.id.menu_ic_home);
         InitButtons();
 
 
@@ -125,6 +127,15 @@ public class MyAccountsActivity extends AppCompatActivity {
                 replaceActivity();
             }
         });
+
+        menu_ic_home.setOnMenuItemClickListener(menuItem -> {
+            Intent myIntent = new Intent(MyAccountsActivity.this, MainActivity.class);
+            MyAccountsActivity.this.startActivity(myIntent);
+            MyAccountsActivity.this.finish();
+            return true;
+        });
+
+
     }
 
     private void replaceActivity(){
