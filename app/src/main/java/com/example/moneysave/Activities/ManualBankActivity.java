@@ -241,6 +241,12 @@ public class ManualBankActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( ManualBankActivity.this ,AccountActivity.class));
+        finish();
+    }
+
     private void InitToolBar() {
         manual_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

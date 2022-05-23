@@ -24,11 +24,6 @@
             android:title="ADD GOAL" />
 
 
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_sign_up"
-            android:title="SHARE" />
-
 
     </group>
 

@@ -66,6 +66,12 @@ public class AddGoalActivity extends AppCompatActivity {
     private void backToAccountActivity(){
         Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
+        finish();
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( AddGoalActivity.this ,AccountActivity.class));
+        finish();
     }
 
     private void InitAppBar(){

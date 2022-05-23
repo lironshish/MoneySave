@@ -31,6 +31,7 @@ import com.example.moneysave.Objects.BankAccount;
 import com.example.moneysave.Objects.Goal;
 import com.example.moneysave.R;
 import com.example.moneysave.tools.DataManager;
+import com.example.moneysave.tools.MyServices;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
@@ -44,7 +45,8 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AccountActivity extends AppCompatActivity {
-
+    private View header;
+    private NavigationView nav_view;
     private RecyclerView account_LST_AccountsBank;
     private RecyclerView account_LST_goals;
     private Activity activity;
@@ -91,7 +93,7 @@ public class AccountActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("MY ACCOUNT");
-        //toolbar.setTitleTextColor(Integer.parseInt("#FFA726"));
+//
 //        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -123,7 +125,7 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddBankAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DataManager.getDataManager().addAccountBank(DataManager.getDataManager().getActiveAccount(), new BankAccount().setName(accountName));
+                MyServices.getInstance().makeToast("will be available on next update");
 
             }
         });
@@ -132,6 +134,7 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AccountActivity.this, AddGoalActivity.class));
+                finish();
             }
         });
         account_BTN_AddManualBank.setOnClickListener(new View.OnClickListener() {
@@ -148,20 +151,24 @@ public class AccountActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_addBankAccount:
+                        MyServices.getInstance().makeToast("will be available on next update");
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        break;
                     case R.id.nav_addGoal:
                         startActivity(new Intent(AccountActivity.this, AddGoalActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
-                    case R.id.nav_share:
-                        // TODO: 5/21/2022 add functional of sharing
-                        drawer_layout.closeDrawer(GravityCompat.START);
+                        finish();
+                        break;
                     case R.id.nav_allAccounts:
                         startActivity(new Intent(AccountActivity.this, MyAccountsActivity.class));
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        finish();
+                        break;
                     case R.id.nav_Distribution:
                         startActivity(new Intent(AccountActivity.this, PieChartActivity.class));
-                        // TODO: 5/21/2022 add all the information that needed for that 
                         drawer_layout.closeDrawer(GravityCompat.START);
+                        finish();
+                        break;
                     case R.id.nav_logout:
                         drawer_layout.closeDrawer(GravityCompat.START);
                         AlertDialog alertDialog = new AlertDialog.Builder(AccountActivity.this)
@@ -181,9 +188,13 @@ public class AccountActivity extends AppCompatActivity {
                                     }
                                 })
                                 .show();
+                        finish();
+                        break;
 
                 }
                 return true;
+
+
             }
 
         });
@@ -211,10 +222,13 @@ public class AccountActivity extends AppCompatActivity {
         account_BTN_AddManualBank = findViewById(R.id.account_BTN_AddManualBank);
         account_LST_AccountsBank = findViewById(R.id.account_LST_AccountsBank);
         account_LST_goals = findViewById(R.id.account_LST_goals);
-        naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);
-        int resourceId = activity.getResources().getIdentifier(DataManager.getDataManager().getMyUser().getAvatar(), "drawable", activity.getPackageName());
-        naviHeader_IMG_user.setImageResource(resourceId);
 
+        //naviHeader_IMG_user = header.findViewById(R.id.naviHeader_IMG_user);
+
+//        int resourceId = getResources().getIdentifier("ic_"+DataManager.getDataManager().getMyUser().getAvatar(), "drawable", this);
+//
+//        naviHeader_IMG_user.setImageResource(resourceId);
+//        nav_view = findViewById(R.id.nav_view);
         fab_return = findViewById(R.id.fab_return);
     }
 
@@ -231,7 +245,7 @@ public class AccountActivity extends AppCompatActivity {
             public void clicked(BankAccount bankAccount, int position) {
                 DataManager.getDataManager().setActiveBankAccount(bankAccount);
                 startActivity(new Intent(AccountActivity.this,ManualBankActivity.class));
-
+                finish();
             }
 
 
@@ -321,6 +335,12 @@ public class AccountActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent( AccountActivity.this, MyAccountsActivity.class));
+        finish();
+    }
 
     private void saveManuelAccount() {
         Toast.makeText(getApplicationContext(),accountName +" saved",Toast.LENGTH_LONG).show();
