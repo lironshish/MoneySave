@@ -33,20 +33,10 @@ public class PieChartActivity extends AppCompatActivity {
         setContentView(R.layout.pie_chart);
         HashMap<String,Integer> data=new HashMap<>();
         InitViews();
-        
-        //test
-//        data.put("option1", 20);
-//        data.put("option2",60);
-//        data.put("option3",20);
-//        data.put("option4",20);
-//        data.put("option5",30);
-//        data.put("option6",20);
-//        data.put("option7",20);
-//        data.put("option8",10);
-//        data.put("option9",5);
-//        data.put("option10",2);
+
         for (Goal category : DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount())){
-            data.put(category.getName(),(int)category.getMoneyWested());
+            if (category.getMoneyWested()!=0)
+                data.put(category.getName(),(int)category.getMoneyWested());
             // TODO: 5/22/2022 add how much we expenses in all account 
         }
         
