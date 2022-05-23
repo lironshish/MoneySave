@@ -62,12 +62,12 @@
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/white"
             android:text="add bank account"
-            android:textColor="@android:color/holo_orange_dark"
+            android:textColor="#222E73"
             app:borderWidth="0dp"
             app:icon="@drawable/ic_addbank"
-            app:iconTint="@android:color/holo_orange_dark"
+            app:iconTint="#222E73"
             app:maxImageSize="50dp"
-            app:tint="@android:color/holo_orange_dark" />
+            app:tint="#222E73" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/account_BTN_AddManualBank"
@@ -77,12 +77,12 @@
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/white"
             android:text="add manual bank"
-            android:textColor="@android:color/holo_orange_dark"
+            android:textColor="#222E73"
             app:borderWidth="0dp"
             app:icon="@drawable/ic_edit"
-            app:iconTint="@android:color/holo_orange_dark"
+            app:iconTint="#222E73"
             app:maxImageSize="50dp"
-            app:tint="@android:color/holo_orange_dark" />
+            app:tint="#222E73" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/account_BTN_AddGoal"
@@ -91,12 +91,12 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/white"
             android:text="add goal"
-            android:textColor="@android:color/holo_orange_dark"
+            android:textColor="#222E73"
             app:borderWidth="0dp"
             app:icon="@drawable/ic_goal"
-            app:iconTint="@android:color/holo_orange_dark"
+            app:iconTint="#222E73"
             app:maxImageSize="50dp"
-            app:tint="@android:color/holo_orange_dark" />
+            app:tint="#222E73" />
 
 
     </LinearLayout>
