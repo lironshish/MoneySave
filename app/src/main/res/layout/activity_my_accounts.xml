@@ -48,7 +48,7 @@
             app:title="My Accounts"
             android:fontFamily="@font/comfortaa_bold"
             app:titleCentered="true"
-            app:titleTextColor="#F1A94F" />
+            app:titleTextColor="#222E73" />
         </com.google.android.material.appbar.AppBarLayout>
 
 

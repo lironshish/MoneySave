@@ -185,7 +185,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/card_money"
         android:layout_centerInParent="true"
-        android:backgroundTint="#AA7CB342"
+        android:backgroundTint="#222E73"
         android:text="Add Goal!"
         android:fontFamily="@font/comfortaa_bold"
         android:textColor="#FFFFFF"
