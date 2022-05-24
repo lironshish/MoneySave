@@ -35,10 +35,13 @@ public class PieChartActivity extends AppCompatActivity {
         HashMap<String,Integer> data=new HashMap<>();
         InitViews();
 
-        for (Goal category : DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount())){
-            if (category.getMoneyWested()!=0)
-                data.put(category.getName(),(int)category.getMoneyWested());
-            // TODO: 5/22/2022 add how much we expenses in all account 
+        float [] inAndOut = DataManager.getDataManager().getActiveAccount().myInAndOut();
+        double precentge;
+        for (Goal category : DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount())) {
+            if (category.getMoneyWested() != 0) {
+                precentge = category.getMoneyWested()/inAndOut[1];
+                data.put(category.getName(), (int) precentge);
+            }
         }
         
         String year = "2022";
