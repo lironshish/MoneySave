@@ -195,6 +195,12 @@ public class AccountActivity extends AppCompatActivity {
 
         });
 
+        fab_return.setOnClickListener(view -> {
+            Intent myIntent = new Intent(AccountActivity.this, MyAccountsActivity.class);
+            AccountActivity.this.startActivity(myIntent);
+            AccountActivity.this.finish();
+        });
+
     }
 
     private void findView() {
