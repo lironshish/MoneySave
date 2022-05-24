@@ -39,7 +39,7 @@ public class PieChartActivity extends AppCompatActivity {
         double precentge;
         for (Goal category : DataManager.getDataManager().getAccountCategories(DataManager.getDataManager().getActiveAccount())) {
             if (category.getMoneyWested() != 0) {
-                precentge = category.getMoneyWested()/inAndOut[1];
+                precentge = (category.getMoneyWested()/inAndOut[1])*100;
                 data.put(category.getName(), (int) precentge);
             }
         }

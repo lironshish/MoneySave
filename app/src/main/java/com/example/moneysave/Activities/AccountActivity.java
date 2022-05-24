@@ -53,7 +53,6 @@ public class AccountActivity extends AppCompatActivity {
     private CircleImageView naviHeader_IMG_user;
     private FloatingActionButton account_FBT_Add;
     private BottomAppBar account_BottomAppBar;
-    private FloatingActionButton fab_return;
     private DrawerLayout drawer_layout;
     private NavigationView account_navigation;
     private MaterialToolbar toolbar;
@@ -195,11 +194,7 @@ public class AccountActivity extends AppCompatActivity {
 
         });
 
-        fab_return.setOnClickListener(view -> {
-            Intent myIntent = new Intent(AccountActivity.this, MyAccountsActivity.class);
-            AccountActivity.this.startActivity(myIntent);
-            AccountActivity.this.finish();
-        });
+
 
     }
 
@@ -223,7 +218,6 @@ public class AccountActivity extends AppCompatActivity {
         expenses_title = findViewById(R.id.expenses_title);
         Income_title = findViewById(R.id.Income_title);
 
-        fab_return = findViewById(R.id.fab_return);
 
         toolbar.setOnClickListener(view -> {
             naviHeader_IMG_user = findViewById(R.id.naviHeader_IMG_user);

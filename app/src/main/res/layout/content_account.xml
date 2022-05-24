@@ -122,15 +122,7 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_return"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:background="@color/white"
-                app:srcCompat="?attr/actionModeCloseDrawable" />
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

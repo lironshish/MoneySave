@@ -30,18 +30,20 @@
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/navigation_header.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_in.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/liron0/Desktop/MoneySave/app/src/main/res/layout/sign_up.xml" value="0.264" />
-        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/account_activity.xml" value="0.264" />
+        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/account_activity.xml" value="0.2" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_account_for_list.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_add_account.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_add_goal.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_details.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_manual.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_manual.xml" value="0.264" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/activity_my_accounts.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/app_bar_account.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/app_bar_account.xml" value="0.2" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/content_account.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/list_account.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/list_bank.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/list_category.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/list_detail.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/list_goal.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/navigation_header.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/pie_chart.xml" value="0.11302083333333333" />
@@ -51,6 +53,7 @@
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/popup_expenses.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/sign_in.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/sign_up.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/liron0/Desktop/Save/app/src/main/res/layout/splash_activity.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/liron0/Desktop/TRY/app/src/main/res/layout/account_activity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/liron0/Desktop/TRY/app/src/main/res/layout/activity_account_for_list.xml" value="0.2" />
         <entry key="..\:/Users/liron0/Desktop/TRY/app/src/main/res/layout/activity_add_account.xml" value="0.536" />

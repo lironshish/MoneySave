@@ -124,8 +124,11 @@
                     android:layout_height="100dp"
                     android:background="@drawable/ic_revenue" />
             </LinearLayout>
+
         </LinearLayout>
+
     </RelativeLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/account_BottomNavigationView"
@@ -145,5 +148,7 @@
         app:fabAlignmentMode="center"
         app:fabCradleMargin="20dp"
         app:fabCradleRoundedCornerRadius="10dp" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
