@@ -53,7 +53,7 @@ public class Goal_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         double n2 = goal.getMoneyPerMonth();
         double temp = n1/n2;
         double temp2=(temp*100);
-        holder.goal_TXT_progressbar.setText(temp2 + "% complete");
+        holder.goal_TXT_progressbar.setText(Math.round(temp2) + "% complete");
 
         holder.goal_progressBar.setProgress((int)temp2);
 
