@@ -32,6 +32,7 @@
             app:titleTextColor="#222E73" />
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <RelativeLayout
         android:id="@+id/manual_Top_Menu"
         android:layout_width="match_parent"
@@ -55,9 +56,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/comfortaa_bold"
                 android:gravity="center"
                 android:text="revenues"
-                android:fontFamily="@font/comfortaa_bold"
                 android:textColor="@color/color_four"
                 android:textSize="20dp">
 
@@ -69,7 +70,7 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/ic_balance"
+                android:background="@drawable/ic_balance_exp"
                 android:gravity="center" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -78,8 +79,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
                 android:fontFamily="@font/comfortaa_bold"
+                android:gravity="center"
                 android:hint="expenses"
                 android:textColorHint="@color/color_five"
                 android:textSize="20dp">
@@ -94,9 +95,9 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_stroke"
                 android:fontFamily="@font/comfortaa_regular"
                 android:hint="  BALANCE:  "
-                android:background="@drawable/shape_stroke"
                 android:textColorHint="@color/white"
                 android:textSize="30dp">
 
@@ -112,23 +113,22 @@
 
                 <ImageButton
                     android:id="@+id/manual_FAB_expenses"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginRight="60dp"
                     android:background="@drawable/ic_expenses" />
 
 
                 <ImageButton
                     android:id="@+id/manual_FAB_revenue"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/ic_revenue" />
             </LinearLayout>
 
         </LinearLayout>
 
     </RelativeLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/account_BottomNavigationView"
