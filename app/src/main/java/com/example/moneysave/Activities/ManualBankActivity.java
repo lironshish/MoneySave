@@ -52,7 +52,7 @@ public class ManualBankActivity extends AppCompatActivity {
      float[] inAndOut = DataManager.getDataManager().getActiveBankAccount().myInAndOut();
         manual_TXT_revenues.setText(inAndOut[0]+"");
         manual_TXT_expenses.setText(inAndOut[1]+"");
-        balance_title.setText( "total: "+ inAndOut[2]+"");
+        balance_title.setText("   total: "+ inAndOut[2]+"");
     }
 
     private void findViews() {
