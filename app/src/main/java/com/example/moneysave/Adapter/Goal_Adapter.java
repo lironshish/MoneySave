@@ -56,7 +56,7 @@ public class Goal_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         holder.goal_TXT_progressbar.setText(Math.round(temp2) + "% complete");
 
         holder.goal_progressBar.setProgress((int)temp2);
-
+        holder.goal_TXT_howMuch.setText((int)goal.getMoneyWested() +"/"+(int)n2);
         int resourceId = activity.getResources().getIdentifier(goal.getImage(), "drawable", activity.getPackageName());
         holder.goal_IMG_pic.setImageResource(resourceId);
 
@@ -76,6 +76,7 @@ class GoalHolder extends RecyclerView.ViewHolder {
     private MaterialTextView goal_TXT_progressbar;
     private ProgressBar goal_progressBar;
     private MaterialTextView goal_TXT_category;
+    private MaterialTextView goal_TXT_howMuch;
     private ImageView goal_IMG_pic;
 
 
@@ -85,7 +86,7 @@ class GoalHolder extends RecyclerView.ViewHolder {
         goal_progressBar = itemView.findViewById(R.id.goal_progressBar);
         goal_TXT_category = itemView.findViewById(R.id.goal_TXT_category);
         goal_IMG_pic = itemView.findViewById(R.id.goal_IMG_pic);
-
+        goal_TXT_howMuch = itemView.findViewById(R.id.goal_TXT_howMuch);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

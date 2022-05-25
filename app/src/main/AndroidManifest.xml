@@ -26,15 +26,13 @@
             android:name=".Activities.MyAccountsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.Activity_Splash"
+            android:name=".Activities.MainActivity"
             android:exported="true" >
 
         </activity>
         <activity
             android:name=".Activities.AddGoalActivity"
-            android:exported="true" /> <!-- <activity -->
-        <!-- android:name=".Acivities.MainActivity" -->
-        <!-- android:exported="false" /> -->
+            android:exported="true" />
         <activity
             android:name=".Activities.PieChartActivity"
             android:exported="true">
@@ -50,7 +48,7 @@
             android:label="Sign Up"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activities.Activity_Splash"
             android:exported="true"
             android:label="Account Activity"
             android:screenOrientation="portrait" >
